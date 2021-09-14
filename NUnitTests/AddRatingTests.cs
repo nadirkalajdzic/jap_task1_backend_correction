@@ -20,7 +20,6 @@ namespace NUnitTests
     {
         DataContext _context;
         IRatingsService _ratingsService;
-        IAuthService _authService;
 
         [SetUp]
         public async Task SetupAsync()
@@ -105,45 +104,7 @@ namespace NUnitTests
 
             // --------------
 
-
-            // IConfiguration setup
-            var inMemoryConfigurationSettings = new Dictionary<string, string>
-            {
-               {"AppSettings:Token", "6673d1b96a3661ae9a2f9a04243291d8f181e016a877358658d16627d5677e33aa85d672a75b0286508ac8c94cbc27e49eddf38abcf88d3027c98a981c25fc62"}
-            };
-            IConfiguration configuration = new ConfigurationBuilder()
-                .AddInMemoryCollection(inMemoryConfigurationSettings)
-                .Build();
-            // --------------------
-
-
-            //auth service setup
-            _authService = new AuthService(_context, configuration);
-
-            // login to get token and setup the httpContext, so it can be passed for the ticketsService
-            var userLogin = await _authService.Login("user@gmail.com", "user");
-
-            var mockHttpContextAccessor = new Mock<IHttpContextAccessor>();
-            mockHttpContextAccessor.Setup(x => x.HttpContext.Request.Headers.Add("Authorization", @"Bearer $userLogin.Data.Token"));
-
-            // - add claims
-            var claims = new List<Claim>()
-            {
-                new Claim(ClaimTypes.NameIdentifier, "2"),
-                new Claim(ClaimTypes.Name, "user@gmail.com")
-            };
-            var identity = new ClaimsIdentity(claims, "User");
-            var claimsPrincipal = new ClaimsPrincipal(identity);
-            var context = new DefaultHttpContext
-            {
-                User = claimsPrincipal
-            };
-
-            context.Request.Headers["Authorization"] = "Bearer " + userLogin.Data.Token;
-            mockHttpContextAccessor.Setup(x => x.HttpContext).Returns(context);
-
-            _ratingsService = new RatingsService(_context, mockHttpContextAccessor.Object);
-            // ----------------------------------------------------------------------------------------
+            _ratingsService = new RatingsService(_context);            
 
         }
 
@@ -156,11 +117,11 @@ namespace NUnitTests
         [Test]
         public async Task AddRatingTest_InputValidRatingAdd_ReturnTrue()
         {
-            var response = await _ratingsService.AddRating(4.1F, 2);
+            var response = await _ratingsService.AddRating(4.1F, 1, 2);
 
             //Is the rating added?
             Assert.IsTrue(response.Success);
-            Assert.AreEqual(response.Message, "Successfully added rating");
+            Assert.AreEqual("Successfully added rating", response.Message);
 
             var ratingAfter = (await _context.Ratings.Where(x => x.VideoId == 1).ToListAsync()).Average(x => x.Value);
             
@@ -170,8 +131,8 @@ namespace NUnitTests
         [Test]
         public async Task AddRatingTest_InputInValidRatingAdd_ReturnFalse()
         {
-            var response1 = await _ratingsService.AddRating(4.1F, 2);
-            var response2 = await _ratingsService.AddRating(4.1F, 2);
+            var response1 = await _ratingsService.AddRating(4.1F, 2, 2);
+            var response2 = await _ratingsService.AddRating(4.1F, 2, 2);
 
             //Is the rating added?
 
@@ -181,7 +142,7 @@ namespace NUnitTests
 
             //second time it shouldn't. one user cannot rate the same film/show twice!
             Assert.IsFalse(response2.Success);
-            Assert.AreEqual(response2.Message, "You already rated this item");
+            Assert.AreEqual(response2.Message, "You already rated this item!");
 
             var ratingAfter = (await _context.Ratings.Where(x => x.VideoId == 1).ToListAsync()).Average(x => x.Value);
 

@@ -3,14 +3,10 @@ using jap_task1_backend_correction.DTO.Ticket;
 using jap_task1_backend_correction.Models;
 using jap_task1_backend_correction.Services.AuthService;
 using jap_task1_backend_correction.Services.TicketsService;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Moq;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace NUnitTests
@@ -19,7 +15,6 @@ namespace NUnitTests
     public class BuyTicketsTest
     {
         DataContext _context;
-        IAuthService authService;
         ITicketsService ticketsService;
 
         [SetUp]
@@ -41,20 +36,7 @@ namespace NUnitTests
 
             // --------------
 
-
-            // IConfiguration setup
-            var inMemoryConfigurationSettings = new Dictionary<string, string>
-            {
-               {"AppSettings:Token", "6673d1b96a3661ae9a2f9a04243291d8f181e016a877358658d16627d5677e33aa85d672a75b0286508ac8c94cbc27e49eddf38abcf88d3027c98a981c25fc62"}
-            };
-            IConfiguration configuration = new ConfigurationBuilder()
-                .AddInMemoryCollection(inMemoryConfigurationSettings)
-                .Build();
-            // --------------------
-
-
-            //auth service setup and add user (it doesnt matter that its the admin user)
-            authService = new AuthService(_context, configuration);
+            //add user setup (it doesnt matter that its the admin user)
 
             AuthService.CreatePasswordHash("admin", out byte[] passHash, out byte[] passSalt);
             _context.Users.Add(
@@ -69,33 +51,10 @@ namespace NUnitTests
                 }
             );
             await _context.SaveChangesAsync();
+
             // -------------------------------------------------------------------------
 
-
-            // login to get token and setup the httpContext, so it can be passed for the ticketsService
-            var userLogin = await authService.Login("admin@gmail.com", "admin");
-
-            var mockHttpContextAccessor = new Mock<IHttpContextAccessor>();
-            mockHttpContextAccessor.Setup(x => x.HttpContext.Request.Headers.Add("Authorization", @"Bearer $userLogin.Data.Token"));
-            
-            // - add claims
-            var claims = new List<Claim>()
-            {
-                new Claim(ClaimTypes.NameIdentifier, "1"),
-                new Claim(ClaimTypes.Name, "admin@gmail.com")
-            };
-            var identity = new ClaimsIdentity(claims, "User");
-            var claimsPrincipal = new ClaimsPrincipal(identity);
-            var context = new DefaultHttpContext
-            {
-               User = claimsPrincipal
-            };
-
-            context.Request.Headers["Authorization"] = "Bearer " + userLogin.Data.Token;
-            mockHttpContextAccessor.Setup(x => x.HttpContext).Returns(context);
-
-            ticketsService = new TicketsService(_context, mockHttpContextAccessor.Object);
-            // ----------------------------------------------------------------------------------------
+            ticketsService = new TicketsService(_context);
 
         }
 
@@ -110,7 +69,7 @@ namespace NUnitTests
         {
             var buyTicketDTO = new BuyTicketDTO { ScreeningId = 1, NumberOfTickets = 2 };
 
-            var response = await ticketsService.BuyTickets(buyTicketDTO);
+            var response = await ticketsService.BuyTickets(buyTicketDTO, 1);
             
             // buying tickets for a valid screening, there is still available tickets and the screening is not in the past
             Assert.IsTrue(response.Data);
@@ -122,7 +81,7 @@ namespace NUnitTests
         {
             var buyTicketDTO = new BuyTicketDTO { ScreeningId = 2, NumberOfTickets = 2 };
 
-            var response = await ticketsService.BuyTickets(buyTicketDTO);
+            var response = await ticketsService.BuyTickets(buyTicketDTO, 1);
 
             // buying tickets for a invalid screening that already happened (screening was in the past)
             Assert.IsFalse(response.Data);
@@ -134,7 +93,7 @@ namespace NUnitTests
         {
             var buyTicketDTO = new BuyTicketDTO { ScreeningId = 3, NumberOfTickets = 1 };
 
-            var response = await ticketsService.BuyTickets(buyTicketDTO);
+            var response = await ticketsService.BuyTickets(buyTicketDTO, 1);
 
             // buying tickets for a invalid screening that is sould out (no more available tickets)
             Assert.IsFalse(response.Data);
@@ -146,7 +105,7 @@ namespace NUnitTests
         {
             var buyTicketDTO = new BuyTicketDTO { ScreeningId = 4, NumberOfTickets = 2 };
 
-            var response = await ticketsService.BuyTickets(buyTicketDTO);
+            var response = await ticketsService.BuyTickets(buyTicketDTO, 1);
 
             // buying tickets for a screening that does not have that many tickets available (available for screening 11, sold 10, trying to buy 2)
             Assert.IsFalse(response.Data);

@@ -125,7 +125,7 @@ namespace NUnitTests
         [Test]
         public async Task RatingTest_NormalCase_ReturnsValid()
         {
-            var videosList = (await _videosService.GetTopVideos(0)).Data;
+            var videosList = (await _videosService.GetTopVideos(0, new())).Data;
 
             var film1 = videosList.Find(x => x.Id == 1);
             Assert.AreEqual(4.10, film1.AverageRating, .1);
@@ -134,7 +134,7 @@ namespace NUnitTests
         [Test]
         public async Task RatingTest_NoRatings_Returns0()
         {
-            var videosList = (await _videosService.GetTopVideos(0)).Data;
+            var videosList = (await _videosService.GetTopVideos(0, new())).Data;
 
             var film1 = videosList.Find(x => x.Id == 3);
             Assert.AreEqual(0, film1.AverageRating);
@@ -143,7 +143,7 @@ namespace NUnitTests
         [Test]
         public async Task RatingTest_RangeCheck_ReturnsNumberPositiveOrZero()
         {
-            var videosList = (await _videosService.GetTopVideos(0)).Data;
+            var videosList = (await _videosService.GetTopVideos(0, new())).Data;
 
             // every average rating needs to be between 0 and 5 (0 and 5 are included)
             videosList.ForEach(x =>

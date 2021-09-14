@@ -113,6 +113,8 @@ namespace NUnitTests
         {
             var list = (await _videosService.GetFilteredVideos("The s")).Data;
 
+            foreach (var i in list) Console.WriteLine(i.Title);
+
             //should only be one from the three given movies
             Assert.AreEqual(1, list.Count);
             Assert.AreEqual(list[0].Title, "The Shawshank Redemption");

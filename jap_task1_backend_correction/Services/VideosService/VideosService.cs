@@ -132,6 +132,7 @@ namespace jap_task1_backend_correction.Services.VideosService
                     query = query.Where(x => x.ReleaseDate.Year > ratingForSearchAfter);
                 else if (containingStringStar(searchQuery[1]) && float.TryParse(searchQuery[0], out float exactRating))
                     query = query.Where(x => x.Ratings.Select(x => x.Value).Average() == exactRating);
+                else setDefaultSearchQuery(ref query);
             } 
             else if(searchQuery.Count == 4)
             {
@@ -147,6 +148,7 @@ namespace jap_task1_backend_correction.Services.VideosService
                 {
                     query = query.Where(x => DateTime.Now.Year - x.ReleaseDate.Year > dateForSearchOlderThan);
                 }
+                else setDefaultSearchQuery(ref query);
             }
             else setDefaultSearchQuery(ref query);
 

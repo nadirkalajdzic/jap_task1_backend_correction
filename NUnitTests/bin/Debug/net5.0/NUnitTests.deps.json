@@ -13,7 +13,7 @@
           "NUnit": "3.13.2",
           "NUnit3TestAdapter": "4.0.0",
           "coverlet.collector": "3.1.0",
-          "jap_task2_backend": "1.0.0"
+          "jap_task1_backend_correction": "1.0.0"
         },
         "runtime": {
           "NUnitTests.dll": {}
@@ -1384,7 +1384,7 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
-      "jap_task2_backend/1.0.0": {
+      "jap_task1_backend_correction/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.9",
@@ -1397,7 +1397,7 @@
           "Swashbuckle.AspNetCore.Filters": "7.0.2"
         },
         "runtime": {
-          "jap_task2_backend.dll": {}
+          "jap_task1_backend_correction.dll": {}
         }
       }
     }
@@ -2255,7 +2255,7 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
-    "jap_task2_backend/1.0.0": {
+    "jap_task1_backend_correction/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
