@@ -10,29 +10,41 @@ namespace jap_task1_backend_correction.Services.RatingsService
     public class RatingsService: IRatingsService
     {
         private readonly DataContext _context;
-        private IHttpContextAccessor _httpContextAccessor;
+        
 
-        public RatingsService(DataContext context, IHttpContextAccessor httpContextAccessor)
+        public RatingsService(DataContext context)
         {
             _context = context;
-            _httpContextAccessor = httpContextAccessor;
+           
         }
 
-        private int GetUserId() => int.Parse(_httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
-
-        public async Task<ServiceResponse<bool>> AddRating(float AddValue, int AddVideoId)
+        public async Task<ServiceResponse<bool>> AddRating(float AddValue, int AddVideoId, int UserId)
         {
 
             ServiceResponse<bool> response = new();
 
-            var AddUserId = GetUserId();
-            var userAlreadyAddedRating = await _context.Ratings.FirstOrDefaultAsync(x => x.UserId == AddUserId && x.VideoId == AddVideoId);
+            response.Data = false;
+            response.Success = false;
+
+            if (AddValue < 1 || AddValue > 5)
+            {
+                response.Message = "Rating must be between 1 and 5!";
+                return response;
+            }
+
+            var isVideoExisting = await _context.Videos.FirstOrDefaultAsync(x => x.Id == AddVideoId);
+
+            if(isVideoExisting == null)
+            {
+                response.Message = "The given video does not exist!";
+                return response;
+            }
+
+            var userAlreadyAddedRating = await _context.Ratings.FirstOrDefaultAsync(x => x.UserId == UserId && x.VideoId == AddVideoId);
 
             if(userAlreadyAddedRating != null)
             {
-                response.Data = false;
-                response.Success = false;
-                response.Message = "You already rated this item";
+                response.Message = "You already rated this item!";
                 return response;
             }
 
@@ -40,7 +52,7 @@ namespace jap_task1_backend_correction.Services.RatingsService
             {
                 Value = AddValue,
                 VideoId = AddVideoId,
-                UserId = AddUserId
+                UserId = UserId
             };
 
             await _context.Ratings.AddAsync(addRating);
