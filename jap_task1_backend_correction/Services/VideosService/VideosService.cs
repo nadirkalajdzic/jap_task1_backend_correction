@@ -36,8 +36,8 @@ namespace jap_task1_backend_correction.Services.VideosService
                 return serviceResponse;
             }
 
-            serviceResponse.Data = await _context.Videos.Include(x => x.Ratings)
-                                                 .AsSplitQuery()
+            serviceResponse.Data = await _context.Videos
+                                                 .Include(x => x.Ratings)
                                                  .Where(x => x.Type == type)
                                                  .Select(x => new GetVideoDTO
                                                  {
@@ -46,7 +46,9 @@ namespace jap_task1_backend_correction.Services.VideosService
                                                      Description = x.Description,
                                                      Image_Url = x.Image_Url,
                                                      ReleaseDate = x.ReleaseDate,
-                                                     AverageRating = x.Ratings.Select(x => x.Value).DefaultIfEmpty().Average()
+                                                     AverageRating = x.Ratings.Select(x => x.Value)
+                                                                              .DefaultIfEmpty()
+                                                                              .Average()
                                                  })
                                                  .OrderByDescending(x => x.AverageRating)
                                                  .Skip((paginationDTO.PageNumber - 1) * paginationDTO.PageSize)
@@ -62,9 +64,9 @@ namespace jap_task1_backend_correction.Services.VideosService
             var serviceResponse = new ServiceResponse<GetVideoFullInfoDTO>();
 
             var video = await _context.Videos
-                .Include(x => x.Actors)
-                .Include(x => x.Categories)
-                .Include(x => x.Ratings)
+                .Include(x => x.Actors).AsSingleQuery()
+                .Include(x => x.Categories).AsSingleQuery()
+                .Include(x => x.Ratings).AsSingleQuery()
                 .Select(x => new GetVideoFullInfoDTO
                 {
                     Id = x.Id,
@@ -97,7 +99,8 @@ namespace jap_task1_backend_correction.Services.VideosService
             AddFiltersForVideoSearch(Search, ref query);
 
             serviceResponse.Data = await query.OrderByDescending(x => x.Ratings.Select(x => x.Value)
-                                                                               .DefaultIfEmpty().Average())
+                                                                               .DefaultIfEmpty()
+                                                                               .Average())
                                               .Select(x => _mapper.Map<GetVideoTextAttributesDTO>(x))
                                               .ToListAsync();
 

@@ -14,7 +14,7 @@ namespace jap_task1_backend_correction.Controllers
     public class TicketsController : ControllerBase
     {
         private readonly ITicketsService _ticketsService;
-        private IHttpContextAccessor _httpContextAccessor;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
         public TicketsController(ITicketsService ticketsService, IHttpContextAccessor httpContextAccessor)
         {

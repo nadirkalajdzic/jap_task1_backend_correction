@@ -21,26 +21,17 @@ namespace jap_task1_backend_correction.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserRegisterDTO request)
         {
-            ServiceResponse<int> response = await _authService.Register(
-                new User { Email = request.Email, Name = request.Name, Surname = request.Surname }, request.Password
-            );
-            if (!response.Success)
-            {
-                return BadRequest(response);
-            }
-            return Ok(response);
+            var response = await _authService.Register(new User { Email = request.Email, Name = request.Name, Surname = request.Surname }, request.Password);
+
+            return (response.Success) ? Ok(response) : BadRequest(response);
         }
 
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginDTO request)
         {
-            ServiceResponse<UserLoginDTO> response = await _authService.Login(request.Email, request.Password);
+            var response = await _authService.Login(request.Email, request.Password);
 
-            if (!response.Success)
-            {
-                return BadRequest(response);
-            }
-            return Ok(response);
+            return (response.Success) ? Ok(response) : BadRequest(response);
         }
 
     }

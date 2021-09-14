@@ -32,22 +32,23 @@ namespace jap_task1_backend_correction.Services.RatingsService
                 return response;
             }
 
+            // checking if the given video exists, if not return error
             var isVideoExisting = await _context.Videos.FirstOrDefaultAsync(x => x.Id == AddVideoId);
-
             if(isVideoExisting == null)
             {
                 response.Message = "The given video does not exist!";
                 return response;
             }
 
+            // checking if the user already rated the given movie, if he/she/they did then return error
             var userAlreadyAddedRating = await _context.Ratings.FirstOrDefaultAsync(x => x.UserId == UserId && x.VideoId == AddVideoId);
-
             if(userAlreadyAddedRating != null)
             {
                 response.Message = "You already rated this item!";
                 return response;
             }
 
+            // adding rating
             var addRating = new Rating
             {
                 Value = AddValue,

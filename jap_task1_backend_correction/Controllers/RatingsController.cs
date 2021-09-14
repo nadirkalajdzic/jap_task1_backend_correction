@@ -14,7 +14,7 @@ namespace jap_task1_backend_correction.Controllers
     public class RatingsController : ControllerBase
     {
         private readonly IRatingsService _ratingsService;
-        private IHttpContextAccessor _httpContextAccessor;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
         public RatingsController(IRatingsService ratingsService, IHttpContextAccessor httpContextAccessor) 
         {
@@ -29,10 +29,7 @@ namespace jap_task1_backend_correction.Controllers
         {
             var response = await _ratingsService.AddRating(addRating.Value, addRating.VideoId, GetUserId());
             
-            if (!response.Success)
-                return BadRequest(response);
-
-            return Ok(response);
+            return (response.Success) ? Ok(response) : BadRequest(response);
         }
     }
 }

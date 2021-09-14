@@ -19,20 +19,19 @@ namespace jap_task1_backend_correction.Services.TicketsService
 
         public async Task<ServiceResponse<bool>> BuyTickets(BuyTicketDTO buyTicketDTO, int UserId)
         {
-            var serviceResponse = new ServiceResponse<bool>();
+            var serviceResponse = new ServiceResponse<bool>
+            {
+                Success = false,
+                Data = false
+            };
 
             if (buyTicketDTO.NumberOfTickets <= 0)
             {
-                serviceResponse.Success = false;
-                serviceResponse.Data = false;
                 serviceResponse.Message = "Number of tickets cannot be zero or negative!";
                 return serviceResponse;
             }
 
             var screening = await _context.Screenings.FirstOrDefaultAsync(x => x.Id == buyTicketDTO.ScreeningId);
-
-            serviceResponse.Success = false;
-            serviceResponse.Data = false;
 
             if (screening == null)
                 serviceResponse.Message = "Screening does not exist!";
