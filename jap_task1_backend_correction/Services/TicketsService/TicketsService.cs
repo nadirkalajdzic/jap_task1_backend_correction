@@ -1,10 +1,8 @@
 ﻿using jap_task1_backend_correction.Data;
 using jap_task1_backend_correction.DTO.Ticket;
 using jap_task1_backend_correction.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace jap_task1_backend_correction.Services.TicketsService
@@ -12,16 +10,14 @@ namespace jap_task1_backend_correction.Services.TicketsService
     public class TicketsService : ITicketsService
     {
         private readonly DataContext _context;
-        private IHttpContextAccessor _httpContextAccessor;
-        public TicketsService(DataContext context, IHttpContextAccessor httpContextAccessor)
+       
+        public TicketsService(DataContext context)
         {
             _context = context;
-            _httpContextAccessor = httpContextAccessor;
+            
         }
 
-        private int GetUserId() => int.Parse(_httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
-
-        public async Task<ServiceResponse<bool>> BuyTickets(BuyTicketDTO buyTicketDTO)
+        public async Task<ServiceResponse<bool>> BuyTickets(BuyTicketDTO buyTicketDTO, int UserId)
         {
             var serviceResponse = new ServiceResponse<bool>();
 
@@ -32,8 +28,7 @@ namespace jap_task1_backend_correction.Services.TicketsService
                 serviceResponse.Message = "Number of tickets cannot be zero or negative!";
                 return serviceResponse;
             }
-            
-            var userId = GetUserId();
+
             var screening = await _context.Screenings.FirstOrDefaultAsync(x => x.Id == buyTicketDTO.ScreeningId);
 
             serviceResponse.Success = false;
@@ -56,7 +51,7 @@ namespace jap_task1_backend_correction.Services.TicketsService
                     .AddAsync(new BoughtTicket
                     {
                         ScreeningId = buyTicketDTO.ScreeningId,
-                        UserId = userId,
+                        UserId = UserId,
                         BoughtTickets = buyTicketDTO.NumberOfTickets
                     });
                 await _context.SaveChangesAsync();

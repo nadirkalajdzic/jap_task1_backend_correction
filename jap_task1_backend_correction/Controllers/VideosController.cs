@@ -1,4 +1,5 @@
-﻿using jap_task1_backend_correction.DTO.Video;
+﻿using jap_task1_backend_correction.DTO.Helpers;
+using jap_task1_backend_correction.DTO.Video;
 using jap_task1_backend_correction.Models;
 using jap_task1_backend_correction.Services.VideosService;
 using Microsoft.AspNetCore.Mvc;
@@ -20,39 +21,30 @@ namespace jap_task1_backend_correction.Controllers
         }
 
         [HttpGet("top_movies")]
-        public async Task<ActionResult<ServiceResponse<List<GetVideoDTO>>>> GetTopMovies()
+        public async Task<ActionResult<ServiceResponse<List<GetVideoDTO>>>> GetTopMovies([FromQuery] PaginationDTO paginationDTO)
         {
-            return Ok(await _videosService.GetTopVideos(0));
-        }
-
-        [HttpGet("top_movies/top_ten")]
-        public async Task<ActionResult<ServiceResponse<List<GetVideoDTO>>>> GetTop10Movies()
-        {
-            return Ok(await _videosService.GetTop10Videos(0));
+            var serviceResponse = await _videosService.GetTopVideos(0, paginationDTO);
+            return (serviceResponse.Success) ? Ok(serviceResponse) : BadRequest(serviceResponse);
         }
 
         [HttpGet("top_shows")]
-        public async Task<ActionResult<ServiceResponse<List<GetVideoDTO>>>> GetTopShows()
+        public async Task<ActionResult<ServiceResponse<List<GetVideoDTO>>>> GetTopShows([FromQuery] PaginationDTO paginationDTO)
         {
-            return Ok(await _videosService.GetTopVideos(1));
-        }
-
-        [HttpGet("top_shows/top_ten")]
-        public async Task<ActionResult<ServiceResponse<List<GetVideoDTO>>>> GetTop10Shows()
-        {
-            return Ok(await _videosService.GetTop10Videos(1));
+            var serviceResponse = await _videosService.GetTopVideos(1, paginationDTO);
+            return (serviceResponse.Success) ? Ok(serviceResponse) : BadRequest(serviceResponse);
         }
 
         [HttpGet("item/{Id}")]
         public async Task<ActionResult<ServiceResponse<List<GetVideoFullInfoDTO>>>> GetVideo(int Id)
         {
-            return Ok(await _videosService.GetVideo(Id));
+            var serviceResponse = await _videosService.GetVideo(Id);
+            return (serviceResponse.Success) ? Ok(serviceResponse) : BadRequest(serviceResponse);
         }
 
         [HttpGet]
         public async Task<ActionResult<ServiceResponse<List<GetVideoTextAttributesDTO>>>> GetFilteredVideos([FromQuery] string search = null)
         {
-          if (search == null) return Ok(await _videosService.GetTopVideos(0));
+          if (search == null) return Ok(await _videosService.GetTopVideos(0, new()));
           
             return Ok(await _videosService.GetFilteredVideos(search));
         }

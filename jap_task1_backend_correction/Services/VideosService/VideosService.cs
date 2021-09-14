@@ -2,6 +2,7 @@
 using jap_task1_backend_correction.Data;
 using jap_task1_backend_correction.DTO.Actor;
 using jap_task1_backend_correction.DTO.Category;
+using jap_task1_backend_correction.DTO.Helpers;
 using jap_task1_backend_correction.DTO.Video;
 using jap_task1_backend_correction.Models;
 using Microsoft.EntityFrameworkCore;
@@ -24,11 +25,18 @@ namespace jap_task1_backend_correction.Services.VideosService
             _context = context;
         }
 
-        public async Task<ServiceResponse<List<GetVideoDTO>>> GetTopVideos(int type)
+        public async Task<ServiceResponse<List<GetVideoDTO>>> GetTopVideos(int type, PaginationDTO paginationDTO)
         {
-            var serviceResponse = new ServiceResponse<List<GetVideoDTO>>
+            var serviceResponse = new ServiceResponse<List<GetVideoDTO>>();
+
+            if(paginationDTO.PageNumber < 1 || paginationDTO.PageSize < 1)
             {
-                Data = await _context.Videos.Include(x => x.Ratings)
+                serviceResponse.Success = false;
+                serviceResponse.Message = "Incorrect paramteres for the pagination";
+                return serviceResponse;
+            }
+
+            serviceResponse.Data = await _context.Videos.Include(x => x.Ratings)
                                                  .AsSplitQuery()
                                                  .Where(x => x.Type == type)
                                                  .Select(x => new GetVideoDTO
@@ -41,39 +49,17 @@ namespace jap_task1_backend_correction.Services.VideosService
                                                      AverageRating = x.Ratings.Select(x => x.Value).DefaultIfEmpty().Average()
                                                  })
                                                  .OrderByDescending(x => x.AverageRating)
-                                                 .ToListAsync()
-            };
-
-            return serviceResponse;
-        }
-
-        public async Task<ServiceResponse<List<GetVideoDTO>>> GetTop10Videos(int type)
-        {
-            var serviceResponse = new ServiceResponse<List<GetVideoDTO>>
-            {
-                Data = await _context.Videos.Include(x => x.Ratings)
-                                                 .AsSplitQuery()
-                                                 .Where(x => x.Type == type)
-                                                 .Select(x => new GetVideoDTO
-                                                 {
-                                                     Id = x.Id,
-                                                     Title = x.Title,
-                                                     Description = x.Description,
-                                                     Image_Url = x.Image_Url,
-                                                     ReleaseDate = x.ReleaseDate,
-                                                     AverageRating = x.Ratings.Select(x => x.Value).DefaultIfEmpty().Average()
-                                                 })
-                                                 .OrderByDescending(x => x.AverageRating)
-                                                 .Take(10)
-                                                 .ToListAsync()
-            };
+                                                 .Skip((paginationDTO.PageNumber - 1) * paginationDTO.PageSize)
+                                                 .Take(paginationDTO.PageSize)
+                                                 .ToListAsync();
+            
 
             return serviceResponse;
         }
 
         public async Task<ServiceResponse<GetVideoFullInfoDTO>> GetVideo(int Id)
         {
-            ServiceResponse<GetVideoFullInfoDTO> serviceResponse = new ServiceResponse<GetVideoFullInfoDTO>();
+            var serviceResponse = new ServiceResponse<GetVideoFullInfoDTO>();
 
             var video = await _context.Videos
                 .Include(x => x.Actors)
@@ -92,7 +78,13 @@ namespace jap_task1_backend_correction.Services.VideosService
                 })
                 .FirstOrDefaultAsync(x => x.Id == Id);
 
-            serviceResponse.Data = _mapper.Map<GetVideoFullInfoDTO>(video);
+            if(video == null)
+            {
+                serviceResponse.Success = false;
+                serviceResponse.Message = "Movie not found";
+            }
+
+            serviceResponse.Data = video;
             return serviceResponse;
         }
 
@@ -105,8 +97,9 @@ namespace jap_task1_backend_correction.Services.VideosService
             AddFiltersForVideoSearch(Search, ref query);
 
             serviceResponse.Data = await query.OrderByDescending(x => x.Ratings.Select(x => x.Value)
-                                    .DefaultIfEmpty().Average())
-                                    .Select(x => _mapper.Map<GetVideoTextAttributesDTO>(x)).ToListAsync();
+                                                                               .DefaultIfEmpty().Average())
+                                              .Select(x => _mapper.Map<GetVideoTextAttributesDTO>(x))
+                                              .ToListAsync();
 
             return serviceResponse;
         }
@@ -116,15 +109,19 @@ namespace jap_task1_backend_correction.Services.VideosService
 
             var searchQuery = Regex.Split(Search, @"\s+").ToList();
 
-            if (searchQuery.Count < 2)
-            {
-                query = query = query.Where(x => x.Title.ToUpper().Contains(Search.ToUpper())
-                                  || x.Description.ToUpper().Contains(Search.ToUpper()));
-                return;
-            }
+            // ------ helper functions to make the code cleaner ------
+            void setDefaultSearchQuery(ref IQueryable<Video> q) => q = q.Where(x => x.Title.ToUpper().Contains(Search.ToUpper())
+                                                                   || x.Description.ToUpper().Contains(Search.ToUpper()));
 
             bool containingStringStar(string s) => s.ToUpper().Equals("STAR") || s.ToUpper().Equals("STARS");
             bool containingStringYear(string s) => s.ToUpper().Equals("YEAR") || s.ToUpper().Equals("YEARS");
+            // -------------------------------------------------------
+
+            if (searchQuery.Count < 2)
+            {
+                setDefaultSearchQuery(ref query);
+                return;
+            }
 
             if (searchQuery.Count == 2) 
             {
@@ -132,9 +129,6 @@ namespace jap_task1_backend_correction.Services.VideosService
                     query = query.Where(x => x.ReleaseDate.Year > ratingForSearchAfter);
                 else if (containingStringStar(searchQuery[1]) && float.TryParse(searchQuery[0], out float exactRating))
                     query = query.Where(x => x.Ratings.Select(x => x.Value).Average() == exactRating);
-                else
-                    query = query.Where(x => x.Title.ToUpper().Contains(Search.ToUpper())
-                                  || x.Description.ToUpper().Contains(Search.ToUpper()));
             } 
             else if(searchQuery.Count == 4)
             {
@@ -145,14 +139,13 @@ namespace jap_task1_backend_correction.Services.VideosService
                     query = query.Where(x => x.Ratings.Select(x => x.Value).Average() >= ratingForSearchAtLeast);
                 } 
                 else if (searchQuery[0].ToUpper().Equals("OLDER") && searchQuery[1].ToUpper().Equals("THAN")
-                        && int.TryParse(searchQuery[2], out int dateForSearchOlderThan) 
-                        && containingStringYear(searchQuery[3]))
+                      && int.TryParse(searchQuery[2], out int dateForSearchOlderThan) 
+                      && containingStringYear(searchQuery[3]))
                 {
                     query = query.Where(x => DateTime.Now.Year - x.ReleaseDate.Year > dateForSearchOlderThan);
-                } 
+                }
             }
-            else query = query.Where(x => x.Title.ToUpper().Contains(Search.ToUpper()) 
-                                  || x.Description.ToUpper().Contains(Search.ToUpper()));
+            else setDefaultSearchQuery(ref query);
 
         }
 
