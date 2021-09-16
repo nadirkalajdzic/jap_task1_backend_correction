@@ -4,7 +4,7 @@ using jap_task1_backend_correction.DTO.Actor;
 using jap_task1_backend_correction.DTO.Category;
 using jap_task1_backend_correction.DTO.Helpers;
 using jap_task1_backend_correction.DTO.Video;
-using jap_task1_backend_correction.Models;
+using jap_task1_backend_correction.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -25,7 +25,7 @@ namespace jap_task1_backend_correction.Services.VideosService
             _context = context;
         }
 
-        public async Task<ServiceResponse<List<GetVideoDTO>>> GetTopVideos(int type, PaginationDTO paginationDTO)
+        public async Task<ServiceResponse<List<GetVideoDTO>>> GetVideos(int type, PaginationDTO paginationDTO)
         {
             var serviceResponse = new ServiceResponse<List<GetVideoDTO>>();
 
@@ -36,7 +36,9 @@ namespace jap_task1_backend_correction.Services.VideosService
                 return serviceResponse;
             }
 
-            serviceResponse.Data = await _context.Videos
+            try
+            {
+                serviceResponse.Data = await _context.Videos
                                                  .Include(x => x.Ratings)
                                                  .Where(x => x.Type == type)
                                                  .Select(x => new GetVideoDTO
@@ -54,7 +56,11 @@ namespace jap_task1_backend_correction.Services.VideosService
                                                  .Skip((paginationDTO.PageNumber - 1) * paginationDTO.PageSize)
                                                  .Take(paginationDTO.PageSize)
                                                  .ToListAsync();
-            
+            } catch (Exception)
+            {
+                serviceResponse.Success = false;
+                serviceResponse.Message = "Internal server error";
+            }
 
             return serviceResponse;
         }
@@ -63,7 +69,9 @@ namespace jap_task1_backend_correction.Services.VideosService
         {
             var serviceResponse = new ServiceResponse<GetVideoFullInfoDTO>();
 
-            var video = await _context.Videos
+            try
+            {
+                var video = await _context.Videos
                 .Include(x => x.Actors).AsSingleQuery()
                 .Include(x => x.Categories).AsSingleQuery()
                 .Include(x => x.Ratings).AsSingleQuery()
@@ -75,35 +83,46 @@ namespace jap_task1_backend_correction.Services.VideosService
                     Image_Url = x.Image_Url,
                     ReleaseDate = x.ReleaseDate,
                     AverageRating = x.Ratings.Select(x => x.Value).DefaultIfEmpty().Average(),
-                    Actors = x.Actors.Select(x => new GetActorForVideoDTO{ Name = x.Name, Surname = x.Surname }).ToList(),
+                    Actors = x.Actors.Select(x => new GetActorForVideoDTO { Name = x.Name, Surname = x.Surname }).ToList(),
                     Categories = x.Categories.Select(x => new GetCategoryForVideoDTO { Name = x.Name }).ToList()
                 })
                 .FirstOrDefaultAsync(x => x.Id == Id);
 
-            if(video == null)
+                if (video == null)
+                {
+                    serviceResponse.Success = false;
+                    serviceResponse.Message = "Movie not found";
+                }
+
+                serviceResponse.Data = video;
+            } catch(Exception)
             {
                 serviceResponse.Success = false;
-                serviceResponse.Message = "Movie not found";
+                serviceResponse.Message = "Internal server error";
             }
-
-            serviceResponse.Data = video;
+            
             return serviceResponse;
         }
 
         public async Task<ServiceResponse<List<GetVideoTextAttributesDTO>>> GetFilteredVideos(string Search)
         {
-
             ServiceResponse<List<GetVideoTextAttributesDTO>> serviceResponse = new();
 
-            var query = _context.Videos.AsQueryable();
-            AddFiltersForVideoSearch(Search, ref query);
-
-            serviceResponse.Data = await query.OrderByDescending(x => x.Ratings.Select(x => x.Value)
-                                                                               .DefaultIfEmpty()
-                                                                               .Average())
-                                              .Select(x => _mapper.Map<GetVideoTextAttributesDTO>(x))
-                                              .ToListAsync();
-
+            try
+            {
+                var query = _context.Videos.AsQueryable();
+                AddFiltersForVideoSearch(Search, ref query);
+                serviceResponse.Data = await query.OrderByDescending(x => x.Ratings.Select(x => x.Value)
+                                                                                   .DefaultIfEmpty()
+                                                                                   .Average())
+                                                  .Select(x => _mapper.Map<GetVideoTextAttributesDTO>(x))
+                                                  .ToListAsync();
+            } catch(Exception)
+            {
+                serviceResponse.Success = false;
+                serviceResponse.Message = "Internal server error";
+            }
+            
             return serviceResponse;
         }
 
@@ -121,40 +140,35 @@ namespace jap_task1_backend_correction.Services.VideosService
             // -------------------------------------------------------
 
             if (searchQuery.Count < 2)
-            {
                 setDefaultSearchQuery(ref query);
-                return;
-            }
-
-            if (searchQuery.Count == 2) 
+            else
             {
-                if (searchQuery[0].ToUpper().Equals("AFTER") && int.TryParse(searchQuery[1], out int ratingForSearchAfter))
-                    query = query.Where(x => x.ReleaseDate.Year > ratingForSearchAfter);
-                else if (containingStringStar(searchQuery[1]) && float.TryParse(searchQuery[0], out float exactRating))
-                    query = query.Where(x => x.Ratings.Select(x => x.Value).Average() == exactRating);
-                else setDefaultSearchQuery(ref query);
-            } 
-            else if(searchQuery.Count == 4)
-            {
-                if (searchQuery[0].ToUpper().Equals("AT") && searchQuery[1].ToUpper().Equals("LEAST")
-                 && float.TryParse(searchQuery[2], out float ratingForSearchAtLeast) 
-                 && containingStringStar(searchQuery[3]))
+                if (searchQuery.Count == 2)
                 {
-                    query = query.Where(x => x.Ratings.Select(x => x.Value).Average() >= ratingForSearchAtLeast);
-                } 
-                else if (searchQuery[0].ToUpper().Equals("OLDER") && searchQuery[1].ToUpper().Equals("THAN")
-                      && int.TryParse(searchQuery[2], out int dateForSearchOlderThan) 
-                      && containingStringYear(searchQuery[3]))
+                    if (searchQuery[0].ToUpper().Equals("AFTER") && int.TryParse(searchQuery[1], out int ratingForSearchAfter))
+                        query = query.Where(x => x.ReleaseDate.Year > ratingForSearchAfter);
+                    else if (containingStringStar(searchQuery[1]) && float.TryParse(searchQuery[0], out float exactRating))
+                        query = query.Where(x => x.Ratings.Select(x => x.Value).Average() == exactRating);
+                    else setDefaultSearchQuery(ref query);
+                }
+                else if (searchQuery.Count == 4)
                 {
-                    query = query.Where(x => DateTime.Now.Year - x.ReleaseDate.Year > dateForSearchOlderThan);
+                    if (searchQuery[0].ToUpper().Equals("AT") && searchQuery[1].ToUpper().Equals("LEAST")
+                     && float.TryParse(searchQuery[2], out float ratingForSearchAtLeast)
+                     && containingStringStar(searchQuery[3]))
+                    {
+                        query = query.Where(x => x.Ratings.Select(x => x.Value).Average() >= ratingForSearchAtLeast);
+                    }
+                    else if (searchQuery[0].ToUpper().Equals("OLDER") && searchQuery[1].ToUpper().Equals("THAN")
+                          && int.TryParse(searchQuery[2], out int dateForSearchOlderThan)
+                          && containingStringYear(searchQuery[3]))
+                    {
+                        query = query.Where(x => DateTime.Now.Year - x.ReleaseDate.Year > dateForSearchOlderThan);
+                    }
+                    else setDefaultSearchQuery(ref query);
                 }
                 else setDefaultSearchQuery(ref query);
             }
-            else setDefaultSearchQuery(ref query);
-
         }
-
-
-
     }
 }

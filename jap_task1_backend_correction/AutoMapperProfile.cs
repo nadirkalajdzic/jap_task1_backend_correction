@@ -3,7 +3,7 @@ using jap_task1_backend_correction.DTO.Actor;
 using jap_task1_backend_correction.DTO.Category;
 using jap_task1_backend_correction.DTO.Rating;
 using jap_task1_backend_correction.DTO.Video;
-using jap_task1_backend_correction.Models;
+using jap_task1_backend_correction.Entities;
 
 namespace jap_task1_backend_correction
 {

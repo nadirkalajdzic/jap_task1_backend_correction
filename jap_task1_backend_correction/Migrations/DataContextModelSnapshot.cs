@@ -49,7 +49,7 @@ namespace jap_task1_backend_correction.Migrations
                     b.ToTable("CategoryVideo");
                 });
 
-            modelBuilder.Entity("jap_task1_backend_correction.Models.Actor", b =>
+            modelBuilder.Entity("jap_task1_backend_correction.Entities.Actor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -489,7 +489,7 @@ namespace jap_task1_backend_correction.Migrations
                         });
                 });
 
-            modelBuilder.Entity("jap_task1_backend_correction.Models.BoughtTicket", b =>
+            modelBuilder.Entity("jap_task1_backend_correction.Entities.BoughtTicket", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -514,7 +514,7 @@ namespace jap_task1_backend_correction.Migrations
                     b.ToTable("BoughtTickets");
                 });
 
-            modelBuilder.Entity("jap_task1_backend_correction.Models.Category", b =>
+            modelBuilder.Entity("jap_task1_backend_correction.Entities.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -606,7 +606,7 @@ namespace jap_task1_backend_correction.Migrations
                         });
                 });
 
-            modelBuilder.Entity("jap_task1_backend_correction.Models.MostRatedMoviesReport", b =>
+            modelBuilder.Entity("jap_task1_backend_correction.Entities.MostRatedMoviesReport", b =>
                 {
                     b.Property<double>("AverageRating")
                         .HasColumnType("float");
@@ -623,7 +623,7 @@ namespace jap_task1_backend_correction.Migrations
                     b.ToTable("MostRatedMoviesReports");
                 });
 
-            modelBuilder.Entity("jap_task1_backend_correction.Models.MoviesWithMostScreeningsReport", b =>
+            modelBuilder.Entity("jap_task1_backend_correction.Entities.MoviesWithMostScreeningsReport", b =>
                 {
                     b.Property<int>("MovieId")
                         .HasColumnType("int");
@@ -637,7 +637,7 @@ namespace jap_task1_backend_correction.Migrations
                     b.ToTable("MoviesWithMostScreeningsReports");
                 });
 
-            modelBuilder.Entity("jap_task1_backend_correction.Models.MoviesWithMostSoldTicketsReport", b =>
+            modelBuilder.Entity("jap_task1_backend_correction.Entities.MoviesWithMostSoldTicketsReport", b =>
                 {
                     b.Property<int>("MovieId")
                         .HasColumnType("int");
@@ -654,7 +654,7 @@ namespace jap_task1_backend_correction.Migrations
                     b.ToTable("MoviesWithMostSoldTicketsReports");
                 });
 
-            modelBuilder.Entity("jap_task1_backend_correction.Models.Rating", b =>
+            modelBuilder.Entity("jap_task1_backend_correction.Entities.Rating", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -1451,7 +1451,7 @@ namespace jap_task1_backend_correction.Migrations
                         });
                 });
 
-            modelBuilder.Entity("jap_task1_backend_correction.Models.Screening", b =>
+            modelBuilder.Entity("jap_task1_backend_correction.Entities.Screening", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -2545,7 +2545,7 @@ namespace jap_task1_backend_correction.Migrations
                         });
                 });
 
-            modelBuilder.Entity("jap_task1_backend_correction.Models.User", b =>
+            modelBuilder.Entity("jap_task1_backend_correction.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -2583,7 +2583,7 @@ namespace jap_task1_backend_correction.Migrations
                         });
                 });
 
-            modelBuilder.Entity("jap_task1_backend_correction.Models.Video", b =>
+            modelBuilder.Entity("jap_task1_backend_correction.Entities.Video", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -3568,13 +3568,13 @@ namespace jap_task1_backend_correction.Migrations
 
             modelBuilder.Entity("ActorVideo", b =>
                 {
-                    b.HasOne("jap_task1_backend_correction.Models.Actor", null)
+                    b.HasOne("jap_task1_backend_correction.Entities.Actor", null)
                         .WithMany()
                         .HasForeignKey("ActorsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("jap_task1_backend_correction.Models.Video", null)
+                    b.HasOne("jap_task1_backend_correction.Entities.Video", null)
                         .WithMany()
                         .HasForeignKey("VideosId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -3583,71 +3583,71 @@ namespace jap_task1_backend_correction.Migrations
 
             modelBuilder.Entity("CategoryVideo", b =>
                 {
-                    b.HasOne("jap_task1_backend_correction.Models.Category", null)
+                    b.HasOne("jap_task1_backend_correction.Entities.Category", null)
                         .WithMany()
                         .HasForeignKey("CategoriesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("jap_task1_backend_correction.Models.Video", null)
+                    b.HasOne("jap_task1_backend_correction.Entities.Video", null)
                         .WithMany()
                         .HasForeignKey("VideosId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("jap_task1_backend_correction.Models.BoughtTicket", b =>
+            modelBuilder.Entity("jap_task1_backend_correction.Entities.BoughtTicket", b =>
                 {
-                    b.HasOne("jap_task1_backend_correction.Models.Screening", null)
+                    b.HasOne("jap_task1_backend_correction.Entities.Screening", null)
                         .WithMany("BoughtTickets")
                         .HasForeignKey("ScreeningId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("jap_task1_backend_correction.Models.User", null)
+                    b.HasOne("jap_task1_backend_correction.Entities.User", null)
                         .WithMany("BoughtTickets")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("jap_task1_backend_correction.Models.Rating", b =>
+            modelBuilder.Entity("jap_task1_backend_correction.Entities.Rating", b =>
                 {
-                    b.HasOne("jap_task1_backend_correction.Models.User", null)
+                    b.HasOne("jap_task1_backend_correction.Entities.User", null)
                         .WithMany("Ratings")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("jap_task1_backend_correction.Models.Video", null)
+                    b.HasOne("jap_task1_backend_correction.Entities.Video", null)
                         .WithMany("Ratings")
                         .HasForeignKey("VideoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("jap_task1_backend_correction.Models.Screening", b =>
+            modelBuilder.Entity("jap_task1_backend_correction.Entities.Screening", b =>
                 {
-                    b.HasOne("jap_task1_backend_correction.Models.Video", null)
+                    b.HasOne("jap_task1_backend_correction.Entities.Video", null)
                         .WithMany("Screenings")
                         .HasForeignKey("VideoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("jap_task1_backend_correction.Models.Screening", b =>
+            modelBuilder.Entity("jap_task1_backend_correction.Entities.Screening", b =>
                 {
                     b.Navigation("BoughtTickets");
                 });
 
-            modelBuilder.Entity("jap_task1_backend_correction.Models.User", b =>
+            modelBuilder.Entity("jap_task1_backend_correction.Entities.User", b =>
                 {
                     b.Navigation("BoughtTickets");
 
                     b.Navigation("Ratings");
                 });
 
-            modelBuilder.Entity("jap_task1_backend_correction.Models.Video", b =>
+            modelBuilder.Entity("jap_task1_backend_correction.Entities.Video", b =>
                 {
                     b.Navigation("Ratings");
 

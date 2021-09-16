@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using jap_task1_backend_correction;
 using jap_task1_backend_correction.Data;
-using jap_task1_backend_correction.Models;
+using jap_task1_backend_correction.Entities;
 using jap_task1_backend_correction.Services.AuthService;
 using jap_task1_backend_correction.Services.VideosService;
 using Microsoft.EntityFrameworkCore;

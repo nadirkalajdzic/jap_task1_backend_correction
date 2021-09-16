@@ -1,13 +1,13 @@
 ﻿using jap_task1_backend_correction.DTO.User;
 using jap_task1_backend_correction.DTO.Video;
-using jap_task1_backend_correction.Models;
+using jap_task1_backend_correction.Entities;
 using jap_task1_backend_correction.Services.AuthService;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace jap_task1_backend_correction.Controllers
 {
-    [Route("auth")]
+    [Route("api/auth")]
     [ApiController]
     public class AuthController : ControllerBase
     {

@@ -1,16 +1,12 @@
 ﻿using jap_task1_backend_correction.Data;
-using jap_task1_backend_correction.Models;
+using jap_task1_backend_correction.Entities;
 using jap_task1_backend_correction.Services.AuthService;
 using jap_task1_backend_correction.Services.RatingsService;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Moq;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace NUnitTests

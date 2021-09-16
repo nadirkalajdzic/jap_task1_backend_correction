@@ -1,4 +1,4 @@
-﻿using jap_task1_backend_correction.Models;
+﻿using jap_task1_backend_correction.Entities;
 using jap_task1_backend_correction.Services.AuthService;
 using Microsoft.EntityFrameworkCore;
 using System;

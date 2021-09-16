@@ -1,5 +1,5 @@
 ﻿using jap_task1_backend_correction.DTO.Reports;
-using jap_task1_backend_correction.Models;
+using jap_task1_backend_correction.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

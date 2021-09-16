@@ -1,5 +1,5 @@
 ﻿using jap_task1_backend_correction.DTO.Ticket;
-using jap_task1_backend_correction.Models;
+using jap_task1_backend_correction.Entities;
 using System.Threading.Tasks;
 
 namespace jap_task1_backend_correction.Services.TicketsService

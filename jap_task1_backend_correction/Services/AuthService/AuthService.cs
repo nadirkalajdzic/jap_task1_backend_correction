@@ -1,6 +1,6 @@
 ﻿using jap_task1_backend_correction.Data;
 using jap_task1_backend_correction.DTO.User;
-using jap_task1_backend_correction.Models;
+using jap_task1_backend_correction.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -27,7 +27,18 @@ namespace jap_task1_backend_correction.Services.AuthService
         public async Task<ServiceResponse<UserLoginDTO>> Login(string email, string password)
         {
             ServiceResponse<UserLoginDTO> response = new();
-            User user = await _context.Users.FirstOrDefaultAsync(x => x.Email.ToUpper().Equals(email.ToUpper()));
+            User user = null;
+
+            try 
+            { 
+                user = await _context.Users.FirstOrDefaultAsync(x => x.Email.ToUpper().Equals(email.ToUpper())); 
+            }
+            catch(Exception)
+            {
+                response.Success = false;
+                response.Message = "Internal server error";
+                return response;
+            }
             
             if (user == null)
             {
@@ -58,23 +69,30 @@ namespace jap_task1_backend_correction.Services.AuthService
         {
             var response = new ServiceResponse<int>();
             
-            if (await UserExists(user.Email))
+            try
+            {
+                if (await UserExists(user.Email))
+                {
+                    response.Success = false;
+                    response.Message = "User already exists.";
+                    return response;
+                }
+
+                CreatePasswordHash(password, out byte[] passwordHash, out byte[] passwordSalt);
+
+                user.Hash = passwordHash;
+                user.Salt = passwordSalt;
+
+                await _context.Users.AddAsync(user);
+                await _context.SaveChangesAsync();
+
+                response.Data = user.Id;
+                response.Message = "Registered successfully!";
+            } catch(Exception)
             {
                 response.Success = false;
-                response.Message = "User already exists.";
-                return response;
+                response.Message = "Internal server error";
             }
-
-            CreatePasswordHash(password, out byte[] passwordHash, out byte[] passwordSalt);
-
-            user.Hash = passwordHash;
-            user.Salt = passwordSalt;
-
-            await _context.Users.AddAsync(user);
-            await _context.SaveChangesAsync();
-
-            response.Data = user.Id;
-            response.Message = "Registered successfully!";
 
             return response;
         }
@@ -85,7 +103,7 @@ namespace jap_task1_backend_correction.Services.AuthService
         {
             using var hmac = new System.Security.Cryptography.HMACSHA512();
             passwordSalt = hmac.Key;
-            passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+            passwordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
         }
 
         public static bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)

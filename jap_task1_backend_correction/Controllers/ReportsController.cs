@@ -1,5 +1,5 @@
 ﻿using jap_task1_backend_correction.DTO.Reports;
-using jap_task1_backend_correction.Models;
+using jap_task1_backend_correction.Entities;
 using jap_task1_backend_correction.Services.ReportsService;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace jap_task1_backend_correction.Controllers
 {
-    [Route("reports")]
+    [Route("api/reports")]
     [ApiController]
     public class ReportsController : ControllerBase
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace jap_task1_backend_correction.Models
+namespace jap_task1_backend_correction.Entities
 {
     public class Screening
     {

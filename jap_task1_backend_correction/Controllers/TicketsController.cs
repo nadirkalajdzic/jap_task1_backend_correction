@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace jap_task1_backend_correction.Controllers
 {
     [Authorize]
-    [Route("tickets")]
+    [Route("api/tickets")]
     [ApiController]
     public class TicketsController : ControllerBase
     {

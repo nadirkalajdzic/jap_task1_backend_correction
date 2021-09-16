@@ -1,6 +1,4 @@
-﻿using jap_task1_backend_correction.DTO.Rating;
-using System;
-using System.Collections.Generic;
+﻿using System;
 
 namespace jap_task1_backend_correction.DTO.Video
 {
