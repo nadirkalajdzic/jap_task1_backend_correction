@@ -29,9 +29,9 @@ namespace JapTask1BackendCorrection.Controllers
         }
 
         [HttpGet("{Id}")]
-        public async Task<ActionResult<ServiceResponse<List<GetMediaFullInfoDTO>>>> GetMedia(int Id)
+        public async Task<ActionResult<ServiceResponse<List<GetMediaFullInfoDTO>>>> GetMedia(int id)
         {
-            var serviceResponse = await _videosService.GetMedia(Id);
+            var serviceResponse = await _videosService.GetMedia(id);
             return (serviceResponse.Success) ? Ok(serviceResponse) : BadRequest(serviceResponse);
         }
 

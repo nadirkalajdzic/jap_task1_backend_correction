@@ -58,7 +58,7 @@ namespace JapTask1BackendCorrection.Services.MediaService
             return serviceResponse;
         }
 
-        public async Task<ServiceResponse<GetMediaFullInfoDTO>> GetMedia(int Id)
+        public async Task<ServiceResponse<GetMediaFullInfoDTO>> GetMedia(int id)
         {
             return new ServiceResponse<GetMediaFullInfoDTO>
             {
@@ -77,17 +77,17 @@ namespace JapTask1BackendCorrection.Services.MediaService
                                          Actors = x.Actors.Select(x => new GetActorForMediaDTO { FirstName = x.FirstName, LastName = x.LastName }).ToList(),
                                          Categories = x.Categories.Select(x => new GetCategoryForMediaDTO { Name = x.Name }).ToList()
                                      })
-                                     .FirstOrDefaultAsync(x => x.Id == Id) ?? throw new Exception("Movie not found"),
+                                     .FirstOrDefaultAsync(x => x.Id == id) ?? throw new Exception("Movie not found"),
 
                 Message = "Success",
                 Success = true
             };
         }
 
-        public async Task<ServiceResponse<List<GetMediaTextAttributesDTO>>> GetFilteredMedias(string Search)
+        public async Task<ServiceResponse<List<GetMediaTextAttributesDTO>>> GetFilteredMedias(string search)
         {
             var query = _context.Medias.AsQueryable();
-            AddFiltersForVideoSearch(Search, ref query);
+            AddFiltersForVideoSearch(search, ref query);
 
             return new()
             {
@@ -101,14 +101,14 @@ namespace JapTask1BackendCorrection.Services.MediaService
             };
         }
 
-        private static void AddFiltersForVideoSearch(string Search, ref IQueryable<Media> query)
+        private static void AddFiltersForVideoSearch(string search, ref IQueryable<Media> query)
         {
 
-            var searchQuery = Regex.Split(Search, @"\s+").ToList();
+            var searchQuery = Regex.Split(search, @"\s+").ToList();
 
             // ------ helper functions to make the code cleaner ------
-            void setDefaultSearchQuery(ref IQueryable<Media> q) => q = q.Where(x => x.Title.ToUpper().Contains(Search.ToUpper())
-                                                                   || x.Description.ToUpper().Contains(Search.ToUpper()));
+            void setDefaultSearchQuery(ref IQueryable<Media> q) => q = q.Where(x => x.Title.ToUpper().Contains(search.ToUpper())
+                                                                   || x.Description.ToUpper().Contains(search.ToUpper()));
 
             bool containingStringStar(string s) => s.ToUpper().Equals("STAR") || s.ToUpper().Equals("STARS");
             bool containingStringYear(string s) => s.ToUpper().Equals("YEAR") || s.ToUpper().Equals("YEARS");

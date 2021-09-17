@@ -17,7 +17,7 @@ namespace JapTask1BackendCorrection.Services.TicketService
             
         }
 
-        public async Task<ServiceResponse<bool>> BuyTickets(BuyTicketDTO buyTicketDTO, int UserId)
+        public async Task<ServiceResponse<bool>> BuyTickets(BuyTicketDTO buyTicketDTO, int userId)
         {
             var serviceResponse = new ServiceResponse<bool> { Data = false };
 
@@ -43,7 +43,7 @@ namespace JapTask1BackendCorrection.Services.TicketService
                     .AddAsync(new BoughtTicket
                         {
                             ScreeningId = buyTicketDTO.ScreeningId,
-                            UserId = UserId,
+                            UserId = userId,
                             BoughtTickets = buyTicketDTO.NumberOfTickets
                         });
                 await _context.SaveChangesAsync();
