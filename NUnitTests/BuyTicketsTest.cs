@@ -4,7 +4,6 @@ using JapTask1BackendCorrection.Entities;
 using JapTask1BackendCorrection.Services.AuthService;
 using JapTask1BackendCorrection.Services.TicketService;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
 using System;
 using System.Threading.Tasks;
@@ -28,10 +27,10 @@ namespace NUnitTests
             _context = new DataContext(options);
 
             // - add data
-            _context.Screenings.Add(new Screening { Id = 1, Name = "Screening 1", VideoId = 1, AvailableTickets = 11, SoldTickets = 7, ScreeningDate = DateTime.Now.AddDays(30), Duration = 300 });
-            _context.Screenings.Add(new Screening { Id = 2, Name = "Screening 2", VideoId = 1, AvailableTickets = 11, SoldTickets = 10, ScreeningDate = DateTime.Now.AddDays(-3), Duration = 300 });
-            _context.Screenings.Add(new Screening { Id = 3, Name = "Screening 3", VideoId = 1, AvailableTickets = 11, SoldTickets = 11, ScreeningDate = DateTime.Now.AddMinutes(30), Duration = 300 });
-            _context.Screenings.Add(new Screening { Id = 4, Name = "Screening 4", VideoId = 1, AvailableTickets = 11, SoldTickets = 10, ScreeningDate = DateTime.Now.AddMinutes(30), Duration = 300 });
+            _context.Screenings.Add(new Screening { Id = 1, Name = "Screening 1", MediaId = 1, AvailableTickets = 11, SoldTickets = 7, ScreeningDate = DateTime.Now.AddDays(30), Duration = 300 });
+            _context.Screenings.Add(new Screening { Id = 2, Name = "Screening 2", MediaId = 1, AvailableTickets = 11, SoldTickets = 10, ScreeningDate = DateTime.Now.AddDays(-3), Duration = 300 });
+            _context.Screenings.Add(new Screening { Id = 3, Name = "Screening 3", MediaId = 1, AvailableTickets = 11, SoldTickets = 11, ScreeningDate = DateTime.Now.AddMinutes(30), Duration = 300 });
+            _context.Screenings.Add(new Screening { Id = 4, Name = "Screening 4", MediaId = 1, AvailableTickets = 11, SoldTickets = 10, ScreeningDate = DateTime.Now.AddMinutes(30), Duration = 300 });
             await _context.SaveChangesAsync();
 
             // --------------
@@ -43,8 +42,8 @@ namespace NUnitTests
                 new User 
                 { 
                   Id = 1, 
-                  Name = "Admin", 
-                  Surname = "Admin", 
+                  FirstName = "Admin", 
+                  LastName = "Admin", 
                   Email = "admin@gmail.com", 
                   Salt = passSalt, 
                   Hash = passHash 
@@ -81,11 +80,14 @@ namespace NUnitTests
         {
             var buyTicketDTO = new BuyTicketDTO { ScreeningId = 2, NumberOfTickets = 2 };
 
-            var response = await ticketsService.BuyTickets(buyTicketDTO, 1);
-
-            // buying tickets for a invalid screening that already happened (screening was in the past)
-            Assert.IsFalse(response.Data);
-            Assert.AreEqual(response.Message, "Screening is in the past!");
+            try
+            {
+                // buying tickets for a invalid screening that already happened (screening was in the past)
+                await ticketsService.BuyTickets(buyTicketDTO, 1);
+            } catch(Exception e)
+            {
+                Assert.AreEqual(e.Message, "Screening is in the past!");
+            }
         }
 
         [Test]
@@ -93,11 +95,16 @@ namespace NUnitTests
         {
             var buyTicketDTO = new BuyTicketDTO { ScreeningId = 3, NumberOfTickets = 1 };
 
-            var response = await ticketsService.BuyTickets(buyTicketDTO, 1);
-
-            // buying tickets for a invalid screening that is sould out (no more available tickets)
-            Assert.IsFalse(response.Data);
-            Assert.AreEqual(response.Message, "Sould out!");
+            try
+            {
+                // buying tickets for a invalid screening that is sould out (no more available tickets)
+                await ticketsService.BuyTickets(buyTicketDTO, 1);
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual(e.Message, "Sould out!");
+            }
+        
         }
 
         [Test]
@@ -105,11 +112,18 @@ namespace NUnitTests
         {
             var buyTicketDTO = new BuyTicketDTO { ScreeningId = 4, NumberOfTickets = 2 };
 
-            var response = await ticketsService.BuyTickets(buyTicketDTO, 1);
+            try
+            {
+                // buying tickets for a screening that does not have that many tickets available
+                // (available for screening 11, sold 10, trying to buy 2)
+                await ticketsService.BuyTickets(buyTicketDTO, 1);
+            }
+            catch (Exception e)
+            {
+                Assert.AreEqual(e.Message, "Cannot buy that many tickets. There are not that many tickets available!");
+            }
 
-            // buying tickets for a screening that does not have that many tickets available (available for screening 11, sold 10, trying to buy 2)
-            Assert.IsFalse(response.Data);
-            Assert.AreEqual(response.Message, "Cannot buy that many tickets. There are not that many tickets available!");
+            
         }
 
     }
