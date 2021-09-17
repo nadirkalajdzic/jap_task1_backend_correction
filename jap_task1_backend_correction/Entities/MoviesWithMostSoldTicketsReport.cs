@@ -1,4 +1,4 @@
-﻿namespace jap_task1_backend_correction.Entities
+﻿namespace JapTask1BackendCorrection.Entities
 {
     public class MoviesWithMostSoldTicketsReport
     {

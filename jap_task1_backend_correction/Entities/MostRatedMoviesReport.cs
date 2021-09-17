@@ -1,4 +1,6 @@
-﻿namespace jap_task1_backend_correction.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace JapTask1BackendCorrection.Entities
 {
     public class MostRatedMoviesReport
     {

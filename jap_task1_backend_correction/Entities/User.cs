@@ -1,16 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
-namespace jap_task1_backend_correction.Entities
+namespace JapTask1BackendCorrection.Entities
 {
     public class User
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
+
+        [Required(ErrorMessage = "First name is required")]
+        [MaxLength(50, ErrorMessage = "First name cannot be longer than 50 characters")]
+        public string FirstName { get; set; }
+
+        [Required(ErrorMessage = "Last name is required")]
+        [MaxLength(50, ErrorMessage = "Last name cannot be longer than 50 characters")]
+        public string LastName { get; set; }
+
+        [Required(ErrorMessage = "Email is required")]
+        [MaxLength(30, ErrorMessage = "Email cannot be longer than 30 characters")]
         public string Email { get; set; }
+
+        [Required(ErrorMessage = "Salt is required")]
         public byte[] Salt { get; set; }
+
+        [Required(ErrorMessage = "Hash is required")]
         public byte[] Hash { get; set; }
+
         public List<Rating> Ratings { get; set; } = new List<Rating>();
         public List<BoughtTicket> BoughtTickets { get; set; } = new List<BoughtTicket>();
     }

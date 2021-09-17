@@ -1,9 +1,10 @@
-using jap_task1_backend_correction.Data;
-using jap_task1_backend_correction.Services.AuthService;
-using jap_task1_backend_correction.Services.RatingsService;
-using jap_task1_backend_correction.Services.ReportsService;
-using jap_task1_backend_correction.Services.TicketsService;
-using jap_task1_backend_correction.Services.VideosService;
+using JapTask1BackendCorrection.Data;
+using JapTask1BackendCorrection.Middleware;
+using JapTask1BackendCorrection.Services.AuthService;
+using JapTask1BackendCorrection.Services.MediaService;
+using JapTask1BackendCorrection.Services.RatingService;
+using JapTask1BackendCorrection.Services.ReportService;
+using JapTask1BackendCorrection.Services.TicketService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -17,7 +18,7 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 using System.Text;
 
-namespace jap_task1_backend_correction
+namespace JapTask1BackendCorrection
 {
     public class Startup
     {
@@ -37,7 +38,7 @@ namespace jap_task1_backend_correction
             
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "jap_task1_backend_correction", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "JapTask1BackendCorrection", Version = "v1" });
                 
                 c.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
                 {
@@ -64,11 +65,11 @@ namespace jap_task1_backend_correction
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-            services.AddScoped<IVideosService, VideosService>();
+            services.AddScoped<IMediaService, MediaService>();
             services.AddScoped<IAuthService, AuthService>();
-            services.AddScoped<IRatingsService, RatingsService>();
-            services.AddScoped<IReportsService, ReportsService>();
-            services.AddScoped<ITicketsService, TicketsService>();
+            services.AddScoped<IRatingService, RatingService>();
+            services.AddScoped<IReportService, ReportService>();
+            services.AddScoped<ITicketService, TicketService>();
         }
             
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -78,15 +79,17 @@ namespace jap_task1_backend_correction
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "jap_task1_backend_correction v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "JapTask1BackendCorrection v1"));
             }
+
+            app.UseMiddleware<ErrorMiddleware>();
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseCors(
-                 options => options.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader()
+                 options => options.WithOrigins("https://localhost:3000", "http://localhost:3000").AllowAnyMethod().AllowAnyHeader()
                 ) ;
 
             app.UseAuthentication();

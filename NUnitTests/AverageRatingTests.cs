@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using jap_task1_backend_correction;
-using jap_task1_backend_correction.Data;
-using jap_task1_backend_correction.Entities;
-using jap_task1_backend_correction.Services.AuthService;
-using jap_task1_backend_correction.Services.VideosService;
+using JapTask1BackendCorrection;
+using JapTask1BackendCorrection.Data;
+using JapTask1BackendCorrection.Entities;
+using JapTask1BackendCorrection.Services.AuthService;
+using JapTask1BackendCorrection.Services.VideoService;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
@@ -16,7 +16,7 @@ namespace NUnitTests
     public class AverageRatingTests
     {
         DataContext _context;
-        IVideosService _videosService;
+        IVideoService _videosService;
         IMapper _mapper;
 
         [SetUp]
@@ -112,7 +112,7 @@ namespace NUnitTests
             });
             _mapper = mappingConfig.CreateMapper();
 
-            _videosService = new VideosService(_mapper, _context);
+            _videosService = new VideoService(_mapper, _context);
             
         }
 

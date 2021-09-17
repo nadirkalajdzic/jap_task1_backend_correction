@@ -1,12 +1,20 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace jap_task1_backend_correction.Entities
+namespace JapTask1BackendCorrection.Entities
 {
     public class Actor
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public List<Video> Videos { get; set; } = new List<Video>();
+
+        [Required(ErrorMessage = "Actor's first name is required")]
+        [MaxLength(50, ErrorMessage = "Actor's first name cannot be longer than 50 characters")]
+        public string FirstName { get; set; }
+
+        [Required(ErrorMessage = "Actor's last name is required")]
+        [MaxLength(50, ErrorMessage = "Actor's last name cannot be longer than 50 characters")]
+        public string LastName { get; set; }
+
+        public List<Media> Medias { get; set; } = new List<Media>();
     }
 }

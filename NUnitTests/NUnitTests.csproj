@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\jap_task1_backend_correction\jap_task1_backend_correction.csproj" />
+    <ProjectReference Include="..\JapTask1BackendCorrection\JapTask1BackendCorrection.csproj" />
   </ItemGroup>
 
 </Project>

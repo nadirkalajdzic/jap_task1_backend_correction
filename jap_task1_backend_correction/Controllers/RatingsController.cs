@@ -1,22 +1,22 @@
-﻿using jap_task1_backend_correction.DTO.Rating;
-using jap_task1_backend_correction.Services.RatingsService;
+﻿using JapTask1BackendCorrection.DTO.Rating;
+using JapTask1BackendCorrection.Services.RatingService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace jap_task1_backend_correction.Controllers
+namespace JapTask1BackendCorrection.Controllers
 {
     [Authorize]
     [Route("api/ratings")]
     [ApiController]
     public class RatingsController : ControllerBase
     {
-        private readonly IRatingsService _ratingsService;
+        private readonly IRatingService _ratingsService;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public RatingsController(IRatingsService ratingsService, IHttpContextAccessor httpContextAccessor) 
+        public RatingsController(IRatingService ratingsService, IHttpContextAccessor httpContextAccessor) 
         {
             _ratingsService = ratingsService;
             _httpContextAccessor = httpContextAccessor;

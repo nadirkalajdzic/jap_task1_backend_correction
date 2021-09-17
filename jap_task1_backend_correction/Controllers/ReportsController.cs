@@ -1,19 +1,19 @@
-﻿using jap_task1_backend_correction.DTO.Reports;
-using jap_task1_backend_correction.Entities;
-using jap_task1_backend_correction.Services.ReportsService;
+﻿using JapTask1BackendCorrection.DTO.Reports;
+using JapTask1BackendCorrection.Entities;
+using JapTask1BackendCorrection.Services.ReportService;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace jap_task1_backend_correction.Controllers
+namespace JapTask1BackendCorrection.Controllers
 {
     [Route("api/reports")]
     [ApiController]
     public class ReportsController : ControllerBase
     {
-        private readonly IReportsService _reportsService;
+        private readonly IReportService _reportsService;
 
-        public ReportsController(IReportsService reportsService)
+        public ReportsController(IReportService reportsService)
         {
             _reportsService = reportsService;
         }

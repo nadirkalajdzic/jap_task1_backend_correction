@@ -1,6 +1,6 @@
-﻿using jap_task1_backend_correction.Data;
-using jap_task1_backend_correction.DTO.User;
-using jap_task1_backend_correction.Entities;
+﻿using JapTask1BackendCorrection.Data;
+using JapTask1BackendCorrection.DTO.User;
+using JapTask1BackendCorrection.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -11,7 +11,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace jap_task1_backend_correction.Services.AuthService
+namespace JapTask1BackendCorrection.Services.AuthService
 {
     public class AuthService: IAuthService
     {
@@ -24,39 +24,27 @@ namespace jap_task1_backend_correction.Services.AuthService
             _context = context;
         }
 
-        public async Task<ServiceResponse<UserLoginDTO>> Login(string email, string password)
+        public async Task<ServiceResponse<GetUserDTO>> Login(string email, string password)
         {
-            ServiceResponse<UserLoginDTO> response = new();
-            User user = null;
-
-            try 
-            { 
-                user = await _context.Users.FirstOrDefaultAsync(x => x.Email.ToUpper().Equals(email.ToUpper())); 
-            }
-            catch(Exception)
-            {
-                response.Success = false;
-                response.Message = "Internal server error";
-                return response;
-            }
-            
+            ServiceResponse<GetUserDTO> response = new();
+            User user = await _context.Users.FirstOrDefaultAsync(x => x.Email.ToUpper().Equals(email.ToUpper())); 
+              
             if (user == null)
             {
-                response.Success = false;
-                response.Message = "User not found.";
+                throw new Exception("User not found.");
             }
             else if (!VerifyPasswordHash(password, user.Hash, user.Salt))
             {
-                response.Success = false;
-                response.Message = "Wrong password";
+                throw new Exception("Wrong password");
             }
             else
             {
-                UserLoginDTO userLogin = new();
+                GetUserDTO userLogin = new();
                 userLogin.Token = CreateToken(user);
-                userLogin.Name = user.Name;
-                userLogin.Surname = user.Surname;
-                
+                userLogin.FirstName = user.FirstName;
+                userLogin.LastName = user.LastName;
+
+                response.Success = true;
                 response.Data = userLogin;
                 response.Message = "Login successful!";
             }
@@ -67,34 +55,18 @@ namespace jap_task1_backend_correction.Services.AuthService
 
         public async Task<ServiceResponse<int>> Register(User user, string password)
         {
-            var response = new ServiceResponse<int>();
+            if (await UserExists(user.Email))
+                throw new Exception("User already exists.");
+                
+            CreatePasswordHash(password, out byte[] passwordHash, out byte[] passwordSalt);
+
+            user.Hash = passwordHash;
+            user.Salt = passwordSalt;
+
+            await _context.Users.AddAsync(user);
+            await _context.SaveChangesAsync();
             
-            try
-            {
-                if (await UserExists(user.Email))
-                {
-                    response.Success = false;
-                    response.Message = "User already exists.";
-                    return response;
-                }
-
-                CreatePasswordHash(password, out byte[] passwordHash, out byte[] passwordSalt);
-
-                user.Hash = passwordHash;
-                user.Salt = passwordSalt;
-
-                await _context.Users.AddAsync(user);
-                await _context.SaveChangesAsync();
-
-                response.Data = user.Id;
-                response.Message = "Registered successfully!";
-            } catch(Exception)
-            {
-                response.Success = false;
-                response.Message = "Internal server error";
-            }
-
-            return response;
+            return new ServiceResponse<int> { Data = user.Id, Message = "Registered successfully!", Success = true };
         }
 
         public async Task<bool> UserExists(string email) => await _context.Users.AnyAsync(x => x.Email.ToUpper() == email.ToUpper());

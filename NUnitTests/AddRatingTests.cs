@@ -1,7 +1,7 @@
-﻿using jap_task1_backend_correction.Data;
-using jap_task1_backend_correction.Entities;
-using jap_task1_backend_correction.Services.AuthService;
-using jap_task1_backend_correction.Services.RatingsService;
+﻿using JapTask1BackendCorrection.Data;
+using JapTask1BackendCorrection.Entities;
+using JapTask1BackendCorrection.Services.AuthService;
+using JapTask1BackendCorrection.Services.RatingService;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 using System;
@@ -15,7 +15,7 @@ namespace NUnitTests
     public class AddRatingTests
     {
         DataContext _context;
-        IRatingsService _ratingsService;
+        IRatingService _ratingsService;
 
         [SetUp]
         public async Task SetupAsync()
@@ -100,7 +100,7 @@ namespace NUnitTests
 
             // --------------
 
-            _ratingsService = new RatingsService(_context);            
+            _ratingsService = new RatingService(_context);            
 
         }
 

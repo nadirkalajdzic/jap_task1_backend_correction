@@ -1,22 +1,22 @@
-﻿using jap_task1_backend_correction.DTO.Ticket;
-using jap_task1_backend_correction.Services.TicketsService;
+﻿using JapTask1BackendCorrection.DTO.Ticket;
+using JapTask1BackendCorrection.Services.TicketService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace jap_task1_backend_correction.Controllers
+namespace JapTask1BackendCorrection.Controllers
 {
     [Authorize]
     [Route("api/tickets")]
     [ApiController]
     public class TicketsController : ControllerBase
     {
-        private readonly ITicketsService _ticketsService;
+        private readonly ITicketService _ticketsService;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public TicketsController(ITicketsService ticketsService, IHttpContextAccessor httpContextAccessor)
+        public TicketsController(ITicketService ticketsService, IHttpContextAccessor httpContextAccessor)
         {
             _ticketsService = ticketsService;
             _httpContextAccessor = httpContextAccessor;

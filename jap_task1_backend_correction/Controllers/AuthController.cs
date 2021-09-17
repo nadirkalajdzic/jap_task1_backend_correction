@@ -1,11 +1,10 @@
-﻿using jap_task1_backend_correction.DTO.User;
-using jap_task1_backend_correction.DTO.Video;
-using jap_task1_backend_correction.Entities;
-using jap_task1_backend_correction.Services.AuthService;
+﻿using JapTask1BackendCorrection.DTO.User;
+using JapTask1BackendCorrection.Entities;
+using JapTask1BackendCorrection.Services.AuthService;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace jap_task1_backend_correction.Controllers
+namespace JapTask1BackendCorrection.Controllers
 {
     [Route("api/auth")]
     [ApiController]
@@ -21,13 +20,13 @@ namespace jap_task1_backend_correction.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserRegisterDTO request)
         {
-            var response = await _authService.Register(new User { Email = request.Email, Name = request.Name, Surname = request.Surname }, request.Password);
+            var response = await _authService.Register(new User { Email = request.Email, FirstName = request.FirstName, LastName = request.LastName }, request.Password);
 
             return (response.Success) ? Ok(response) : BadRequest(response);
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login(LoginDTO request)
+        public async Task<IActionResult> Login(UserLoginDTO request)
         {
             var response = await _authService.Login(request.Email, request.Password);
 

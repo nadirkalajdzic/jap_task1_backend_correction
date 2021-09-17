@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "jap_task1_backend_correction": {
+    "JapTask1BackendCorrection": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

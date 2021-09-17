@@ -1,11 +1,11 @@
-﻿using jap_task1_backend_correction.DTO.Reports;
-using jap_task1_backend_correction.Entities;
+﻿using JapTask1BackendCorrection.DTO.Reports;
+using JapTask1BackendCorrection.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace jap_task1_backend_correction.Services.ReportsService
+namespace JapTask1BackendCorrection.Services.ReportService
 {
-    public interface IReportsService
+    public interface IReportService
     {
         Task<ServiceResponse<List<MostRatedMoviesReport>>> MostRatedMoviesReport();
         Task<ServiceResponse<List<MoviesWithMostScreeningsReport>>> MoviesWithMostScreeningsReport(DateIntervalDTO dateIntervalDTO);

@@ -1,10 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace jap_task1_backend_correction.DTO.Reports
+namespace JapTask1BackendCorrection.DTO.Reports
 {
-    public class DateIntervalDTO
+    public class DateIntervalDTO: IValidatableObject
     {
+        [Required(ErrorMessage = "Start date is required")]
         public DateTime StartDate { get; set; }
+
+        [Required(ErrorMessage = "End date is required")]
         public DateTime EndDate { get; set; }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (StartDate > EndDate)
+                yield return new ValidationResult("End date cannot be before the start date");
+        }
     }
 }

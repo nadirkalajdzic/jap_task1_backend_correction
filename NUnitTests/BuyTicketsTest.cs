@@ -1,8 +1,8 @@
-using jap_task1_backend_correction.Data;
-using jap_task1_backend_correction.DTO.Ticket;
-using jap_task1_backend_correction.Entities;
-using jap_task1_backend_correction.Services.AuthService;
-using jap_task1_backend_correction.Services.TicketsService;
+using JapTask1BackendCorrection.Data;
+using JapTask1BackendCorrection.DTO.Ticket;
+using JapTask1BackendCorrection.Entities;
+using JapTask1BackendCorrection.Services.AuthService;
+using JapTask1BackendCorrection.Services.TicketService;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
@@ -15,7 +15,7 @@ namespace NUnitTests
     public class BuyTicketsTest
     {
         DataContext _context;
-        ITicketsService ticketsService;
+        ITicketService ticketsService;
 
         [SetUp]
         public async Task OneTimeSetupAsync()
@@ -54,7 +54,7 @@ namespace NUnitTests
 
             // -------------------------------------------------------------------------
 
-            ticketsService = new TicketsService(_context);
+            ticketsService = new TicketService(_context);
 
         }
 

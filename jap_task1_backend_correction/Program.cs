@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace jap_task1_backend_correction
+namespace JapTask1BackendCorrection
 {
     public class Program
     {
