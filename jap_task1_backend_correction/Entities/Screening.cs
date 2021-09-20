@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace JapTask1BackendCorrection.Entities
 {
-    public class Screening: IValidatableObject
+    public class Screening : BaseEntity, IValidatableObject
     {
         public int Id { get; set; }
 

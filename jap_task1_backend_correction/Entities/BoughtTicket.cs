@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace JapTask1BackendCorrection.Entities
 {
-    public class BoughtTicket: IValidatableObject
+    public class BoughtTicket: BaseEntity, IValidatableObject
     {
         public int Id { get; set; }
 

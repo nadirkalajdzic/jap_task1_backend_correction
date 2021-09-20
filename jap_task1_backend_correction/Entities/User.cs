@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 namespace JapTask1BackendCorrection.Entities
 {
-    public class User
+    public class User : BaseEntity
     {
         public int Id { get; set; }
 

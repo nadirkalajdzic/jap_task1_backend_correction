@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace JapTask1BackendCorrection.Entities
 {
-    public class Actor
+    public class Actor: BaseEntity
     {
         public int Id { get; set; }
 

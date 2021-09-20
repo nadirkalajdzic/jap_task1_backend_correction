@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace JapTask1BackendCorrection.Entities
 {
-    public class Rating: IValidatableObject
+    public class Rating: BaseEntity, IValidatableObject
     {
         public int Id { get; set; }
 

@@ -1,8 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace JapTask1BackendCorrection.Entities
+﻿namespace JapTask1BackendCorrection.Entities
 {
-    public class MostRatedMoviesReport
+    public class MostRatedMoviesReport : BaseEntity
     {
         public int MovieId { get; set; }
         public string MovieName { get; set; }

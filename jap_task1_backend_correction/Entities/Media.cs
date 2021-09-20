@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace JapTask1BackendCorrection.Entities
 {
-    public class Media
+    public class Media : BaseEntity
     {
         public int Id { get; set; }
 
