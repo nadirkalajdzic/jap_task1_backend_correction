@@ -66,9 +66,7 @@ namespace NUnitTests
         [Test]
         public async Task BuyTicketsTest_ValidInput_ReturnsTrue()
         {
-            var buyTicketDTO = new BuyTicketRequest { ScreeningId = 1, NumberOfTickets = 2 };
-
-            var response = await ticketsService.BuyTickets(buyTicketDTO, 1);
+            var response = await ticketsService.BuyTickets(1, 2, 1);
             
             // buying tickets for a valid screening, there is still available tickets and the screening is not in the past
             Assert.IsTrue(response.Data);
@@ -78,12 +76,10 @@ namespace NUnitTests
         [Test]
         public async Task BuyTicketsTest_ForScreeningInPast_ReturnsFalse()
         {
-            var buyTicketDTO = new BuyTicketRequest { ScreeningId = 2, NumberOfTickets = 2 };
-
             try
             {
                 // buying tickets for a invalid screening that already happened (screening was in the past)
-                await ticketsService.BuyTickets(buyTicketDTO, 1);
+                await ticketsService.BuyTickets(2, 2, 1);
             } catch(Exception e)
             {
                 Assert.AreEqual(e.Message, "Screening is in the past!");
@@ -93,12 +89,10 @@ namespace NUnitTests
         [Test]
         public async Task BuyTicketsTest_ForASoldOutScreening_ReturnsFalse()
         {
-            var buyTicketDTO = new BuyTicketRequest { ScreeningId = 3, NumberOfTickets = 1 };
-
             try
             {
                 // buying tickets for a invalid screening that is sould out (no more available tickets)
-                await ticketsService.BuyTickets(buyTicketDTO, 1);
+                await ticketsService.BuyTickets(3, 1, 1);
             }
             catch (Exception e)
             {
@@ -110,13 +104,11 @@ namespace NUnitTests
         [Test]
         public async Task BuyTicketsTest_TryingToBuyTooManyTickets_ReturnsFalse()
         {
-            var buyTicketDTO = new BuyTicketRequest { ScreeningId = 4, NumberOfTickets = 2 };
-
             try
             {
                 // buying tickets for a screening that does not have that many tickets available
                 // (available for screening 11, sold 10, trying to buy 2)
-                await ticketsService.BuyTickets(buyTicketDTO, 1);
+                await ticketsService.BuyTickets(4, 2, 1);
             }
             catch (Exception e)
             {
