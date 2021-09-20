@@ -23,37 +23,20 @@ namespace JapTask1BackendCorrection.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            #region Category static data
             modelBuilder.Entity<Category>().HasData(CategorySeed.Categories);
-            #endregion
-
-            #region Actor static data
             modelBuilder.Entity<Actor>().HasData(ActorSeed.Actors);
-            #endregion
-
-            #region Movies and Series static data
             modelBuilder.Entity<Media>().HasData(MediaSeed.Medias);
-            #endregion
 
-            #region Admin user
             AuthService.CreatePasswordHash("admin", out byte[] passHash, out byte[] passSalt);
             modelBuilder.Entity<User>().HasData(
                 new User { Id = 1, FirstName = "Admin", LastName="Admin", Email="admin@gmail.com",  Salt = passSalt, Hash= passHash}  
             );
-            #endregion
 
-            #region Ratings
             modelBuilder.Entity<Rating>().HasData(RatingSeed.Ratings);
-            #endregion
-
-            #region Screenings, duration is in minutes
             modelBuilder.Entity<Screening>().HasData(ScreeningSeed.Screenings);
-            #endregion
 
             modelBuilder.Entity<MostRatedMoviesReport>().HasNoKey();
-
             modelBuilder.Entity<MoviesWithMostScreeningsReport>().HasNoKey();
-
             modelBuilder.Entity<MoviesWithMostSoldTicketsReport>().HasNoKey();
         }
     }

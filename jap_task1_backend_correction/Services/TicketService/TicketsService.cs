@@ -17,6 +17,19 @@ namespace JapTask1BackendCorrection.Services.TicketService
             
         }
 
+        /// <summary>
+        ///     firstly some conditions need to be met:
+        ///         1. the number of tickets must be at least 1, elsewise an exception is thrown
+        ///         2. the given screening must exist in the database, elsewise an exception is thrown
+        ///         3. the given screening cannot be in the past because you need to buy tickets for a screening that will happen in the future, elsewise an exception is thrown
+        ///         4. the given screening must have available tickets for selling, elsewise an exception is thrown
+        ///         5. the user cannot buy 20 tickets for a screening that has now 10 available tickets, elsewise an exception is thrown
+        ///     
+        ///     if the conditions are met, the tickets get bought
+        /// </summary>
+        /// <param name="buyTicketDTO"></param>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         public async Task<ServiceResponse<bool>> BuyTickets(BuyTicketDTO buyTicketDTO, int userId)
         {
             var serviceResponse = new ServiceResponse<bool> { Data = false };

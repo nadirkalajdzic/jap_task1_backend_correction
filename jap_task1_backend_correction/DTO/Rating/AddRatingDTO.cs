@@ -9,7 +9,7 @@ namespace JapTask1BackendCorrection.DTO.Rating
         public float Value { get; set; }
 
         [Required(ErrorMessage = "Id of video must be given")]
-        public int VideoId { get; set; }
+        public int MediaId { get; set; }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {

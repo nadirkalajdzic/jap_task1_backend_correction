@@ -21,15 +21,15 @@ namespace JapTask1BackendCorrection.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<ServiceResponse<List<GetMediaDTO>>>> GetMedias([FromQuery] MediaTypeDTO videoTypeDTO, [FromQuery] PaginationDTO paginationDTO)
+        public async Task<ActionResult<ServiceResponse<List<GetMediaDTO>>>> GetMedias([FromQuery] MediaTypeDTO mediaTypeDTO, [FromQuery] PaginationDTO paginationDTO)
         {
-            var serviceResponse = await _videosService.GetMedias(videoTypeDTO.MediaType, paginationDTO);
+            var serviceResponse = await _videosService.GetMedias(mediaTypeDTO.MediaType, paginationDTO);
             
             return (serviceResponse.Success) ? Ok(serviceResponse) : BadRequest(serviceResponse);
         }
 
-        [HttpGet("{Id}")]
-        public async Task<ActionResult<ServiceResponse<List<GetMediaFullInfoDTO>>>> GetMedia(int id)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<ServiceResponse<List<GetMediaFullInfoDTO>>>> GetMedia([FromRoute] int id)
         {
             var serviceResponse = await _videosService.GetMedia(id);
             return (serviceResponse.Success) ? Ok(serviceResponse) : BadRequest(serviceResponse);

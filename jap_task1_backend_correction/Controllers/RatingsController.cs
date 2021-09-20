@@ -27,7 +27,7 @@ namespace JapTask1BackendCorrection.Controllers
         [HttpPost("add")]
         public async Task<IActionResult> AddRating(AddRatingDTO addRating)
         {
-            var response = await _ratingsService.AddRating(addRating.Value, addRating.VideoId, GetUserId());
+            var response = await _ratingsService.AddRating(addRating.Value, addRating.MediaId, GetUserId());
             
             return (response.Success) ? Ok(response) : BadRequest(response);
         }

@@ -16,8 +16,8 @@ namespace JapTask1BackendCorrection.DTO.Helpers
             if (PageNumber < 1)
                 yield return new ValidationResult("Page number must be 1 or higher");
 
-            if(PageSize < 1)
-                yield return new ValidationResult("Page size must be at least 1");
+            if(PageSize < 1 || PageSize > 100)
+                yield return new ValidationResult("Page size must be at least 1 and lower than 100");
         }
     }
 }

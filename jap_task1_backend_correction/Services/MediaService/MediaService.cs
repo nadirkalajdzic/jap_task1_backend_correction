@@ -26,6 +26,14 @@ namespace JapTask1BackendCorrection.Services.MediaService
             _context = context;
         }
 
+        /// <summary>
+        ///     checks firstly if the given parameters 
+        ///     for the pagination are correct, if they are
+        ///     returns the list of movies/shows
+        /// </summary>
+        /// <param name="mediaType">if it is a show or a movie</param>
+        /// <param name="paginationDTO">which page it is and the page size</param>
+        /// <returns> list of movies/shows with basic data </returns>
         public async Task<ServiceResponse<List<GetMediaDTO>>> GetMedias(MediaEnum mediaType, PaginationDTO paginationDTO)
         {
             if(paginationDTO.PageNumber < 1 || paginationDTO.PageSize < 1)
@@ -58,6 +66,11 @@ namespace JapTask1BackendCorrection.Services.MediaService
             return serviceResponse;
         }
 
+        /// <summary>
+        ///     returns the specific movie/show for the given id
+        /// </summary>
+        /// <param name="id">id of the movie</param>
+        /// <returns> movie/show for the given id or throws an exception if the movie for the id doesn't exist </returns>
         public async Task<ServiceResponse<GetMediaFullInfoDTO>> GetMedia(int id)
         {
             return new ServiceResponse<GetMediaFullInfoDTO>
@@ -84,6 +97,14 @@ namespace JapTask1BackendCorrection.Services.MediaService
             };
         }
 
+        /// <summary>
+        ///     the AddFiltersForVideoSearch method
+        ///     prepares the query before it gets executed and
+        ///     returns a list of movies/shows --> check the AddFiltersForVideoSearch below
+        ///                                        to see the logic 
+        /// </summary>
+        /// <param name="search">search query, can be any of the movie/show attributes or special frazes like 'at least 4.4 stars' </param>
+        /// <returns> list of movies/shows filtered by the search string </returns>
         public async Task<ServiceResponse<List<GetMediaTextAttributesDTO>>> GetFilteredMedias(string search)
         {
             var query = _context.Medias.AsQueryable();
@@ -94,6 +115,7 @@ namespace JapTask1BackendCorrection.Services.MediaService
                 Data = await query.OrderByDescending(x => x.Ratings.Select(x => x.Value)
                                                                    .DefaultIfEmpty()
                                                                    .Average())
+                                  .Take(100)
                                   .Select(x => _mapper.Map<GetMediaTextAttributesDTO>(x))
                                   .ToListAsync(),
                 Message = "Success",
@@ -101,6 +123,16 @@ namespace JapTask1BackendCorrection.Services.MediaService
             };
         }
 
+
+        /// <summary>
+        ///     firstly, the search query gets split in arrays of string
+        ///     and checks firstly if the special frazes are given 
+        ///     like 'after 2015', 'at least 4.4 stars' and etc.
+        ///     If they are, a special query is prepared, elsewise the films/shows are 
+        ///     searched in the sense if their textual attributes contain the given search string
+        /// </summary>
+        /// <param name="search"> the search query </param>
+        /// <param name="query"> the query that will be materialized </param>
         private static void AddFiltersForVideoSearch(string search, ref IQueryable<Media> query)
         {
 

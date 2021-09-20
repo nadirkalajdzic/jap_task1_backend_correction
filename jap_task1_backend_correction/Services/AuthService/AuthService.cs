@@ -24,6 +24,14 @@ namespace JapTask1BackendCorrection.Services.AuthService
             _context = context;
         }
 
+
+        /// <summary>
+        ///     checks firstly if the given user exist, then it checks
+        ///     if the password  is correct for the user
+        /// </summary>
+        /// <param name="email"> email of user </param>
+        /// <param name="password"> users password, it isnt hashed just a normal password </param>
+        /// <returns> jwt token for user and his first and last name </returns>
         public async Task<ServiceResponse<GetUserDTO>> Login(string email, string password)
         {
             ServiceResponse<GetUserDTO> response = new();
@@ -53,6 +61,14 @@ namespace JapTask1BackendCorrection.Services.AuthService
 
         }
 
+        /// <summary>
+        ///     checks firstly if the user exists,
+        ///     if he does an exception is thrown
+        ///     otherwise the user gets registered
+        /// </summary>
+        /// <param name="user"> user object, contains his info </param>
+        /// <param name="password"> user password </param>
+        /// <returns> the id of the registered user </returns>
         public async Task<ServiceResponse<int>> Register(User user, string password)
         {
             if (await UserExists(user.Email))
