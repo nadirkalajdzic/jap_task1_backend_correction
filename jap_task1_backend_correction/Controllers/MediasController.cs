@@ -1,6 +1,7 @@
 ﻿using JapTask1BackendCorrection.DTO.Helpers;
 using JapTask1BackendCorrection.DTO.Media;
 using JapTask1BackendCorrection.Entities;
+using JapTask1BackendCorrection.Requests.Media;
 using JapTask1BackendCorrection.Services.MediaService;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -21,9 +22,9 @@ namespace JapTask1BackendCorrection.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<ServiceResponse<List<GetMediaDTO>>>> GetMedias([FromQuery] MediaTypeDTO mediaTypeDTO, [FromQuery] PaginationDTO paginationDTO)
+        public async Task<ActionResult<ServiceResponse<List<GetMediaDTO>>>> GetMedias([FromQuery] GetMediasRequest getMediasRequest)
         {
-            var serviceResponse = await _videosService.GetMedias(mediaTypeDTO.MediaType, paginationDTO);
+            var serviceResponse = await _videosService.GetMedias(getMediasRequest.MediaType, getMediasRequest.Pagination);
             
             return (serviceResponse.Success) ? Ok(serviceResponse) : BadRequest(serviceResponse);
         }

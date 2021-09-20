@@ -25,9 +25,9 @@ namespace JapTask1BackendCorrection.Controllers
         }
 
         [HttpPost("movies_with_most_screenings")]
-        public async Task<ActionResult<ServiceResponse<List<MostRatedMoviesReport>>>> MoviesWithMostScreeningsReport([FromBody] DateIntervalDTO dateIntervalDTO)
+        public async Task<ActionResult<ServiceResponse<List<MostRatedMoviesReport>>>> MoviesWithMostScreeningsReport([FromBody] DateIntervalRequest dateIntervalRequest)
         {
-            return Ok(await _reportsService.MoviesWithMostScreeningsReport(dateIntervalDTO));
+            return Ok(await _reportsService.MoviesWithMostScreeningsReport(dateIntervalRequest.StartDate, dateIntervalRequest.EndDate));
         }
 
         [HttpGet("movies_with_most_sold_tickets")]

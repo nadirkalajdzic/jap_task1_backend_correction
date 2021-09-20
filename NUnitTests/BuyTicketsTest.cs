@@ -66,7 +66,7 @@ namespace NUnitTests
         [Test]
         public async Task BuyTicketsTest_ValidInput_ReturnsTrue()
         {
-            var buyTicketDTO = new BuyTicketDTO { ScreeningId = 1, NumberOfTickets = 2 };
+            var buyTicketDTO = new BuyTicketRequest { ScreeningId = 1, NumberOfTickets = 2 };
 
             var response = await ticketsService.BuyTickets(buyTicketDTO, 1);
             
@@ -78,7 +78,7 @@ namespace NUnitTests
         [Test]
         public async Task BuyTicketsTest_ForScreeningInPast_ReturnsFalse()
         {
-            var buyTicketDTO = new BuyTicketDTO { ScreeningId = 2, NumberOfTickets = 2 };
+            var buyTicketDTO = new BuyTicketRequest { ScreeningId = 2, NumberOfTickets = 2 };
 
             try
             {
@@ -93,7 +93,7 @@ namespace NUnitTests
         [Test]
         public async Task BuyTicketsTest_ForASoldOutScreening_ReturnsFalse()
         {
-            var buyTicketDTO = new BuyTicketDTO { ScreeningId = 3, NumberOfTickets = 1 };
+            var buyTicketDTO = new BuyTicketRequest { ScreeningId = 3, NumberOfTickets = 1 };
 
             try
             {
@@ -110,7 +110,7 @@ namespace NUnitTests
         [Test]
         public async Task BuyTicketsTest_TryingToBuyTooManyTickets_ReturnsFalse()
         {
-            var buyTicketDTO = new BuyTicketDTO { ScreeningId = 4, NumberOfTickets = 2 };
+            var buyTicketDTO = new BuyTicketRequest { ScreeningId = 4, NumberOfTickets = 2 };
 
             try
             {

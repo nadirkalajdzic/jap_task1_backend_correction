@@ -6,6 +6,6 @@ namespace JapTask1BackendCorrection.Services.TicketService
 {
     public interface ITicketService
     {
-        Task<ServiceResponse<bool>> BuyTickets(BuyTicketDTO buyTicketDTO, int userId);
+        Task<ServiceResponse<bool>> BuyTickets(int screeningId, int numberOfTickets, int userId);
     }
 }

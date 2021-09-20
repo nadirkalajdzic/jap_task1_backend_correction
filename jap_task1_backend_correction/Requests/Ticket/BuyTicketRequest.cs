@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace JapTask1BackendCorrection.DTO.Ticket
 {
-    public class BuyTicketDTO: IValidatableObject
+    public class BuyTicketRequest: IValidatableObject
     {
         [Required(ErrorMessage = "Screening id is required")]
         public int ScreeningId { get; set; }

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace JapTask1BackendCorrection.DTO.Helpers
 {
-    public class PaginationDTO: IValidatableObject
+    public class Pagination: IValidatableObject
     {
         [Required(ErrorMessage = "Page number is required")]
         public int PageNumber { get; set; } = 1;

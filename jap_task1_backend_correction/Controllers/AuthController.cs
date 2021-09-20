@@ -18,7 +18,7 @@ namespace JapTask1BackendCorrection.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register(UserRegisterDTO request)
+        public async Task<IActionResult> Register(UserRegisterRequest request)
         {
             var response = await _authService.Register(new User { Email = request.Email, FirstName = request.FirstName, LastName = request.LastName }, request.Password);
 
@@ -26,7 +26,7 @@ namespace JapTask1BackendCorrection.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login(UserLoginDTO request)
+        public async Task<IActionResult> Login(UserLoginRequest request)
         {
             var response = await _authService.Login(request.Email, request.Password);
 

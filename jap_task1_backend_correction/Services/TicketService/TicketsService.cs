@@ -27,17 +27,18 @@ namespace JapTask1BackendCorrection.Services.TicketService
         ///     
         ///     if the conditions are met, the tickets get bought
         /// </summary>
-        /// <param name="buyTicketDTO"></param>
-        /// <param name="userId"></param>
+        /// <param name="screeningId"> id of the screening for which the tickets will be bought </param>
+        /// <param name="numberOfTickets"> how many tickets will be bought </param>
+        /// <param name="userId"> id of the user who is buying the tickets </param>
         /// <returns></returns>
-        public async Task<ServiceResponse<bool>> BuyTickets(BuyTicketDTO buyTicketDTO, int userId)
+        public async Task<ServiceResponse<bool>> BuyTickets(int screeningId, int numberOfTickets, int userId)
         {
             var serviceResponse = new ServiceResponse<bool> { Data = false };
 
-            if (buyTicketDTO.NumberOfTickets <= 0)
+            if (numberOfTickets <= 0)
                 throw new Exception("Number of tickets cannot be zero or negative!");
             
-            var screening = await _context.Screenings.FirstOrDefaultAsync(x => x.Id == buyTicketDTO.ScreeningId);
+            var screening = await _context.Screenings.FirstOrDefaultAsync(x => x.Id == screeningId);
 
             if (screening == null)
                 throw new Exception("Screening does not exist!");
@@ -45,20 +46,20 @@ namespace JapTask1BackendCorrection.Services.TicketService
                 throw new Exception("Screening is in the past!");
             else if (screening.AvailableTickets == screening.SoldTickets)
                 throw new Exception("Sould out!");
-            else if (screening.SoldTickets + buyTicketDTO.NumberOfTickets > screening.AvailableTickets)
+            else if (screening.SoldTickets + numberOfTickets > screening.AvailableTickets)
                 throw new Exception("Cannot buy that many tickets. There are not that many tickets available!");
             else
             {
-                screening.SoldTickets += buyTicketDTO.NumberOfTickets;
+                screening.SoldTickets += numberOfTickets;
                 await _context.SaveChangesAsync();
 
                 await _context.BoughtTickets
                     .AddAsync(new BoughtTicket
                         {
-                            ScreeningId = buyTicketDTO.ScreeningId,
+                            ScreeningId = screeningId,
                             UserId = userId,
-                            BoughtTickets = buyTicketDTO.NumberOfTickets
-                        });
+                            BoughtTickets = numberOfTickets
+                    });
                 await _context.SaveChangesAsync();
 
                 return new() { Success = true, Data = true, Message = "Successfully bought tickets!" };

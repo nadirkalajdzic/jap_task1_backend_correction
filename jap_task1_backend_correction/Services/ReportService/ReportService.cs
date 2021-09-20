@@ -36,14 +36,15 @@ namespace JapTask1BackendCorrection.Services.ReportService
         /// <summary>
         ///     report for the movies with most screenings in the given interval (a procedure gets executed)
         /// </summary>
-        /// <param name="dateIntervalDTO"> the given interval for the procedure </param>
+        /// <param name="fromDate"> from date </param>
+        /// <param name="toDate"> to date </param>
         /// <returns> query result from the database </returns>
-        public async Task<ServiceResponse<List<MoviesWithMostScreeningsReport>>> MoviesWithMostScreeningsReport(DateIntervalDTO dateIntervalDTO)
+        public async Task<ServiceResponse<List<MoviesWithMostScreeningsReport>>> MoviesWithMostScreeningsReport(DateTime fromDate, DateTime toDate)
         {
             return new()
             {
                 Data = await _context.MoviesWithMostScreeningsReports
-                     .FromSqlRaw("EXEC [dbo].[getTop10MoviesWithMostScreenings] {0}, {1};", dateIntervalDTO.StartDate, dateIntervalDTO.EndDate)
+                     .FromSqlRaw("EXEC [dbo].[getTop10MoviesWithMostScreenings] {0}, {1};", fromDate, toDate)
                      .ToListAsync(),
 
                 Success = true,

@@ -9,7 +9,7 @@ namespace JapTask1BackendCorrection.Services.MediaService
 {
     public interface IMediaService
     {
-        Task<ServiceResponse<List<GetMediaDTO>>> GetMedias(MediaEnum mediaType, PaginationDTO paginationDTO);
+        Task<ServiceResponse<List<GetMediaDTO>>> GetMedias(MediaEnum mediaType, Pagination paginationDTO);
         Task<ServiceResponse<GetMediaFullInfoDTO>> GetMedia(int id);
         Task<ServiceResponse<List<GetMediaTextAttributesDTO>>> GetFilteredMedias(string search);
     }

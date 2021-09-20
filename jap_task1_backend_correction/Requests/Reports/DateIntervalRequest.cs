@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace JapTask1BackendCorrection.DTO.Reports
 {
-    public class DateIntervalDTO: IValidatableObject
+    public class DateIntervalRequest: IValidatableObject
     {
         [Required(ErrorMessage = "Start date is required")]
         public DateTime StartDate { get; set; }

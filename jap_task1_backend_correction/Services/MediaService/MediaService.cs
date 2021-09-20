@@ -34,7 +34,7 @@ namespace JapTask1BackendCorrection.Services.MediaService
         /// <param name="mediaType">if it is a show or a movie</param>
         /// <param name="paginationDTO">which page it is and the page size</param>
         /// <returns> list of movies/shows with basic data </returns>
-        public async Task<ServiceResponse<List<GetMediaDTO>>> GetMedias(MediaEnum mediaType, PaginationDTO paginationDTO)
+        public async Task<ServiceResponse<List<GetMediaDTO>>> GetMedias(MediaEnum mediaType, Pagination paginationDTO)
         {
             if(paginationDTO.PageNumber < 1 || paginationDTO.PageSize < 1)
                throw new Exception("Incorrect paramteres for the pagination");

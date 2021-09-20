@@ -25,9 +25,9 @@ namespace JapTask1BackendCorrection.Controllers
         private int GetUserId() => int.Parse(_httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
 
         [HttpPost("buy_tickets")]
-        public async Task<IActionResult> BuyTickets([FromBody] BuyTicketDTO buyTicketDTO)
+        public async Task<IActionResult> BuyTickets([FromBody] BuyTicketRequest buyTicketRequest)
         {
-            var response = await _ticketsService.BuyTickets(buyTicketDTO, GetUserId());
+            var response = await _ticketsService.BuyTickets(buyTicketRequest.ScreeningId, buyTicketRequest.NumberOfTickets, GetUserId());
 
             return response.Success ? Ok(response) : BadRequest(response);
       

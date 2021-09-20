@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace JapTask1BackendCorrection.DTO.Rating
 {
-    public class AddRatingDTO: IValidatableObject
+    public class AddRatingRequest: IValidatableObject
     {
         [Required(ErrorMessage = "Rating value is required")]
         public float Value { get; set; }

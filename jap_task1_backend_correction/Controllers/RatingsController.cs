@@ -25,7 +25,7 @@ namespace JapTask1BackendCorrection.Controllers
         private int GetUserId() => int.Parse(_httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
 
         [HttpPost("add")]
-        public async Task<IActionResult> AddRating(AddRatingDTO addRating)
+        public async Task<IActionResult> AddRating(AddRatingRequest addRating)
         {
             var response = await _ratingsService.AddRating(addRating.Value, addRating.MediaId, GetUserId());
             
