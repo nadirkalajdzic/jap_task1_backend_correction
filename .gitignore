@@ -17,20 +17,26 @@
 mono_crash.*
 
 # Build results
-jap_task1_backend_correction/[Dd]ebug/
-jap_task1_backend_correction/[Dd]ebugPublic/
-jap_task1_backend_correction/[Rr]elease/
-jap_task1_backend_correction/[Rr]eleases/
-jap_task1_backend_correction/x64/
-jap_task1_backend_correction/x86/
-jap_task1_backend_correction/[Ww][Ii][Nn]32/
-jap_task1_backend_correction/[Aa][Rr][Mm]/
-jap_task1_backend_correction/[Aa][Rr][Mm]64/
-jap_task1_backend_correction/bld/
-jap_task1_backend_correction/[Bb]in/
-jap_task1_backend_correction/[Oo]bj/
-jap_task1_backend_correction/[Ll]og/
-jap_task1_backend_correction/[Ll]ogs/
+JapTask1BackendCorrection/[Dd]ebug/
+JapTask1BackendCorrection/[Dd]ebugPublic/
+JapTask1BackendCorrection/[Rr]elease/
+JapTask1BackendCorrection/[Rr]eleases/
+JapTask1BackendCorrection/x64/
+JapTask1BackendCorrection/x86/
+JapTask1BackendCorrection/[Ww][Ii][Nn]32/
+JapTask1BackendCorrection/[Aa][Rr][Mm]/
+JapTask1BackendCorrection/[Aa][Rr][Mm]64/
+JapTask1BackendCorrection/bld/
+JapTask1BackendCorrection/JapTask1BackendCorrection.Core/[Bb]in/
+JapTask1BackendCorrection/JapTask1BackendCorrection.Core/[Oo]bj/
+JapTask1BackendCorrection/JapTask1BackendCorrection.Infrastructure/[Bb]in/
+JapTask1BackendCorrection/JapTask1BackendCorrection.Infrastructureore/[Oo]bj/
+JapTask1BackendCorrection/JapTask1BackendCorrection.Web/[Bb]in/
+JapTask1BackendCorrection/JapTask1BackendCorrection.Web/[Oo]bj/
+JapTask1BackendCorrection/Tests/[Bb]in/
+JapTask1BackendCorrection/Tests/[Oo]bj/
+JapTask1BackendCorrection/[Ll]og/
+JapTask1BackendCorrection/[Ll]ogs/
 
 # Build results for test project
 
