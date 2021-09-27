@@ -147,7 +147,9 @@ namespace JapTask1BackendCorrection.Services.MediaService
             // -------------------------------------------------------
 
             if (searchQuery.Count < 2)
+            {
                 setDefaultSearchQuery(ref query);
+            }
             else
             {
                 if (searchQuery.Count == 2)
