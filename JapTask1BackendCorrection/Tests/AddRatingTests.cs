@@ -115,7 +115,7 @@ namespace NUnitTests
         [Test]
         public async Task AddRatingTest_InputValidRatingAdd_ReturnTrue()
         {
-            var response = await _ratingsService.AddRating(4.1F, 1, 2);
+            var response = await _ratingsService.AddRating(new() { Value = 4.1F, MediaId = 1 }, 2);
 
             //Is the rating added?
             Assert.IsTrue(response.Success);
@@ -129,8 +129,8 @@ namespace NUnitTests
         [Test]
         public async Task AddRatingTest_InputInValidRatingAdd_ReturnFalse()
         {
-            var response1 = await _ratingsService.AddRating(4.1F, 2, 2);
-            var response2 = await _ratingsService.AddRating(4.1F, 2, 2);
+            var response1 = await _ratingsService.AddRating(new() { Value = 4.1F, MediaId = 2 }, 2);
+            var response2 = await _ratingsService.AddRating(new() { Value = 4.1F, MediaId = 2 }, 2);
 
             //Is the rating added?
             //first one needs to be added

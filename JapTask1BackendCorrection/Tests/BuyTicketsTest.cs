@@ -66,7 +66,7 @@ namespace NUnitTests
         [Test]
         public async Task BuyTicketsTest_ValidInput_ReturnsTrue()
         {
-            var response = await ticketsService.BuyTickets(1, 2, 1);
+            var response = await ticketsService.BuyTickets(new() { ScreeningId = 1, NumberOfTickets = 2 }, 1);
             
             // buying tickets for a valid screening, there is still available tickets and the screening is not in the past
             Assert.IsTrue(response.Data);
@@ -77,14 +77,14 @@ namespace NUnitTests
         public async Task BuyTicketsTest_ForScreeningInPast_ReturnsFalse()
         {
             // buying tickets for a invalid screening that already happened (screening was in the past)
-            var response = await ticketsService.BuyTickets(2, 2, 1);
+            var response = await ticketsService.BuyTickets(new() { ScreeningId = 2, NumberOfTickets = 2 }, 1);
             Assert.AreEqual(response.Message, "Screening is in the past!");
         }
 
         [Test]
         public async Task BuyTicketsTest_ForASoldOutScreening_ReturnsFalse()
         {
-            var response = await ticketsService.BuyTickets(3, 1, 1);
+            var response = await ticketsService.BuyTickets(new() { ScreeningId = 3, NumberOfTickets = 1 }, 1);
             Assert.AreEqual(response.Message, "Sould out!");
         }
 
@@ -93,7 +93,7 @@ namespace NUnitTests
         {
             // buying tickets for a screening that does not have that many tickets available
             // (available for screening 11, sold 10, trying to buy 2)
-            var response = await ticketsService.BuyTickets(4, 2, 1);
+            var response = await ticketsService.BuyTickets(new() { ScreeningId = 4, NumberOfTickets = 2 }, 1);
             Assert.AreEqual(response.Message, "Cannot buy that many tickets. There are not that many tickets available!"); 
         }
 
