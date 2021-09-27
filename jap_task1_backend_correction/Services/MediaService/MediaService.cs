@@ -36,10 +36,12 @@ namespace JapTask1BackendCorrection.Services.MediaService
         /// <returns> list of movies/shows with basic data </returns>
         public async Task<ServiceResponse<List<GetMediaDTO>>> GetMedias(MediaEnum mediaType, Pagination paginationDTO)
         {
-            if(paginationDTO.PageNumber < 1 || paginationDTO.PageSize < 1)
-               throw new Exception("Incorrect paramteres for the pagination");
+            if (paginationDTO.PageNumber < 1 || paginationDTO.PageSize < 1)
+            {
+                return new() { Message = "Incorrect paramteres for the pagination" };
+            }
 
-            var serviceResponse = new ServiceResponse<List<GetMediaDTO>>
+            return new()
             {
                 Data = await _context.Medias
                                      .Include(x => x.Ratings)
@@ -62,8 +64,6 @@ namespace JapTask1BackendCorrection.Services.MediaService
                 Message = "Success",
                 Success = true
             };
-
-            return serviceResponse;
         }
 
         /// <summary>

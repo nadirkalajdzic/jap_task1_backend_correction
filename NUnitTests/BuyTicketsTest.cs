@@ -1,5 +1,4 @@
 using JapTask1BackendCorrection.Data;
-using JapTask1BackendCorrection.DTO.Ticket;
 using JapTask1BackendCorrection.Entities;
 using JapTask1BackendCorrection.Services.AuthService;
 using JapTask1BackendCorrection.Services.TicketService;

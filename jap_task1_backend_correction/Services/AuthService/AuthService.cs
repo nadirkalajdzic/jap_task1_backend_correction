@@ -39,11 +39,11 @@ namespace JapTask1BackendCorrection.Services.AuthService
               
             if (user == null)
             {
-                throw new Exception("User not found.");
+                response.Message = "User not found.";
             }
             else if (!VerifyPasswordHash(password, user.Hash, user.Salt))
             {
-                throw new Exception("Wrong password");
+                response.Message = "Wrong password";
             }
             else
             {
@@ -72,7 +72,9 @@ namespace JapTask1BackendCorrection.Services.AuthService
         public async Task<ServiceResponse<int>> Register(User user, string password)
         {
             if (await UserExists(user.Email))
-                throw new Exception("User already exists.");
+            {
+                return new ServiceResponse<int> { Message = "User already exists." };
+            }        
                 
             CreatePasswordHash(password, out byte[] passwordHash, out byte[] passwordSalt);
 
