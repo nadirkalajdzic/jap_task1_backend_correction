@@ -4,8 +4,9 @@ using JapTask1BackendCorrection.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace JapTask1BackendCorrection.Migrations
+namespace JapTask1BackendCorrection.Infrastructure.Migrations
 {
     [DbContext(typeof(DataContext))]
     partial class DataContextModelSnapshot : ModelSnapshot
@@ -15,7 +16,7 @@ namespace JapTask1BackendCorrection.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.9")
+                .HasAnnotation("ProductVersion", "5.0.10")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("ActorMedia", b =>
@@ -48,7 +49,7 @@ namespace JapTask1BackendCorrection.Migrations
                     b.ToTable("CategoryMedia");
                 });
 
-            modelBuilder.Entity("JapTask1BackendCorrection.Entities.Actor", b =>
+            modelBuilder.Entity("JapTask1BackendCorrection.Core.Entities.Actor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -85,7 +86,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(7353),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(7309),
                             CreatedBy = "SYSTEM",
                             FirstName = "Morgan",
                             LastName = "Freeman"
@@ -93,7 +94,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8234),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8614),
                             CreatedBy = "SYSTEM",
                             FirstName = "Bob",
                             LastName = "Gunton"
@@ -101,7 +102,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8247),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8633),
                             CreatedBy = "SYSTEM",
                             FirstName = "Tim",
                             LastName = "Robbins"
@@ -109,7 +110,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8250),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8638),
                             CreatedBy = "SYSTEM",
                             FirstName = "Marlon",
                             LastName = "Brando"
@@ -117,7 +118,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8253),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8642),
                             CreatedBy = "SYSTEM",
                             FirstName = "Al",
                             LastName = "Pacino"
@@ -125,7 +126,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8261),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8654),
                             CreatedBy = "SYSTEM",
                             FirstName = "James",
                             LastName = "Caan"
@@ -133,7 +134,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8264),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8657),
                             CreatedBy = "SYSTEM",
                             FirstName = "Robert",
                             LastName = "De Niro"
@@ -141,7 +142,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 8,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8267),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8662),
                             CreatedBy = "SYSTEM",
                             FirstName = "Robert",
                             LastName = "Duvall"
@@ -149,7 +150,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 9,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8269),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8666),
                             CreatedBy = "SYSTEM",
                             FirstName = "Christian",
                             LastName = "Bale"
@@ -157,7 +158,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 10,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8273),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8671),
                             CreatedBy = "SYSTEM",
                             FirstName = "Heath",
                             LastName = "Ledger"
@@ -165,7 +166,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 11,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8276),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8674),
                             CreatedBy = "SYSTEM",
                             FirstName = "Aaron",
                             LastName = "Eckhart"
@@ -173,7 +174,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 12,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8278),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8678),
                             CreatedBy = "SYSTEM",
                             FirstName = "Henry",
                             LastName = "Fonda"
@@ -181,7 +182,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 13,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8281),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8683),
                             CreatedBy = "SYSTEM",
                             FirstName = "Lee",
                             LastName = "J. Cobb"
@@ -189,7 +190,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 14,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8284),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8686),
                             CreatedBy = "SYSTEM",
                             FirstName = "Martin",
                             LastName = "Balsam"
@@ -197,7 +198,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 15,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8286),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8690),
                             CreatedBy = "SYSTEM",
                             FirstName = "Liam",
                             LastName = "Neeson"
@@ -205,7 +206,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 16,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8289),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8693),
                             CreatedBy = "SYSTEM",
                             FirstName = "Ralph",
                             LastName = "Fiennes"
@@ -213,7 +214,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 17,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8291),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8697),
                             CreatedBy = "SYSTEM",
                             FirstName = "Ben",
                             LastName = "Kingsley"
@@ -221,7 +222,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 18,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8295),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8702),
                             CreatedBy = "SYSTEM",
                             FirstName = "Elijah",
                             LastName = "Wood"
@@ -229,7 +230,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 19,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8298),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8705),
                             CreatedBy = "SYSTEM",
                             FirstName = "Viggo",
                             LastName = "Mortensen"
@@ -237,7 +238,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 20,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8301),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8709),
                             CreatedBy = "SYSTEM",
                             FirstName = "Ian",
                             LastName = "McKellen"
@@ -245,7 +246,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 21,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8303),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8712),
                             CreatedBy = "SYSTEM",
                             FirstName = "John",
                             LastName = "Travolta"
@@ -253,7 +254,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 22,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8306),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8717),
                             CreatedBy = "SYSTEM",
                             FirstName = "Uma",
                             LastName = "Thurman"
@@ -261,7 +262,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 23,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8308),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8721),
                             CreatedBy = "SYSTEM",
                             FirstName = "Samuel",
                             LastName = "L. Jackson"
@@ -269,7 +270,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 24,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8311),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8724),
                             CreatedBy = "SYSTEM",
                             FirstName = "Clint",
                             LastName = "Eastwood"
@@ -277,7 +278,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 25,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8313),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8728),
                             CreatedBy = "SYSTEM",
                             FirstName = "Eli",
                             LastName = "Wallach"
@@ -285,7 +286,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 26,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8316),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8732),
                             CreatedBy = "SYSTEM",
                             FirstName = "Lee",
                             LastName = "Van Cleef"
@@ -293,7 +294,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 27,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8318),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8735),
                             CreatedBy = "SYSTEM",
                             FirstName = "Orlando",
                             LastName = "Bloom"
@@ -301,7 +302,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 28,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8321),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8739),
                             CreatedBy = "SYSTEM",
                             FirstName = "Brad",
                             LastName = "Pitt"
@@ -309,7 +310,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 29,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8323),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8742),
                             CreatedBy = "SYSTEM",
                             FirstName = "Edward",
                             LastName = "Norton"
@@ -317,7 +318,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 30,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8326),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8746),
                             CreatedBy = "SYSTEM",
                             FirstName = "Meat",
                             LastName = "Loaf"
@@ -325,7 +326,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 31,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8328),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8750),
                             CreatedBy = "SYSTEM",
                             FirstName = "Tom",
                             LastName = "Hanks"
@@ -333,7 +334,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 32,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8331),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8753),
                             CreatedBy = "SYSTEM",
                             FirstName = "Robin",
                             LastName = "Wright"
@@ -341,7 +342,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 33,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8333),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8757),
                             CreatedBy = "SYSTEM",
                             FirstName = "Gary",
                             LastName = "Sinise"
@@ -349,7 +350,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 34,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8337),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8830),
                             CreatedBy = "SYSTEM",
                             FirstName = "Leonardo",
                             LastName = "DiCaprio"
@@ -357,7 +358,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 35,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8340),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8834),
                             CreatedBy = "SYSTEM",
                             FirstName = "Joseph",
                             LastName = "Gordon-Levitt"
@@ -365,7 +366,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 36,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8342),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8837),
                             CreatedBy = "SYSTEM",
                             FirstName = "Elliot",
                             LastName = "Page"
@@ -373,7 +374,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 37,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8345),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8841),
                             CreatedBy = "SYSTEM",
                             FirstName = "David",
                             LastName = "Attenborough"
@@ -381,7 +382,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 38,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8347),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8846),
                             CreatedBy = "SYSTEM",
                             FirstName = "Sigourney",
                             LastName = "Weaver"
@@ -389,7 +390,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 39,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8350),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8849),
                             CreatedBy = "SYSTEM",
                             FirstName = "Nikolay",
                             LastName = "Drozdov"
@@ -397,7 +398,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 40,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8352),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8853),
                             CreatedBy = "SYSTEM",
                             FirstName = "Bryan",
                             LastName = "Cranston"
@@ -405,7 +406,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 41,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8355),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8856),
                             CreatedBy = "SYSTEM",
                             FirstName = "Aaron",
                             LastName = "Paul"
@@ -413,7 +414,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 42,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8357),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8860),
                             CreatedBy = "SYSTEM",
                             FirstName = "Anna",
                             LastName = "Gunn"
@@ -421,7 +422,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 43,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8360),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8864),
                             CreatedBy = "SYSTEM",
                             FirstName = "Scott",
                             LastName = "Grimes"
@@ -429,7 +430,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 44,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8362),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8867),
                             CreatedBy = "SYSTEM",
                             FirstName = "Damian",
                             LastName = "Lewis"
@@ -437,7 +438,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 45,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8365),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8871),
                             CreatedBy = "SYSTEM",
                             FirstName = "Ron",
                             LastName = "Livingston"
@@ -445,7 +446,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 46,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8404),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8876),
                             CreatedBy = "SYSTEM",
                             FirstName = "Jessie",
                             LastName = "Buckley"
@@ -453,7 +454,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 47,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8407),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8879),
                             CreatedBy = "SYSTEM",
                             FirstName = "Jared",
                             LastName = "Harris"
@@ -461,7 +462,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 48,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8409),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8883),
                             CreatedBy = "SYSTEM",
                             FirstName = "Stellan",
                             LastName = "Skarsgard"
@@ -469,7 +470,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 49,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8412),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8886),
                             CreatedBy = "SYSTEM",
                             FirstName = "Jessie",
                             LastName = "Buckley"
@@ -477,7 +478,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 50,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8415),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8890),
                             CreatedBy = "SYSTEM",
                             FirstName = "Dominic",
                             LastName = "West"
@@ -485,7 +486,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 51,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8417),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8894),
                             CreatedBy = "SYSTEM",
                             FirstName = "Lance",
                             LastName = "Reddick"
@@ -493,7 +494,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 52,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8420),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8897),
                             CreatedBy = "SYSTEM",
                             FirstName = "Sonja",
                             LastName = "Sohn"
@@ -501,7 +502,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 53,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8422),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8901),
                             CreatedBy = "SYSTEM",
                             FirstName = "Peter",
                             LastName = "Drost"
@@ -509,7 +510,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 54,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8425),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8904),
                             CreatedBy = "SYSTEM",
                             FirstName = "Roger",
                             LastName = "Horrocks"
@@ -517,7 +518,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 55,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8427),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8909),
                             CreatedBy = "SYSTEM",
                             FirstName = "Neil",
                             LastName = "deGrasse Tyson"
@@ -525,7 +526,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 56,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8430),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8913),
                             CreatedBy = "SYSTEM",
                             FirstName = "Stoney",
                             LastName = "Emshwiller"
@@ -533,7 +534,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 57,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8432),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8916),
                             CreatedBy = "SYSTEM",
                             FirstName = "Piotr",
                             LastName = "Michael"
@@ -541,7 +542,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 58,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8435),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8920),
                             CreatedBy = "SYSTEM",
                             FirstName = "Neil",
                             LastName = "deGrasse Tyson"
@@ -549,7 +550,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 59,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8437),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8923),
                             CreatedBy = "SYSTEM",
                             FirstName = "Dee",
                             LastName = "Bradley Baker"
@@ -557,7 +558,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 60,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8440),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8927),
                             CreatedBy = "SYSTEM",
                             FirstName = "Zach",
                             LastName = "Tyler"
@@ -565,7 +566,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 61,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8442),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8931),
                             CreatedBy = "SYSTEM",
                             FirstName = "Mae",
                             LastName = "Whitman"
@@ -573,7 +574,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 62,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8445),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8934),
                             CreatedBy = "SYSTEM",
                             FirstName = "Carl",
                             LastName = "Sagan"
@@ -581,7 +582,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 63,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8447),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8938),
                             CreatedBy = "SYSTEM",
                             FirstName = "Jaromir",
                             LastName = "Hanzlik"
@@ -589,7 +590,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 64,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8450),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8941),
                             CreatedBy = "SYSTEM",
                             FirstName = "Jonathan",
                             LastName = "Fahn"
@@ -597,7 +598,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 65,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8452),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8945),
                             CreatedBy = "SYSTEM",
                             FirstName = "Emilia",
                             LastName = "Clarke"
@@ -605,7 +606,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 66,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8456),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8951),
                             CreatedBy = "SYSTEM",
                             FirstName = "Peter",
                             LastName = "Dinklage"
@@ -613,7 +614,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 67,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8459),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8956),
                             CreatedBy = "SYSTEM",
                             FirstName = "Kit",
                             LastName = "Harington"
@@ -621,7 +622,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 68,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8462),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8959),
                             CreatedBy = "SYSTEM",
                             FirstName = "James",
                             LastName = "Gandolfini"
@@ -629,7 +630,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 69,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8464),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8963),
                             CreatedBy = "SYSTEM",
                             FirstName = "Lorraine",
                             LastName = "Bracco"
@@ -637,14 +638,14 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 70,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 512, DateTimeKind.Local).AddTicks(8467),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 822, DateTimeKind.Local).AddTicks(8967),
                             CreatedBy = "SYSTEM",
                             FirstName = "Eddie",
                             LastName = "Falco"
                         });
                 });
 
-            modelBuilder.Entity("JapTask1BackendCorrection.Entities.BoughtTicket", b =>
+            modelBuilder.Entity("JapTask1BackendCorrection.Core.Entities.BoughtTicket", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -681,7 +682,7 @@ namespace JapTask1BackendCorrection.Migrations
                     b.ToTable("BoughtTickets");
                 });
 
-            modelBuilder.Entity("JapTask1BackendCorrection.Entities.Category", b =>
+            modelBuilder.Entity("JapTask1BackendCorrection.Core.Entities.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -713,111 +714,111 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 508, DateTimeKind.Local).AddTicks(2750),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 815, DateTimeKind.Local).AddTicks(5779),
                             CreatedBy = "SYSTEM",
                             Name = "ACTION"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 510, DateTimeKind.Local).AddTicks(1141),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 818, DateTimeKind.Local).AddTicks(8439),
                             CreatedBy = "SYSTEM",
                             Name = "COMEDY"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 510, DateTimeKind.Local).AddTicks(1173),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 818, DateTimeKind.Local).AddTicks(8493),
                             CreatedBy = "SYSTEM",
                             Name = "THRILLER"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 510, DateTimeKind.Local).AddTicks(1178),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 818, DateTimeKind.Local).AddTicks(8500),
                             CreatedBy = "SYSTEM",
                             Name = "DRAMA"
                         },
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 510, DateTimeKind.Local).AddTicks(1180),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 818, DateTimeKind.Local).AddTicks(8504),
                             CreatedBy = "SYSTEM",
                             Name = "TRAGEDY"
                         },
                         new
                         {
                             Id = 6,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 510, DateTimeKind.Local).AddTicks(1186),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 818, DateTimeKind.Local).AddTicks(8513),
                             CreatedBy = "SYSTEM",
                             Name = "CRIME"
                         },
                         new
                         {
                             Id = 7,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 510, DateTimeKind.Local).AddTicks(1189),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 818, DateTimeKind.Local).AddTicks(8517),
                             CreatedBy = "SYSTEM",
                             Name = "BIOGRAPHY"
                         },
                         new
                         {
                             Id = 8,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 510, DateTimeKind.Local).AddTicks(1192),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 818, DateTimeKind.Local).AddTicks(8521),
                             CreatedBy = "SYSTEM",
                             Name = "ADVENTURE"
                         },
                         new
                         {
                             Id = 9,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 510, DateTimeKind.Local).AddTicks(1194),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 818, DateTimeKind.Local).AddTicks(8524),
                             CreatedBy = "SYSTEM",
                             Name = "WESTERN"
                         },
                         new
                         {
                             Id = 10,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 510, DateTimeKind.Local).AddTicks(1198),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 818, DateTimeKind.Local).AddTicks(8529),
                             CreatedBy = "SYSTEM",
                             Name = "BIOGRAPHY"
                         },
                         new
                         {
                             Id = 11,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 510, DateTimeKind.Local).AddTicks(1201),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 818, DateTimeKind.Local).AddTicks(8533),
                             CreatedBy = "SYSTEM",
                             Name = "ROMANCE"
                         },
                         new
                         {
                             Id = 12,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 510, DateTimeKind.Local).AddTicks(1203),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 818, DateTimeKind.Local).AddTicks(8536),
                             CreatedBy = "SYSTEM",
                             Name = "SCI-FI"
                         },
                         new
                         {
                             Id = 13,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 510, DateTimeKind.Local).AddTicks(1206),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 818, DateTimeKind.Local).AddTicks(8540),
                             CreatedBy = "SYSTEM",
                             Name = "DOCUMENTARY"
                         },
                         new
                         {
                             Id = 14,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 510, DateTimeKind.Local).AddTicks(1209),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 818, DateTimeKind.Local).AddTicks(8543),
                             CreatedBy = "SYSTEM",
                             Name = "HISTORY"
                         },
                         new
                         {
                             Id = 15,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 510, DateTimeKind.Local).AddTicks(1212),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 818, DateTimeKind.Local).AddTicks(8547),
                             CreatedBy = "SYSTEM",
                             Name = "ANIMATION"
                         });
                 });
 
-            modelBuilder.Entity("JapTask1BackendCorrection.Entities.Media", b =>
+            modelBuilder.Entity("JapTask1BackendCorrection.Core.Entities.Media", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -865,7 +866,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(6621),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 830, DateTimeKind.Local).AddTicks(7564),
                             CreatedBy = "SYSTEM",
                             Description = "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
                             ImageUrl = "https://swank.azureedge.net/swank/prod-film/3560cd8a-9491-4ab9-876c-8a8d6b84a6dd/f8e7c904-669a-4c9f-ac29-d19b64b43e33/one-sheet.jpg?width=335&height=508&mode=crop",
@@ -876,7 +877,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8206),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(722),
                             CreatedBy = "SYSTEM",
                             Description = "An organized crime dynasty's aging patriarch transfers control of his clandestine empire to his reluctant son.",
                             ImageUrl = "https://www.reelviews.net/resources/img/posters/thumbs/godfather_poster.jpg",
@@ -887,7 +888,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8221),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(748),
                             CreatedBy = "SYSTEM",
                             Description = "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
                             ImageUrl = "https://shotonwhat.com/images/0071562-med.jpg",
@@ -898,7 +899,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8225),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(753),
                             CreatedBy = "SYSTEM",
                             Description = "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/sh/8/83/Dark_knight_rises_poster.jpg",
@@ -909,7 +910,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8229),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(759),
                             CreatedBy = "SYSTEM",
                             Description = "A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/b/b5/12_Angry_Men_%281957_film_poster%29.jpg",
@@ -920,7 +921,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8238),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(772),
                             CreatedBy = "SYSTEM",
                             Description = "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
                             ImageUrl = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c617e634647543.56d846b10d56f.jpg",
@@ -931,7 +932,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8241),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(777),
                             CreatedBy = "SYSTEM",
                             Description = "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
                             ImageUrl = "https://img.discogs.com/MsgjJVAxVCXb1w86ffIbaNRr2BY=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-728620-1512923411-4779.jpeg.jpg",
@@ -942,7 +943,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 8,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8244),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(782),
                             CreatedBy = "SYSTEM",
                             Description = "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
                             ImageUrl = "https://prod.miramax.digital/media/assets/Pulp-Fiction1.png",
@@ -953,7 +954,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 9,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8248),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(788),
                             CreatedBy = "SYSTEM",
                             Description = "A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/4/45/Good_the_bad_and_the_ugly_poster.jpg",
@@ -964,7 +965,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 10,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8252),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(794),
                             CreatedBy = "SYSTEM",
                             Description = "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
                             ImageUrl = "https://images.moviesanywhere.com/198e228b071c60f5ad57e5f62fe60029/ff22cad6-2218-414d-b853-3f95d76905c7.jpg?h=375&resize=fit&w=250",
@@ -975,7 +976,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 11,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8255),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(799),
                             CreatedBy = "SYSTEM",
                             Description = "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
                             ImageUrl = "https://m.media-amazon.com/images/I/51v5ZpFyaFL._AC_.jpg",
@@ -986,7 +987,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 12,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8259),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(867),
                             CreatedBy = "SYSTEM",
                             Description = "The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.",
                             ImageUrl = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/37a5b434647543.56d846b10ca45.jpg",
@@ -997,7 +998,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 13,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8262),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(873),
                             CreatedBy = "SYSTEM",
                             Description = "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
                             ImageUrl = "https://m.media-amazon.com/images/I/81p+xe8cbnL._SY445_.jpg",
@@ -1008,7 +1009,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 14,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8265),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(878),
                             CreatedBy = "SYSTEM",
                             Description = "Wildlife documentary series with David Attenborough, beginning with a look at the remote islands which offer sanctuary to some of the planet's rarest creatures, to the beauty of cities, which are home to humans, and animals..",
                             ImageUrl = "https://blackwells.co.uk/jacket/l/9781785943041.jpg",
@@ -1019,7 +1020,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 15,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8268),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(884),
                             CreatedBy = "SYSTEM",
                             Description = "Emmy Award-winning, 11 episodes, five years in the making, the most expensive nature documentary series ever commissioned by the BBC, and the first to be filmed in high definition.",
                             ImageUrl = "https://m.media-amazon.com/images/I/91X9p6+58KL._SY445_.jpg",
@@ -1030,7 +1031,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 16,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8272),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(889),
                             CreatedBy = "SYSTEM",
                             Description = "A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine in order to secure his family's future.",
                             ImageUrl = "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/ggFHVNu6YYI5L9pCfOacjizRGt.jpg",
@@ -1041,7 +1042,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 17,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8275),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(893),
                             CreatedBy = "SYSTEM",
                             Description = "The story of Easy Company of the U.S. Army 101st Airborne Division and their mission in World War II Europe, from Operation Overlord to V-J Day.",
                             ImageUrl = "https://i.dailymail.co.uk/i/pix/2017/02/13/01/3D24EF6B00000578-4215748-image-a-63_1486948627611.jpg",
@@ -1052,7 +1053,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 18,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8317),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(901),
                             CreatedBy = "SYSTEM",
                             Description = "In April 1986, an explosion at the Chernobyl nuclear power plant in the Union of Soviet Socialist Republics becomes one of the world's worst man-made catastrophes.",
                             ImageUrl = "https://i.redd.it/bv5isr69yr531.png",
@@ -1063,7 +1064,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 19,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8321),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(905),
                             CreatedBy = "SYSTEM",
                             Description = "The Baltimore drug scene, as seen through the eyes of drug dealers and law enforcement.",
                             ImageUrl = "https://tvshows.today/wp-content/uploads/the-wire-season-1-poster.jpg",
@@ -1074,7 +1075,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 20,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8324),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(910),
                             CreatedBy = "SYSTEM",
                             Description = "David Attenborough returns to the world's oceans in this sequel to the acclaimed documentary filming rare and unusual creatures of the deep, as well as documenting the problems our oceans face.",
                             ImageUrl = "https://cdn.shopify.com/s/files/1/0747/3829/products/mL1006_1024x1024.jpg?v=1571445246",
@@ -1085,7 +1086,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 21,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8327),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(915),
                             CreatedBy = "SYSTEM",
                             Description = "Documentary series focusing on the breadth of the diversity of habitats around the world, from the remote Arctic wilderness and mysterious deep oceans to the vast landscapes of Africa and diverse jungles of South America.",
                             ImageUrl = "https://www.penguin.co.uk/content/dam/prh/books/111/1115210/9780593079768.jpg.transform/PRHDesktopWide_small/image.jpg",
@@ -1096,7 +1097,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 22,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8331),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(919),
                             CreatedBy = "SYSTEM",
                             Description = "An exploration of our discovery of the laws of nature and coordinates in space and time.",
                             ImageUrl = "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5945/5945188_sa.jpg;maxHeight=640;maxWidth=550",
@@ -1107,7 +1108,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 23,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8334),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(923),
                             CreatedBy = "SYSTEM",
                             Description = "In a war-torn world of elemental magic, a young boy reawakens to undertake a dangerous mystic quest to fulfill his destiny as the Avatar, and bring peace to the world.",
                             ImageUrl = "https://images-na.ssl-images-amazon.com/images/I/914eUC4XPML.jpg",
@@ -1118,7 +1119,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 24,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8337),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(928),
                             CreatedBy = "SYSTEM",
                             Description = "Astronomer Carl Sagan leads us on an engaging guided tour of the various elements and cosmological theories of the universe.",
                             ImageUrl = "https://www.themoviedb.org/t/p/original/4WJ9kNejI8apl3f8hMNwo8V3hGT.jpg",
@@ -1129,7 +1130,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 25,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8340),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(933),
                             CreatedBy = "SYSTEM",
                             Description = "Nine noble families fight for control over the lands of Westeros, while an ancient enemy returns after being dormant for millennia.",
                             ImageUrl = "https://m.media-amazon.com/images/M/MV5BYTRiNDQwYzAtMzVlZS00NTI5LWJjYjUtMzkwNTUzMWMxZTllXkEyXkFqcGdeQXVyNDIzMzcwNjc@._V1_FMjpg_UX1000_.jpg",
@@ -1140,7 +1141,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 26,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8343),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(938),
                             CreatedBy = "SYSTEM",
                             Description = "New Jersey mob boss Tony Soprano deals with personal and professional issues in his home and business life that affect his mental state, leading him to seek professional psychiatric counseling.",
                             ImageUrl = "https://m.media-amazon.com/images/M/MV5BZGJjYzhjYTYtMDBjYy00OWU1LTg5OTYtNmYwOTZmZjE3ZDdhXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_FMjpg_UX1000_.jpg",
@@ -1151,7 +1152,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 27,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8347),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(943),
                             CreatedBy = "SYSTEM",
                             Description = "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
                             ImageUrl = "https://swank.azureedge.net/swank/prod-film/3560cd8a-9491-4ab9-876c-8a8d6b84a6dd/f8e7c904-669a-4c9f-ac29-d19b64b43e33/one-sheet.jpg?width=335&height=508&mode=crop",
@@ -1162,7 +1163,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 28,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8350),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(947),
                             CreatedBy = "SYSTEM",
                             Description = "An organized crime dynasty's aging patriarch transfers control of his clandestine empire to his reluctant son.",
                             ImageUrl = "https://www.reelviews.net/resources/img/posters/thumbs/godfather_poster.jpg",
@@ -1173,7 +1174,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 29,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8353),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(952),
                             CreatedBy = "SYSTEM",
                             Description = "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
                             ImageUrl = "https://shotonwhat.com/images/0071562-med.jpg",
@@ -1184,7 +1185,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 30,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8356),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(957),
                             CreatedBy = "SYSTEM",
                             Description = "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/sh/8/83/Dark_knight_rises_poster.jpg",
@@ -1195,7 +1196,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 31,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8359),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(962),
                             CreatedBy = "SYSTEM",
                             Description = "A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/b/b5/12_Angry_Men_%281957_film_poster%29.jpg",
@@ -1206,7 +1207,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 32,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8362),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(967),
                             CreatedBy = "SYSTEM",
                             Description = "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
                             ImageUrl = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c617e634647543.56d846b10d56f.jpg",
@@ -1217,7 +1218,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 33,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8366),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(971),
                             CreatedBy = "SYSTEM",
                             Description = "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
                             ImageUrl = "https://img.discogs.com/MsgjJVAxVCXb1w86ffIbaNRr2BY=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-728620-1512923411-4779.jpeg.jpg",
@@ -1228,7 +1229,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 34,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8370),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(977),
                             CreatedBy = "SYSTEM",
                             Description = "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
                             ImageUrl = "https://prod.miramax.digital/media/assets/Pulp-Fiction1.png",
@@ -1239,7 +1240,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 35,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8374),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(982),
                             CreatedBy = "SYSTEM",
                             Description = "A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/4/45/Good_the_bad_and_the_ugly_poster.jpg",
@@ -1250,7 +1251,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 36,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8377),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(987),
                             CreatedBy = "SYSTEM",
                             Description = "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
                             ImageUrl = "https://images.moviesanywhere.com/198e228b071c60f5ad57e5f62fe60029/ff22cad6-2218-414d-b853-3f95d76905c7.jpg?h=375&resize=fit&w=250",
@@ -1261,7 +1262,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 37,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8380),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(993),
                             CreatedBy = "SYSTEM",
                             Description = "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
                             ImageUrl = "https://m.media-amazon.com/images/I/51v5ZpFyaFL._AC_.jpg",
@@ -1272,7 +1273,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 38,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8383),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(998),
                             CreatedBy = "SYSTEM",
                             Description = "The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.",
                             ImageUrl = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/37a5b434647543.56d846b10ca45.jpg",
@@ -1283,7 +1284,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 39,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8387),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1003),
                             CreatedBy = "SYSTEM",
                             Description = "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
                             ImageUrl = "https://m.media-amazon.com/images/I/81p+xe8cbnL._SY445_.jpg",
@@ -1294,7 +1295,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 40,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8390),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1007),
                             CreatedBy = "SYSTEM",
                             Description = "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
                             ImageUrl = "https://swank.azureedge.net/swank/prod-film/3560cd8a-9491-4ab9-876c-8a8d6b84a6dd/f8e7c904-669a-4c9f-ac29-d19b64b43e33/one-sheet.jpg?width=335&height=508&mode=crop",
@@ -1305,7 +1306,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 41,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8393),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1048),
                             CreatedBy = "SYSTEM",
                             Description = "An organized crime dynasty's aging patriarch transfers control of his clandestine empire to his reluctant son.",
                             ImageUrl = "https://www.reelviews.net/resources/img/posters/thumbs/godfather_poster.jpg",
@@ -1316,7 +1317,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 42,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8396),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1053),
                             CreatedBy = "SYSTEM",
                             Description = "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
                             ImageUrl = "https://shotonwhat.com/images/0071562-med.jpg",
@@ -1327,7 +1328,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 43,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8399),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1058),
                             CreatedBy = "SYSTEM",
                             Description = "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/sh/8/83/Dark_knight_rises_poster.jpg",
@@ -1338,7 +1339,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 44,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8402),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1063),
                             CreatedBy = "SYSTEM",
                             Description = "A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/b/b5/12_Angry_Men_%281957_film_poster%29.jpg",
@@ -1349,7 +1350,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 45,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8405),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1067),
                             CreatedBy = "SYSTEM",
                             Description = "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
                             ImageUrl = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c617e634647543.56d846b10d56f.jpg",
@@ -1360,7 +1361,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 46,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8409),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1072),
                             CreatedBy = "SYSTEM",
                             Description = "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
                             ImageUrl = "https://img.discogs.com/MsgjJVAxVCXb1w86ffIbaNRr2BY=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-728620-1512923411-4779.jpeg.jpg",
@@ -1371,7 +1372,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 47,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8432),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1077),
                             CreatedBy = "SYSTEM",
                             Description = "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
                             ImageUrl = "https://prod.miramax.digital/media/assets/Pulp-Fiction1.png",
@@ -1382,7 +1383,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 48,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8435),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1082),
                             CreatedBy = "SYSTEM",
                             Description = "A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/4/45/Good_the_bad_and_the_ugly_poster.jpg",
@@ -1393,7 +1394,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 49,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8439),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1089),
                             CreatedBy = "SYSTEM",
                             Description = "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
                             ImageUrl = "https://images.moviesanywhere.com/198e228b071c60f5ad57e5f62fe60029/ff22cad6-2218-414d-b853-3f95d76905c7.jpg?h=375&resize=fit&w=250",
@@ -1404,7 +1405,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 50,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8442),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1094),
                             CreatedBy = "SYSTEM",
                             Description = "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
                             ImageUrl = "https://m.media-amazon.com/images/I/51v5ZpFyaFL._AC_.jpg",
@@ -1415,7 +1416,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 51,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8445),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1098),
                             CreatedBy = "SYSTEM",
                             Description = "The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.",
                             ImageUrl = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/37a5b434647543.56d846b10ca45.jpg",
@@ -1426,7 +1427,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 52,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8449),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1103),
                             CreatedBy = "SYSTEM",
                             Description = "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
                             ImageUrl = "https://m.media-amazon.com/images/I/81p+xe8cbnL._SY445_.jpg",
@@ -1437,7 +1438,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 53,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8452),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1108),
                             CreatedBy = "SYSTEM",
                             Description = "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
                             ImageUrl = "https://swank.azureedge.net/swank/prod-film/3560cd8a-9491-4ab9-876c-8a8d6b84a6dd/f8e7c904-669a-4c9f-ac29-d19b64b43e33/one-sheet.jpg?width=335&height=508&mode=crop",
@@ -1448,7 +1449,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 54,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8456),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1113),
                             CreatedBy = "SYSTEM",
                             Description = "An organized crime dynasty's aging patriarch transfers control of his clandestine empire to his reluctant son.",
                             ImageUrl = "https://www.reelviews.net/resources/img/posters/thumbs/godfather_poster.jpg",
@@ -1459,7 +1460,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 55,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8459),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1118),
                             CreatedBy = "SYSTEM",
                             Description = "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
                             ImageUrl = "https://shotonwhat.com/images/0071562-med.jpg",
@@ -1470,7 +1471,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 56,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8462),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1122),
                             CreatedBy = "SYSTEM",
                             Description = "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/sh/8/83/Dark_knight_rises_poster.jpg",
@@ -1481,7 +1482,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 57,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8465),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1128),
                             CreatedBy = "SYSTEM",
                             Description = "A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/b/b5/12_Angry_Men_%281957_film_poster%29.jpg",
@@ -1492,7 +1493,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 58,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8468),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1133),
                             CreatedBy = "SYSTEM",
                             Description = "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
                             ImageUrl = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c617e634647543.56d846b10d56f.jpg",
@@ -1503,7 +1504,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 59,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8472),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1138),
                             CreatedBy = "SYSTEM",
                             Description = "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
                             ImageUrl = "https://img.discogs.com/MsgjJVAxVCXb1w86ffIbaNRr2BY=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-728620-1512923411-4779.jpeg.jpg",
@@ -1514,7 +1515,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 60,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8475),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1143),
                             CreatedBy = "SYSTEM",
                             Description = "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
                             ImageUrl = "https://prod.miramax.digital/media/assets/Pulp-Fiction1.png",
@@ -1525,7 +1526,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 61,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8478),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1148),
                             CreatedBy = "SYSTEM",
                             Description = "A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/4/45/Good_the_bad_and_the_ugly_poster.jpg",
@@ -1536,7 +1537,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 62,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8482),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1152),
                             CreatedBy = "SYSTEM",
                             Description = "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
                             ImageUrl = "https://images.moviesanywhere.com/198e228b071c60f5ad57e5f62fe60029/ff22cad6-2218-414d-b853-3f95d76905c7.jpg?h=375&resize=fit&w=250",
@@ -1547,7 +1548,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 63,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8485),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1157),
                             CreatedBy = "SYSTEM",
                             Description = "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
                             ImageUrl = "https://m.media-amazon.com/images/I/51v5ZpFyaFL._AC_.jpg",
@@ -1558,7 +1559,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 64,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8489),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1162),
                             CreatedBy = "SYSTEM",
                             Description = "The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.",
                             ImageUrl = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/37a5b434647543.56d846b10ca45.jpg",
@@ -1569,7 +1570,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 65,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8493),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1166),
                             CreatedBy = "SYSTEM",
                             Description = "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
                             ImageUrl = "https://m.media-amazon.com/images/I/81p+xe8cbnL._SY445_.jpg",
@@ -1580,7 +1581,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 66,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8497),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1173),
                             CreatedBy = "SYSTEM",
                             Description = "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
                             ImageUrl = "https://m.media-amazon.com/images/I/81p+xe8cbnL._SY445_.jpg",
@@ -1591,7 +1592,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 67,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8501),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1178),
                             CreatedBy = "SYSTEM",
                             Description = "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
                             ImageUrl = "https://swank.azureedge.net/swank/prod-film/3560cd8a-9491-4ab9-876c-8a8d6b84a6dd/f8e7c904-669a-4c9f-ac29-d19b64b43e33/one-sheet.jpg?width=335&height=508&mode=crop",
@@ -1602,7 +1603,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 68,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8504),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1182),
                             CreatedBy = "SYSTEM",
                             Description = "An organized crime dynasty's aging patriarch transfers control of his clandestine empire to his reluctant son.",
                             ImageUrl = "https://www.reelviews.net/resources/img/posters/thumbs/godfather_poster.jpg",
@@ -1613,7 +1614,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 69,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8507),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1223),
                             CreatedBy = "SYSTEM",
                             Description = "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
                             ImageUrl = "https://shotonwhat.com/images/0071562-med.jpg",
@@ -1624,7 +1625,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 70,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8510),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1228),
                             CreatedBy = "SYSTEM",
                             Description = "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/sh/8/83/Dark_knight_rises_poster.jpg",
@@ -1635,7 +1636,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 71,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8513),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1233),
                             CreatedBy = "SYSTEM",
                             Description = "A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/b/b5/12_Angry_Men_%281957_film_poster%29.jpg",
@@ -1646,7 +1647,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 72,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8516),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1238),
                             CreatedBy = "SYSTEM",
                             Description = "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
                             ImageUrl = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c617e634647543.56d846b10d56f.jpg",
@@ -1657,7 +1658,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 73,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8519),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1242),
                             CreatedBy = "SYSTEM",
                             Description = "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
                             ImageUrl = "https://img.discogs.com/MsgjJVAxVCXb1w86ffIbaNRr2BY=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-728620-1512923411-4779.jpeg.jpg",
@@ -1668,7 +1669,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 74,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8523),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1247),
                             CreatedBy = "SYSTEM",
                             Description = "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
                             ImageUrl = "https://prod.miramax.digital/media/assets/Pulp-Fiction1.png",
@@ -1679,7 +1680,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 75,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8546),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1252),
                             CreatedBy = "SYSTEM",
                             Description = "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
                             ImageUrl = "https://prod.miramax.digital/media/assets/Pulp-Fiction1.png",
@@ -1690,7 +1691,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 76,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8549),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1257),
                             CreatedBy = "SYSTEM",
                             Description = "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
                             ImageUrl = "https://prod.miramax.digital/media/assets/Pulp-Fiction1.png",
@@ -1701,7 +1702,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 77,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8553),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1262),
                             CreatedBy = "SYSTEM",
                             Description = "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
                             ImageUrl = "https://prod.miramax.digital/media/assets/Pulp-Fiction1.png",
@@ -1712,7 +1713,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 78,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8556),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1266),
                             CreatedBy = "SYSTEM",
                             Description = "A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/4/45/Good_the_bad_and_the_ugly_poster.jpg",
@@ -1723,7 +1724,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 79,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8559),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1271),
                             CreatedBy = "SYSTEM",
                             Description = "A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/4/45/Good_the_bad_and_the_ugly_poster.jpg",
@@ -1734,7 +1735,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 80,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8562),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1276),
                             CreatedBy = "SYSTEM",
                             Description = "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
                             ImageUrl = "https://images.moviesanywhere.com/198e228b071c60f5ad57e5f62fe60029/ff22cad6-2218-414d-b853-3f95d76905c7.jpg?h=375&resize=fit&w=250",
@@ -1745,7 +1746,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 81,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8566),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1281),
                             CreatedBy = "SYSTEM",
                             Description = "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
                             ImageUrl = "https://m.media-amazon.com/images/I/51v5ZpFyaFL._AC_.jpg",
@@ -1756,7 +1757,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 82,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8569),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1285),
                             CreatedBy = "SYSTEM",
                             Description = "The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.",
                             ImageUrl = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/37a5b434647543.56d846b10ca45.jpg",
@@ -1767,7 +1768,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 83,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8572),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1290),
                             CreatedBy = "SYSTEM",
                             Description = "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
                             ImageUrl = "https://m.media-amazon.com/images/I/81p+xe8cbnL._SY445_.jpg",
@@ -1778,7 +1779,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 84,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8576),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1296),
                             CreatedBy = "SYSTEM",
                             Description = "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
                             ImageUrl = "https://swank.azureedge.net/swank/prod-film/3560cd8a-9491-4ab9-876c-8a8d6b84a6dd/f8e7c904-669a-4c9f-ac29-d19b64b43e33/one-sheet.jpg?width=335&height=508&mode=crop",
@@ -1789,7 +1790,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 85,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8579),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1301),
                             CreatedBy = "SYSTEM",
                             Description = "An organized crime dynasty's aging patriarch transfers control of his clandestine empire to his reluctant son.",
                             ImageUrl = "https://www.reelviews.net/resources/img/posters/thumbs/godfather_poster.jpg",
@@ -1800,7 +1801,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 86,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8582),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1306),
                             CreatedBy = "SYSTEM",
                             Description = "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
                             ImageUrl = "https://shotonwhat.com/images/0071562-med.jpg",
@@ -1811,7 +1812,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 87,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8585),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1311),
                             CreatedBy = "SYSTEM",
                             Description = "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/sh/8/83/Dark_knight_rises_poster.jpg",
@@ -1822,7 +1823,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 88,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8588),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1315),
                             CreatedBy = "SYSTEM",
                             Description = "A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/b/b5/12_Angry_Men_%281957_film_poster%29.jpg",
@@ -1833,7 +1834,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 89,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8593),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1320),
                             CreatedBy = "SYSTEM",
                             Description = "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
                             ImageUrl = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c617e634647543.56d846b10d56f.jpg",
@@ -1844,7 +1845,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 90,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8597),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1325),
                             CreatedBy = "SYSTEM",
                             Description = "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
                             ImageUrl = "https://img.discogs.com/MsgjJVAxVCXb1w86ffIbaNRr2BY=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-728620-1512923411-4779.jpeg.jpg",
@@ -1855,7 +1856,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 91,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8600),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1330),
                             CreatedBy = "SYSTEM",
                             Description = "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
                             ImageUrl = "https://prod.miramax.digital/media/assets/Pulp-Fiction1.png",
@@ -1866,7 +1867,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 92,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8603),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1335),
                             CreatedBy = "SYSTEM",
                             Description = "A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/en/4/45/Good_the_bad_and_the_ugly_poster.jpg",
@@ -1877,7 +1878,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 93,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8606),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1339),
                             CreatedBy = "SYSTEM",
                             Description = "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
                             ImageUrl = "https://images.moviesanywhere.com/198e228b071c60f5ad57e5f62fe60029/ff22cad6-2218-414d-b853-3f95d76905c7.jpg?h=375&resize=fit&w=250",
@@ -1888,7 +1889,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 94,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8610),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1344),
                             CreatedBy = "SYSTEM",
                             Description = "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
                             ImageUrl = "https://m.media-amazon.com/images/I/51v5ZpFyaFL._AC_.jpg",
@@ -1899,7 +1900,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 95,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8613),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1349),
                             CreatedBy = "SYSTEM",
                             Description = "The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.",
                             ImageUrl = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/37a5b434647543.56d846b10ca45.jpg",
@@ -1910,7 +1911,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 96,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8616),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1354),
                             CreatedBy = "SYSTEM",
                             Description = "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
                             ImageUrl = "https://m.media-amazon.com/images/I/81p+xe8cbnL._SY445_.jpg",
@@ -1921,7 +1922,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 97,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8619),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1359),
                             CreatedBy = "SYSTEM",
                             Description = "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
                             ImageUrl = "https://swank.azureedge.net/swank/prod-film/3560cd8a-9491-4ab9-876c-8a8d6b84a6dd/f8e7c904-669a-4c9f-ac29-d19b64b43e33/one-sheet.jpg?width=335&height=508&mode=crop",
@@ -1932,7 +1933,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 98,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8622),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1362),
                             CreatedBy = "SYSTEM",
                             Description = "An organized crime dynasty's aging patriarch transfers control of his clandestine empire to his reluctant son.",
                             ImageUrl = "https://www.reelviews.net/resources/img/posters/thumbs/godfather_poster.jpg",
@@ -1943,7 +1944,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 99,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8626),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1367),
                             CreatedBy = "SYSTEM",
                             Description = "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
                             ImageUrl = "https://shotonwhat.com/images/0071562-med.jpg",
@@ -1954,7 +1955,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 100,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8629),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1372),
                             CreatedBy = "SYSTEM",
                             Description = "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/sh/8/83/Dark_knight_rises_poster.jpg",
@@ -1965,7 +1966,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 101,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8632),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1444),
                             CreatedBy = "SYSTEM",
                             Description = "The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.",
                             ImageUrl = "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/37a5b434647543.56d846b10ca45.jpg",
@@ -1976,7 +1977,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 102,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8635),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1449),
                             CreatedBy = "SYSTEM",
                             Description = "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
                             ImageUrl = "https://m.media-amazon.com/images/I/81p+xe8cbnL._SY445_.jpg",
@@ -1987,7 +1988,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 103,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8638),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1453),
                             CreatedBy = "SYSTEM",
                             Description = "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
                             ImageUrl = "https://swank.azureedge.net/swank/prod-film/3560cd8a-9491-4ab9-876c-8a8d6b84a6dd/f8e7c904-669a-4c9f-ac29-d19b64b43e33/one-sheet.jpg?width=335&height=508&mode=crop",
@@ -1998,7 +1999,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 104,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8641),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1458),
                             CreatedBy = "SYSTEM",
                             Description = "An organized crime dynasty's aging patriarch transfers control of his clandestine empire to his reluctant son.",
                             ImageUrl = "https://www.reelviews.net/resources/img/posters/thumbs/godfather_poster.jpg",
@@ -2009,7 +2010,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 105,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8645),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1463),
                             CreatedBy = "SYSTEM",
                             Description = "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
                             ImageUrl = "https://shotonwhat.com/images/0071562-med.jpg",
@@ -2020,7 +2021,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 106,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 516, DateTimeKind.Local).AddTicks(8648),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 831, DateTimeKind.Local).AddTicks(1469),
                             CreatedBy = "SYSTEM",
                             Description = "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
                             ImageUrl = "https://upload.wikimedia.org/wikipedia/sh/8/83/Dark_knight_rises_poster.jpg",
@@ -2030,22 +2031,10 @@ namespace JapTask1BackendCorrection.Migrations
                         });
                 });
 
-            modelBuilder.Entity("JapTask1BackendCorrection.Entities.MostRatedMoviesReport", b =>
+            modelBuilder.Entity("JapTask1BackendCorrection.Core.Entities.MostRatedMoviesReport", b =>
                 {
-                    b.Property<DateTime?>("ArchivedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ArchivedBy")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<double>("AverageRating")
                         .HasColumnType("float");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("MovieId")
                         .HasColumnType("int");
@@ -2059,20 +2048,8 @@ namespace JapTask1BackendCorrection.Migrations
                     b.ToTable("MostRatedMoviesReports");
                 });
 
-            modelBuilder.Entity("JapTask1BackendCorrection.Entities.MoviesWithMostScreeningsReport", b =>
+            modelBuilder.Entity("JapTask1BackendCorrection.Core.Entities.MoviesWithMostScreeningsReport", b =>
                 {
-                    b.Property<DateTime?>("ArchivedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ArchivedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("MovieId")
                         .HasColumnType("int");
 
@@ -2085,20 +2062,8 @@ namespace JapTask1BackendCorrection.Migrations
                     b.ToTable("MoviesWithMostScreeningsReports");
                 });
 
-            modelBuilder.Entity("JapTask1BackendCorrection.Entities.MoviesWithMostSoldTicketsReport", b =>
+            modelBuilder.Entity("JapTask1BackendCorrection.Core.Entities.MoviesWithMostSoldTicketsReport", b =>
                 {
-                    b.Property<DateTime?>("ArchivedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ArchivedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("MovieId")
                         .HasColumnType("int");
 
@@ -2114,7 +2079,7 @@ namespace JapTask1BackendCorrection.Migrations
                     b.ToTable("MoviesWithMostSoldTicketsReports");
                 });
 
-            modelBuilder.Entity("JapTask1BackendCorrection.Entities.Rating", b =>
+            modelBuilder.Entity("JapTask1BackendCorrection.Core.Entities.Rating", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -2154,7 +2119,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(4909),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(5314),
                             CreatedBy = "SYSTEM",
                             MediaId = 1,
                             UserId = 1,
@@ -2163,7 +2128,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6422),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(7558),
                             CreatedBy = "SYSTEM",
                             MediaId = 2,
                             UserId = 1,
@@ -2172,7 +2137,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6440),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(7585),
                             CreatedBy = "SYSTEM",
                             MediaId = 3,
                             UserId = 1,
@@ -2181,7 +2146,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6443),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(7589),
                             CreatedBy = "SYSTEM",
                             MediaId = 4,
                             UserId = 1,
@@ -2190,7 +2155,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6452),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(7593),
                             CreatedBy = "SYSTEM",
                             MediaId = 5,
                             UserId = 1,
@@ -2199,7 +2164,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6465),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(7616),
                             CreatedBy = "SYSTEM",
                             MediaId = 6,
                             UserId = 1,
@@ -2208,7 +2173,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6468),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(7619),
                             CreatedBy = "SYSTEM",
                             MediaId = 7,
                             UserId = 1,
@@ -2217,7 +2182,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 8,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6471),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8825),
                             CreatedBy = "SYSTEM",
                             MediaId = 8,
                             UserId = 1,
@@ -2226,7 +2191,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 9,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6473),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8872),
                             CreatedBy = "SYSTEM",
                             MediaId = 9,
                             UserId = 1,
@@ -2235,7 +2200,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 10,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6477),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8888),
                             CreatedBy = "SYSTEM",
                             MediaId = 10,
                             UserId = 1,
@@ -2244,7 +2209,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 11,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6479),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8891),
                             CreatedBy = "SYSTEM",
                             MediaId = 11,
                             UserId = 1,
@@ -2253,7 +2218,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 12,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6482),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8895),
                             CreatedBy = "SYSTEM",
                             MediaId = 12,
                             UserId = 1,
@@ -2262,7 +2227,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 13,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6484),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8898),
                             CreatedBy = "SYSTEM",
                             MediaId = 13,
                             UserId = 1,
@@ -2271,7 +2236,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 14,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6487),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8902),
                             CreatedBy = "SYSTEM",
                             MediaId = 14,
                             UserId = 1,
@@ -2280,7 +2245,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 15,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6489),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8906),
                             CreatedBy = "SYSTEM",
                             MediaId = 15,
                             UserId = 1,
@@ -2289,7 +2254,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 16,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6492),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8909),
                             CreatedBy = "SYSTEM",
                             MediaId = 16,
                             UserId = 1,
@@ -2298,7 +2263,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 17,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6494),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8913),
                             CreatedBy = "SYSTEM",
                             MediaId = 17,
                             UserId = 1,
@@ -2307,7 +2272,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 18,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6498),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8918),
                             CreatedBy = "SYSTEM",
                             MediaId = 18,
                             UserId = 1,
@@ -2316,7 +2281,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 19,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6500),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8921),
                             CreatedBy = "SYSTEM",
                             MediaId = 19,
                             UserId = 1,
@@ -2325,7 +2290,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 20,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6503),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8925),
                             CreatedBy = "SYSTEM",
                             MediaId = 20,
                             UserId = 1,
@@ -2334,7 +2299,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 21,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6547),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8928),
                             CreatedBy = "SYSTEM",
                             MediaId = 21,
                             UserId = 1,
@@ -2343,7 +2308,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 22,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6550),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8932),
                             CreatedBy = "SYSTEM",
                             MediaId = 22,
                             UserId = 1,
@@ -2352,7 +2317,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 23,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6552),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8936),
                             CreatedBy = "SYSTEM",
                             MediaId = 23,
                             UserId = 1,
@@ -2361,7 +2326,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 24,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6592),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8939),
                             CreatedBy = "SYSTEM",
                             MediaId = 24,
                             UserId = 1,
@@ -2370,7 +2335,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 25,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6594),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8943),
                             CreatedBy = "SYSTEM",
                             MediaId = 25,
                             UserId = 1,
@@ -2379,7 +2344,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 26,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6597),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8946),
                             CreatedBy = "SYSTEM",
                             MediaId = 26,
                             UserId = 1,
@@ -2388,7 +2353,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 27,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6599),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8950),
                             CreatedBy = "SYSTEM",
                             MediaId = 27,
                             UserId = 1,
@@ -2397,7 +2362,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 28,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6602),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8954),
                             CreatedBy = "SYSTEM",
                             MediaId = 28,
                             UserId = 1,
@@ -2406,7 +2371,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 29,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6604),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8957),
                             CreatedBy = "SYSTEM",
                             MediaId = 29,
                             UserId = 1,
@@ -2415,7 +2380,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 30,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6607),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8964),
                             CreatedBy = "SYSTEM",
                             MediaId = 30,
                             UserId = 1,
@@ -2424,7 +2389,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 31,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6609),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8968),
                             CreatedBy = "SYSTEM",
                             MediaId = 31,
                             UserId = 1,
@@ -2433,7 +2398,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 32,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6611),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8974),
                             CreatedBy = "SYSTEM",
                             MediaId = 32,
                             UserId = 1,
@@ -2442,7 +2407,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 33,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6614),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8976),
                             CreatedBy = "SYSTEM",
                             MediaId = 33,
                             UserId = 1,
@@ -2451,7 +2416,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 34,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6618),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8981),
                             CreatedBy = "SYSTEM",
                             MediaId = 34,
                             UserId = 1,
@@ -2460,7 +2425,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 35,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6621),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8985),
                             CreatedBy = "SYSTEM",
                             MediaId = 35,
                             UserId = 1,
@@ -2469,7 +2434,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 36,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6623),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8988),
                             CreatedBy = "SYSTEM",
                             MediaId = 36,
                             UserId = 1,
@@ -2478,7 +2443,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 37,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6626),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8992),
                             CreatedBy = "SYSTEM",
                             MediaId = 37,
                             UserId = 1,
@@ -2487,7 +2452,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 38,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6629),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8996),
                             CreatedBy = "SYSTEM",
                             MediaId = 38,
                             UserId = 1,
@@ -2496,7 +2461,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 39,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6631),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(8999),
                             CreatedBy = "SYSTEM",
                             MediaId = 39,
                             UserId = 1,
@@ -2505,7 +2470,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 40,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6633),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9003),
                             CreatedBy = "SYSTEM",
                             MediaId = 40,
                             UserId = 1,
@@ -2514,7 +2479,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 41,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6636),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9006),
                             CreatedBy = "SYSTEM",
                             MediaId = 41,
                             UserId = 1,
@@ -2523,7 +2488,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 42,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6638),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9010),
                             CreatedBy = "SYSTEM",
                             MediaId = 42,
                             UserId = 1,
@@ -2532,7 +2497,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 43,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6641),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9012),
                             CreatedBy = "SYSTEM",
                             MediaId = 43,
                             UserId = 1,
@@ -2541,7 +2506,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 44,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6643),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9016),
                             CreatedBy = "SYSTEM",
                             MediaId = 44,
                             UserId = 1,
@@ -2550,7 +2515,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 45,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6645),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9020),
                             CreatedBy = "SYSTEM",
                             MediaId = 45,
                             UserId = 1,
@@ -2559,7 +2524,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 46,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6648),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9023),
                             CreatedBy = "SYSTEM",
                             MediaId = 46,
                             UserId = 1,
@@ -2568,7 +2533,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 47,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6650),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9027),
                             CreatedBy = "SYSTEM",
                             MediaId = 47,
                             UserId = 1,
@@ -2577,7 +2542,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 48,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6653),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9030),
                             CreatedBy = "SYSTEM",
                             MediaId = 48,
                             UserId = 1,
@@ -2586,7 +2551,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 49,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6655),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9034),
                             CreatedBy = "SYSTEM",
                             MediaId = 49,
                             UserId = 1,
@@ -2595,7 +2560,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 50,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6657),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9038),
                             CreatedBy = "SYSTEM",
                             MediaId = 50,
                             UserId = 1,
@@ -2604,7 +2569,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 51,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6660),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9041),
                             CreatedBy = "SYSTEM",
                             MediaId = 51,
                             UserId = 1,
@@ -2613,7 +2578,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 52,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6662),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9045),
                             CreatedBy = "SYSTEM",
                             MediaId = 52,
                             UserId = 1,
@@ -2622,7 +2587,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 53,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6665),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9048),
                             CreatedBy = "SYSTEM",
                             MediaId = 53,
                             UserId = 1,
@@ -2631,7 +2596,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 54,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6667),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9051),
                             CreatedBy = "SYSTEM",
                             MediaId = 54,
                             UserId = 1,
@@ -2640,7 +2605,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 55,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6670),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9054),
                             CreatedBy = "SYSTEM",
                             MediaId = 55,
                             UserId = 1,
@@ -2649,7 +2614,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 56,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6672),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9058),
                             CreatedBy = "SYSTEM",
                             MediaId = 56,
                             UserId = 1,
@@ -2658,7 +2623,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 57,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6674),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9062),
                             CreatedBy = "SYSTEM",
                             MediaId = 57,
                             UserId = 1,
@@ -2667,7 +2632,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 58,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6677),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9065),
                             CreatedBy = "SYSTEM",
                             MediaId = 58,
                             UserId = 1,
@@ -2676,7 +2641,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 59,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6679),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9069),
                             CreatedBy = "SYSTEM",
                             MediaId = 59,
                             UserId = 1,
@@ -2685,7 +2650,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 60,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6682),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9075),
                             CreatedBy = "SYSTEM",
                             MediaId = 60,
                             UserId = 1,
@@ -2694,7 +2659,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 61,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6684),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9078),
                             CreatedBy = "SYSTEM",
                             MediaId = 61,
                             UserId = 1,
@@ -2703,7 +2668,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 62,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6687),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9081),
                             CreatedBy = "SYSTEM",
                             MediaId = 62,
                             UserId = 1,
@@ -2712,7 +2677,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 63,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6689),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9086),
                             CreatedBy = "SYSTEM",
                             MediaId = 63,
                             UserId = 1,
@@ -2721,7 +2686,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 64,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6691),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9089),
                             CreatedBy = "SYSTEM",
                             MediaId = 64,
                             UserId = 1,
@@ -2730,7 +2695,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 65,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6694),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9092),
                             CreatedBy = "SYSTEM",
                             MediaId = 65,
                             UserId = 1,
@@ -2739,7 +2704,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 66,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6697),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9096),
                             CreatedBy = "SYSTEM",
                             MediaId = 66,
                             UserId = 1,
@@ -2748,7 +2713,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 67,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6700),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9100),
                             CreatedBy = "SYSTEM",
                             MediaId = 67,
                             UserId = 1,
@@ -2757,7 +2722,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 68,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6703),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9103),
                             CreatedBy = "SYSTEM",
                             MediaId = 68,
                             UserId = 1,
@@ -2766,7 +2731,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 69,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6705),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9107),
                             CreatedBy = "SYSTEM",
                             MediaId = 69,
                             UserId = 1,
@@ -2775,7 +2740,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 70,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6707),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9111),
                             CreatedBy = "SYSTEM",
                             MediaId = 70,
                             UserId = 1,
@@ -2784,7 +2749,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 71,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6710),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9114),
                             CreatedBy = "SYSTEM",
                             MediaId = 71,
                             UserId = 1,
@@ -2793,7 +2758,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 72,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6712),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9118),
                             CreatedBy = "SYSTEM",
                             MediaId = 72,
                             UserId = 1,
@@ -2802,7 +2767,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 73,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6715),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9121),
                             CreatedBy = "SYSTEM",
                             MediaId = 73,
                             UserId = 1,
@@ -2811,7 +2776,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 74,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6717),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9125),
                             CreatedBy = "SYSTEM",
                             MediaId = 74,
                             UserId = 1,
@@ -2820,7 +2785,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 75,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6719),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9127),
                             CreatedBy = "SYSTEM",
                             MediaId = 75,
                             UserId = 1,
@@ -2829,7 +2794,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 76,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6722),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9131),
                             CreatedBy = "SYSTEM",
                             MediaId = 76,
                             UserId = 1,
@@ -2838,7 +2803,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 77,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6724),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9135),
                             CreatedBy = "SYSTEM",
                             MediaId = 77,
                             UserId = 1,
@@ -2847,7 +2812,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 78,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6726),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9138),
                             CreatedBy = "SYSTEM",
                             MediaId = 78,
                             UserId = 1,
@@ -2856,7 +2821,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 79,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6729),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9142),
                             CreatedBy = "SYSTEM",
                             MediaId = 79,
                             UserId = 1,
@@ -2865,7 +2830,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 80,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6731),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9145),
                             CreatedBy = "SYSTEM",
                             MediaId = 80,
                             UserId = 1,
@@ -2874,7 +2839,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 81,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6734),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9149),
                             CreatedBy = "SYSTEM",
                             MediaId = 81,
                             UserId = 1,
@@ -2883,7 +2848,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 82,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6736),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9153),
                             CreatedBy = "SYSTEM",
                             MediaId = 82,
                             UserId = 1,
@@ -2892,7 +2857,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 83,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6739),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9155),
                             CreatedBy = "SYSTEM",
                             MediaId = 83,
                             UserId = 1,
@@ -2901,7 +2866,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 84,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6741),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9159),
                             CreatedBy = "SYSTEM",
                             MediaId = 84,
                             UserId = 1,
@@ -2910,7 +2875,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 85,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6743),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9162),
                             CreatedBy = "SYSTEM",
                             MediaId = 85,
                             UserId = 1,
@@ -2919,7 +2884,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 86,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6746),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9166),
                             CreatedBy = "SYSTEM",
                             MediaId = 86,
                             UserId = 1,
@@ -2928,7 +2893,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 87,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6748),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9169),
                             CreatedBy = "SYSTEM",
                             MediaId = 87,
                             UserId = 1,
@@ -2937,7 +2902,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 88,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6751),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9173),
                             CreatedBy = "SYSTEM",
                             MediaId = 88,
                             UserId = 1,
@@ -2946,7 +2911,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 89,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6753),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9177),
                             CreatedBy = "SYSTEM",
                             MediaId = 89,
                             UserId = 1,
@@ -2955,7 +2920,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 90,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6756),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9180),
                             CreatedBy = "SYSTEM",
                             MediaId = 90,
                             UserId = 1,
@@ -2964,7 +2929,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 91,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6758),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9184),
                             CreatedBy = "SYSTEM",
                             MediaId = 91,
                             UserId = 1,
@@ -2973,7 +2938,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 92,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6760),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 843, DateTimeKind.Local).AddTicks(9187),
                             CreatedBy = "SYSTEM",
                             MediaId = 92,
                             UserId = 1,
@@ -2982,7 +2947,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 93,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6763),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 844, DateTimeKind.Local).AddTicks(257),
                             CreatedBy = "SYSTEM",
                             MediaId = 93,
                             UserId = 1,
@@ -2991,7 +2956,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 94,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6765),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 844, DateTimeKind.Local).AddTicks(275),
                             CreatedBy = "SYSTEM",
                             MediaId = 94,
                             UserId = 1,
@@ -3000,7 +2965,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 95,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6767),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 844, DateTimeKind.Local).AddTicks(278),
                             CreatedBy = "SYSTEM",
                             MediaId = 95,
                             UserId = 1,
@@ -3009,7 +2974,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 96,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6770),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 844, DateTimeKind.Local).AddTicks(282),
                             CreatedBy = "SYSTEM",
                             MediaId = 96,
                             UserId = 1,
@@ -3018,7 +2983,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 97,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6772),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 844, DateTimeKind.Local).AddTicks(286),
                             CreatedBy = "SYSTEM",
                             MediaId = 97,
                             UserId = 1,
@@ -3027,7 +2992,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 98,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6774),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 844, DateTimeKind.Local).AddTicks(289),
                             CreatedBy = "SYSTEM",
                             MediaId = 98,
                             UserId = 1,
@@ -3036,7 +3001,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 99,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6777),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 844, DateTimeKind.Local).AddTicks(293),
                             CreatedBy = "SYSTEM",
                             MediaId = 99,
                             UserId = 1,
@@ -3045,7 +3010,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 100,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6779),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 844, DateTimeKind.Local).AddTicks(296),
                             CreatedBy = "SYSTEM",
                             MediaId = 100,
                             UserId = 1,
@@ -3054,7 +3019,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 101,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6782),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 844, DateTimeKind.Local).AddTicks(300),
                             CreatedBy = "SYSTEM",
                             MediaId = 100,
                             UserId = 1,
@@ -3063,7 +3028,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 102,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6784),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 844, DateTimeKind.Local).AddTicks(303),
                             CreatedBy = "SYSTEM",
                             MediaId = 100,
                             UserId = 1,
@@ -3072,7 +3037,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 103,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6786),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 844, DateTimeKind.Local).AddTicks(307),
                             CreatedBy = "SYSTEM",
                             MediaId = 100,
                             UserId = 1,
@@ -3081,7 +3046,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 104,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6789),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 844, DateTimeKind.Local).AddTicks(311),
                             CreatedBy = "SYSTEM",
                             MediaId = 10,
                             UserId = 1,
@@ -3090,7 +3055,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 105,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6791),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 844, DateTimeKind.Local).AddTicks(314),
                             CreatedBy = "SYSTEM",
                             MediaId = 67,
                             UserId = 1,
@@ -3099,7 +3064,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 106,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6794),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 844, DateTimeKind.Local).AddTicks(318),
                             CreatedBy = "SYSTEM",
                             MediaId = 67,
                             UserId = 1,
@@ -3108,7 +3073,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 107,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6796),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 844, DateTimeKind.Local).AddTicks(321),
                             CreatedBy = "SYSTEM",
                             MediaId = 44,
                             UserId = 1,
@@ -3117,7 +3082,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 108,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6799),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 844, DateTimeKind.Local).AddTicks(325),
                             CreatedBy = "SYSTEM",
                             MediaId = 17,
                             UserId = 1,
@@ -3126,7 +3091,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 109,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6801),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 844, DateTimeKind.Local).AddTicks(329),
                             CreatedBy = "SYSTEM",
                             MediaId = 17,
                             UserId = 1,
@@ -3135,7 +3100,7 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 110,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 522, DateTimeKind.Local).AddTicks(6804),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 844, DateTimeKind.Local).AddTicks(332),
                             CreatedBy = "SYSTEM",
                             MediaId = 7,
                             UserId = 1,
@@ -3143,7 +3108,7 @@ namespace JapTask1BackendCorrection.Migrations
                         });
                 });
 
-            modelBuilder.Entity("JapTask1BackendCorrection.Entities.Screening", b =>
+            modelBuilder.Entity("JapTask1BackendCorrection.Core.Entities.Screening", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -3193,67 +3158,67 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 1,
                             AvailableTickets = 11,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 526, DateTimeKind.Local).AddTicks(9281),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(2331),
                             CreatedBy = "SYSTEM",
                             Duration = 300,
                             MediaId = 1,
                             Name = "Screening 1",
-                            ScreeningDate = new DateTime(2021, 10, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(513),
+                            ScreeningDate = new DateTime(2021, 10, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(5486),
                             SoldTickets = 7
                         },
                         new
                         {
                             Id = 2,
                             AvailableTickets = 12,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1023),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6684),
                             CreatedBy = "SYSTEM",
                             Duration = 200,
                             MediaId = 2,
                             Name = "Screening 2",
-                            ScreeningDate = new DateTime(2021, 10, 10, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1034),
+                            ScreeningDate = new DateTime(2021, 10, 18, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6720),
                             SoldTickets = 6
                         },
                         new
                         {
                             Id = 3,
                             AvailableTickets = 13,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1038),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6727),
                             CreatedBy = "SYSTEM",
                             Duration = 100,
                             MediaId = 3,
                             Name = "Screening 3",
-                            ScreeningDate = new DateTime(2021, 9, 30, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1041),
+                            ScreeningDate = new DateTime(2021, 10, 8, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6730),
                             SoldTickets = 5
                         },
                         new
                         {
                             Id = 4,
                             AvailableTickets = 14,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1044),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6736),
                             CreatedBy = "SYSTEM",
                             Duration = 400,
                             MediaId = 4,
                             Name = "Screening 4",
-                            ScreeningDate = new DateTime(2021, 9, 25, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1046),
+                            ScreeningDate = new DateTime(2021, 10, 3, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6741),
                             SoldTickets = 4
                         },
                         new
                         {
                             Id = 5,
                             AvailableTickets = 15,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1049),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6747),
                             CreatedBy = "SYSTEM",
                             Duration = 500,
                             MediaId = 5,
                             Name = "Screening 5",
-                            ScreeningDate = new DateTime(2021, 9, 21, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1051),
+                            ScreeningDate = new DateTime(2021, 9, 29, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6751),
                             SoldTickets = 3
                         },
                         new
                         {
                             Id = 6,
                             AvailableTickets = 16,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1111),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6769),
                             CreatedBy = "SYSTEM",
                             Duration = 320,
                             MediaId = 6,
@@ -3265,55 +3230,55 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 7,
                             AvailableTickets = 10,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1115),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6776),
                             CreatedBy = "SYSTEM",
                             Duration = 40,
                             MediaId = 7,
                             Name = "Screening 7",
-                            ScreeningDate = new DateTime(2021, 10, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1117),
+                            ScreeningDate = new DateTime(2021, 10, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6781),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 8,
                             AvailableTickets = 19,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1120),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6786),
                             CreatedBy = "SYSTEM",
                             Duration = 50,
                             MediaId = 8,
                             Name = "Screening 8",
-                            ScreeningDate = new DateTime(2021, 10, 19, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1122),
+                            ScreeningDate = new DateTime(2021, 10, 27, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6790),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 9,
                             AvailableTickets = 102,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1125),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6796),
                             CreatedBy = "SYSTEM",
                             Duration = 310,
                             MediaId = 9,
                             Name = "Screening 9",
-                            ScreeningDate = new DateTime(2021, 9, 21, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1127),
+                            ScreeningDate = new DateTime(2021, 9, 29, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6802),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 10,
                             AvailableTickets = 4,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1131),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6811),
                             CreatedBy = "SYSTEM",
                             Duration = 200,
                             MediaId = 10,
                             Name = "Screening 10",
-                            ScreeningDate = new DateTime(2021, 10, 11, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1134),
+                            ScreeningDate = new DateTime(2021, 10, 19, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6817),
                             SoldTickets = 4
                         },
                         new
                         {
                             Id = 11,
                             AvailableTickets = 10,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1136),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6823),
                             CreatedBy = "SYSTEM",
                             Duration = 210,
                             MediaId = 11,
@@ -3325,7 +3290,7 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 12,
                             AvailableTickets = 22,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1139),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6830),
                             CreatedBy = "SYSTEM",
                             Duration = 220,
                             MediaId = 12,
@@ -3337,67 +3302,67 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 13,
                             AvailableTickets = 11,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1142),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6837),
                             CreatedBy = "SYSTEM",
                             Duration = 300,
                             MediaId = 13,
                             Name = "Screening 13",
-                            ScreeningDate = new DateTime(2021, 10, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1144),
+                            ScreeningDate = new DateTime(2021, 10, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6842),
                             SoldTickets = 7
                         },
                         new
                         {
                             Id = 14,
                             AvailableTickets = 12,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1147),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6865),
                             CreatedBy = "SYSTEM",
                             Duration = 200,
                             MediaId = 14,
                             Name = "Screening 14",
-                            ScreeningDate = new DateTime(2021, 10, 10, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1149),
+                            ScreeningDate = new DateTime(2021, 10, 18, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6871),
                             SoldTickets = 6
                         },
                         new
                         {
                             Id = 15,
                             AvailableTickets = 13,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1152),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6877),
                             CreatedBy = "SYSTEM",
                             Duration = 100,
                             MediaId = 15,
                             Name = "Screening 15",
-                            ScreeningDate = new DateTime(2021, 9, 30, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1154),
+                            ScreeningDate = new DateTime(2021, 10, 8, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6883),
                             SoldTickets = 5
                         },
                         new
                         {
                             Id = 16,
                             AvailableTickets = 14,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1157),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6889),
                             CreatedBy = "SYSTEM",
                             Duration = 400,
                             MediaId = 16,
                             Name = "Screening 16",
-                            ScreeningDate = new DateTime(2021, 9, 25, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1159),
+                            ScreeningDate = new DateTime(2021, 10, 3, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6895),
                             SoldTickets = 4
                         },
                         new
                         {
                             Id = 17,
                             AvailableTickets = 15,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1162),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6901),
                             CreatedBy = "SYSTEM",
                             Duration = 500,
                             MediaId = 17,
                             Name = "Screening 17",
-                            ScreeningDate = new DateTime(2021, 9, 21, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1164),
+                            ScreeningDate = new DateTime(2021, 9, 29, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6905),
                             SoldTickets = 3
                         },
                         new
                         {
                             Id = 18,
                             AvailableTickets = 16,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1167),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6916),
                             CreatedBy = "SYSTEM",
                             Duration = 320,
                             MediaId = 18,
@@ -3409,55 +3374,55 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 19,
                             AvailableTickets = 10,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1170),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6922),
                             CreatedBy = "SYSTEM",
                             Duration = 40,
                             MediaId = 19,
                             Name = "Screening 19",
-                            ScreeningDate = new DateTime(2021, 10, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1173),
+                            ScreeningDate = new DateTime(2021, 10, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6927),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 20,
                             AvailableTickets = 19,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1175),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6935),
                             CreatedBy = "SYSTEM",
                             Duration = 50,
                             MediaId = 20,
                             Name = "Screening 20",
-                            ScreeningDate = new DateTime(2021, 10, 19, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1177),
+                            ScreeningDate = new DateTime(2021, 10, 27, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6940),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 21,
                             AvailableTickets = 102,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1180),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6946),
                             CreatedBy = "SYSTEM",
                             Duration = 310,
                             MediaId = 21,
                             Name = "Screening 21",
-                            ScreeningDate = new DateTime(2021, 9, 21, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1182),
+                            ScreeningDate = new DateTime(2021, 9, 29, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6951),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 22,
                             AvailableTickets = 4,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1185),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6957),
                             CreatedBy = "SYSTEM",
                             Duration = 200,
                             MediaId = 22,
                             Name = "Screening 22",
-                            ScreeningDate = new DateTime(2021, 10, 11, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1187),
+                            ScreeningDate = new DateTime(2021, 10, 19, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6962),
                             SoldTickets = 4
                         },
                         new
                         {
                             Id = 23,
                             AvailableTickets = 10,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1190),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6967),
                             CreatedBy = "SYSTEM",
                             Duration = 210,
                             MediaId = 23,
@@ -3469,7 +3434,7 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 24,
                             AvailableTickets = 22,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1192),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6973),
                             CreatedBy = "SYSTEM",
                             Duration = 220,
                             MediaId = 24,
@@ -3481,67 +3446,67 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 25,
                             AvailableTickets = 11,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1195),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6980),
                             CreatedBy = "SYSTEM",
                             Duration = 300,
                             MediaId = 25,
                             Name = "Screening 25",
-                            ScreeningDate = new DateTime(2021, 10, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1197),
+                            ScreeningDate = new DateTime(2021, 10, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6985),
                             SoldTickets = 7
                         },
                         new
                         {
                             Id = 26,
                             AvailableTickets = 12,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1200),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6991),
                             CreatedBy = "SYSTEM",
                             Duration = 200,
                             MediaId = 26,
                             Name = "Screening 26",
-                            ScreeningDate = new DateTime(2021, 10, 10, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1202),
+                            ScreeningDate = new DateTime(2021, 10, 18, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(6995),
                             SoldTickets = 6
                         },
                         new
                         {
                             Id = 27,
                             AvailableTickets = 13,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1205),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7000),
                             CreatedBy = "SYSTEM",
                             Duration = 100,
                             MediaId = 27,
                             Name = "Screening 27",
-                            ScreeningDate = new DateTime(2021, 9, 30, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1207),
+                            ScreeningDate = new DateTime(2021, 10, 8, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7006),
                             SoldTickets = 5
                         },
                         new
                         {
                             Id = 28,
                             AvailableTickets = 14,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1210),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7012),
                             CreatedBy = "SYSTEM",
                             Duration = 400,
                             MediaId = 28,
                             Name = "Screening 28",
-                            ScreeningDate = new DateTime(2021, 9, 25, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1212),
+                            ScreeningDate = new DateTime(2021, 10, 3, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7017),
                             SoldTickets = 4
                         },
                         new
                         {
                             Id = 29,
                             AvailableTickets = 15,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1215),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7024),
                             CreatedBy = "SYSTEM",
                             Duration = 500,
                             MediaId = 29,
                             Name = "Screening 29",
-                            ScreeningDate = new DateTime(2021, 9, 21, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1217),
+                            ScreeningDate = new DateTime(2021, 9, 29, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7028),
                             SoldTickets = 3
                         },
                         new
                         {
                             Id = 30,
                             AvailableTickets = 16,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1219),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7034),
                             CreatedBy = "SYSTEM",
                             Duration = 320,
                             MediaId = 30,
@@ -3553,55 +3518,55 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 31,
                             AvailableTickets = 10,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1223),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7041),
                             CreatedBy = "SYSTEM",
                             Duration = 40,
                             MediaId = 31,
                             Name = "Screening 31",
-                            ScreeningDate = new DateTime(2021, 10, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1225),
+                            ScreeningDate = new DateTime(2021, 10, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7046),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 32,
                             AvailableTickets = 19,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1228),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7050),
                             CreatedBy = "SYSTEM",
                             Duration = 50,
                             MediaId = 32,
                             Name = "Screening 32",
-                            ScreeningDate = new DateTime(2021, 10, 19, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1230),
+                            ScreeningDate = new DateTime(2021, 10, 27, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7055),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 33,
                             AvailableTickets = 102,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1232),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7061),
                             CreatedBy = "SYSTEM",
                             Duration = 310,
                             MediaId = 33,
                             Name = "Screening 33",
-                            ScreeningDate = new DateTime(2021, 9, 21, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1235),
+                            ScreeningDate = new DateTime(2021, 9, 29, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7066),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 34,
                             AvailableTickets = 4,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1239),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7074),
                             CreatedBy = "SYSTEM",
                             Duration = 200,
                             MediaId = 34,
                             Name = "Screening 34",
-                            ScreeningDate = new DateTime(2021, 10, 11, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1241),
+                            ScreeningDate = new DateTime(2021, 10, 19, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7084),
                             SoldTickets = 4
                         },
                         new
                         {
                             Id = 35,
                             AvailableTickets = 10,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1244),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7090),
                             CreatedBy = "SYSTEM",
                             Duration = 210,
                             MediaId = 35,
@@ -3613,7 +3578,7 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 36,
                             AvailableTickets = 22,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1247),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7096),
                             CreatedBy = "SYSTEM",
                             Duration = 220,
                             MediaId = 36,
@@ -3625,67 +3590,67 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 37,
                             AvailableTickets = 11,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1250),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7102),
                             CreatedBy = "SYSTEM",
                             Duration = 300,
                             MediaId = 37,
                             Name = "Screening 37",
-                            ScreeningDate = new DateTime(2021, 10, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1252),
+                            ScreeningDate = new DateTime(2021, 10, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7107),
                             SoldTickets = 7
                         },
                         new
                         {
                             Id = 38,
                             AvailableTickets = 12,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1254),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7371),
                             CreatedBy = "SYSTEM",
                             Duration = 200,
                             MediaId = 38,
                             Name = "Screening 38",
-                            ScreeningDate = new DateTime(2021, 10, 10, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1257),
+                            ScreeningDate = new DateTime(2021, 10, 18, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7375),
                             SoldTickets = 6
                         },
                         new
                         {
                             Id = 39,
                             AvailableTickets = 13,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1259),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7381),
                             CreatedBy = "SYSTEM",
                             Duration = 100,
                             MediaId = 39,
                             Name = "Screening 39",
-                            ScreeningDate = new DateTime(2021, 9, 30, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1261),
+                            ScreeningDate = new DateTime(2021, 10, 8, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7386),
                             SoldTickets = 5
                         },
                         new
                         {
                             Id = 40,
                             AvailableTickets = 14,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1264),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7393),
                             CreatedBy = "SYSTEM",
                             Duration = 400,
                             MediaId = 40,
                             Name = "Screening 40",
-                            ScreeningDate = new DateTime(2021, 9, 25, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1266),
+                            ScreeningDate = new DateTime(2021, 10, 3, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7398),
                             SoldTickets = 4
                         },
                         new
                         {
                             Id = 41,
                             AvailableTickets = 15,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1269),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7404),
                             CreatedBy = "SYSTEM",
                             Duration = 500,
                             MediaId = 41,
                             Name = "Screening 41",
-                            ScreeningDate = new DateTime(2021, 9, 21, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1271),
+                            ScreeningDate = new DateTime(2021, 9, 29, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7410),
                             SoldTickets = 3
                         },
                         new
                         {
                             Id = 42,
                             AvailableTickets = 16,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1274),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7417),
                             CreatedBy = "SYSTEM",
                             Duration = 320,
                             MediaId = 42,
@@ -3697,55 +3662,55 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 43,
                             AvailableTickets = 10,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1276),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7424),
                             CreatedBy = "SYSTEM",
                             Duration = 40,
                             MediaId = 43,
                             Name = "Screening 43",
-                            ScreeningDate = new DateTime(2021, 10, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1278),
+                            ScreeningDate = new DateTime(2021, 10, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7430),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 44,
                             AvailableTickets = 19,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1281),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7436),
                             CreatedBy = "SYSTEM",
                             Duration = 50,
                             MediaId = 44,
                             Name = "Screening 44",
-                            ScreeningDate = new DateTime(2021, 10, 19, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1283),
+                            ScreeningDate = new DateTime(2021, 10, 27, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7442),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 45,
                             AvailableTickets = 102,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1286),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7447),
                             CreatedBy = "SYSTEM",
                             Duration = 310,
                             MediaId = 45,
                             Name = "Screening 45",
-                            ScreeningDate = new DateTime(2021, 9, 21, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1288),
+                            ScreeningDate = new DateTime(2021, 9, 29, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7452),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 46,
                             AvailableTickets = 4,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1290),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7457),
                             CreatedBy = "SYSTEM",
                             Duration = 200,
                             MediaId = 46,
                             Name = "Screening 46",
-                            ScreeningDate = new DateTime(2021, 10, 11, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1293),
+                            ScreeningDate = new DateTime(2021, 10, 19, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7463),
                             SoldTickets = 4
                         },
                         new
                         {
                             Id = 47,
                             AvailableTickets = 10,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1295),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7591),
                             CreatedBy = "SYSTEM",
                             Duration = 210,
                             MediaId = 47,
@@ -3757,7 +3722,7 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 48,
                             AvailableTickets = 22,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1298),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7603),
                             CreatedBy = "SYSTEM",
                             Duration = 220,
                             MediaId = 48,
@@ -3769,67 +3734,67 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 49,
                             AvailableTickets = 11,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1301),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7610),
                             CreatedBy = "SYSTEM",
                             Duration = 300,
                             MediaId = 49,
                             Name = "Screening 49",
-                            ScreeningDate = new DateTime(2021, 10, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1303),
+                            ScreeningDate = new DateTime(2021, 10, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7616),
                             SoldTickets = 7
                         },
                         new
                         {
                             Id = 50,
                             AvailableTickets = 12,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1305),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7621),
                             CreatedBy = "SYSTEM",
                             Duration = 200,
                             MediaId = 50,
                             Name = "Screening 50",
-                            ScreeningDate = new DateTime(2021, 10, 10, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1308),
+                            ScreeningDate = new DateTime(2021, 10, 18, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7626),
                             SoldTickets = 6
                         },
                         new
                         {
                             Id = 51,
                             AvailableTickets = 13,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1310),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7634),
                             CreatedBy = "SYSTEM",
                             Duration = 100,
                             MediaId = 51,
                             Name = "Screening 51",
-                            ScreeningDate = new DateTime(2021, 9, 30, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1313),
+                            ScreeningDate = new DateTime(2021, 10, 8, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7639),
                             SoldTickets = 5
                         },
                         new
                         {
                             Id = 52,
                             AvailableTickets = 14,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1315),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7645),
                             CreatedBy = "SYSTEM",
                             Duration = 400,
                             MediaId = 52,
                             Name = "Screening 52",
-                            ScreeningDate = new DateTime(2021, 9, 25, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1317),
+                            ScreeningDate = new DateTime(2021, 10, 3, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7650),
                             SoldTickets = 4
                         },
                         new
                         {
                             Id = 53,
                             AvailableTickets = 15,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1320),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7655),
                             CreatedBy = "SYSTEM",
                             Duration = 500,
                             MediaId = 53,
                             Name = "Screening 53",
-                            ScreeningDate = new DateTime(2021, 9, 21, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1322),
+                            ScreeningDate = new DateTime(2021, 9, 29, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7659),
                             SoldTickets = 3
                         },
                         new
                         {
                             Id = 54,
                             AvailableTickets = 16,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1324),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7665),
                             CreatedBy = "SYSTEM",
                             Duration = 320,
                             MediaId = 54,
@@ -3841,55 +3806,55 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 55,
                             AvailableTickets = 10,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1327),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7671),
                             CreatedBy = "SYSTEM",
                             Duration = 40,
                             MediaId = 55,
                             Name = "Screening 55",
-                            ScreeningDate = new DateTime(2021, 10, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1329),
+                            ScreeningDate = new DateTime(2021, 10, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7676),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 56,
                             AvailableTickets = 19,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1332),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7682),
                             CreatedBy = "SYSTEM",
                             Duration = 50,
                             MediaId = 56,
                             Name = "Screening 56",
-                            ScreeningDate = new DateTime(2021, 10, 19, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1334),
+                            ScreeningDate = new DateTime(2021, 10, 27, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7687),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 57,
                             AvailableTickets = 102,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1337),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7693),
                             CreatedBy = "SYSTEM",
                             Duration = 310,
                             MediaId = 57,
                             Name = "Screening 57",
-                            ScreeningDate = new DateTime(2021, 9, 21, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1339),
+                            ScreeningDate = new DateTime(2021, 9, 29, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7698),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 58,
                             AvailableTickets = 4,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1341),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7704),
                             CreatedBy = "SYSTEM",
                             Duration = 200,
                             MediaId = 58,
                             Name = "Screening 58",
-                            ScreeningDate = new DateTime(2021, 10, 11, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1344),
+                            ScreeningDate = new DateTime(2021, 10, 19, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7710),
                             SoldTickets = 4
                         },
                         new
                         {
                             Id = 59,
                             AvailableTickets = 10,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1366),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7716),
                             CreatedBy = "SYSTEM",
                             Duration = 210,
                             MediaId = 59,
@@ -3901,7 +3866,7 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 60,
                             AvailableTickets = 22,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1369),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7722),
                             CreatedBy = "SYSTEM",
                             Duration = 220,
                             MediaId = 60,
@@ -3913,67 +3878,67 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 61,
                             AvailableTickets = 11,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1372),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7729),
                             CreatedBy = "SYSTEM",
                             Duration = 300,
                             MediaId = 61,
                             Name = "Screening 61",
-                            ScreeningDate = new DateTime(2021, 10, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1374),
+                            ScreeningDate = new DateTime(2021, 10, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7734),
                             SoldTickets = 7
                         },
                         new
                         {
                             Id = 62,
                             AvailableTickets = 12,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1376),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7741),
                             CreatedBy = "SYSTEM",
                             Duration = 200,
                             MediaId = 62,
                             Name = "Screening 62",
-                            ScreeningDate = new DateTime(2021, 10, 10, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1379),
+                            ScreeningDate = new DateTime(2021, 10, 18, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7745),
                             SoldTickets = 6
                         },
                         new
                         {
                             Id = 63,
                             AvailableTickets = 13,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1381),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7751),
                             CreatedBy = "SYSTEM",
                             Duration = 100,
                             MediaId = 63,
                             Name = "Screening 63",
-                            ScreeningDate = new DateTime(2021, 9, 30, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1384),
+                            ScreeningDate = new DateTime(2021, 10, 8, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7754),
                             SoldTickets = 5
                         },
                         new
                         {
                             Id = 64,
                             AvailableTickets = 14,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1386),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7759),
                             CreatedBy = "SYSTEM",
                             Duration = 400,
                             MediaId = 64,
                             Name = "Screening 64",
-                            ScreeningDate = new DateTime(2021, 9, 25, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1388),
+                            ScreeningDate = new DateTime(2021, 10, 3, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7765),
                             SoldTickets = 4
                         },
                         new
                         {
                             Id = 65,
                             AvailableTickets = 15,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1391),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7770),
                             CreatedBy = "SYSTEM",
                             Duration = 500,
                             MediaId = 65,
                             Name = "Screening 65",
-                            ScreeningDate = new DateTime(2021, 9, 21, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1393),
+                            ScreeningDate = new DateTime(2021, 9, 29, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7775),
                             SoldTickets = 3
                         },
                         new
                         {
                             Id = 66,
                             AvailableTickets = 16,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1397),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7785),
                             CreatedBy = "SYSTEM",
                             Duration = 320,
                             MediaId = 66,
@@ -3985,55 +3950,55 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 67,
                             AvailableTickets = 10,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1400),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7793),
                             CreatedBy = "SYSTEM",
                             Duration = 40,
                             MediaId = 67,
                             Name = "Screening 67",
-                            ScreeningDate = new DateTime(2021, 10, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1402),
+                            ScreeningDate = new DateTime(2021, 10, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7799),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 68,
                             AvailableTickets = 19,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1405),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7803),
                             CreatedBy = "SYSTEM",
                             Duration = 50,
                             MediaId = 68,
                             Name = "Screening 68",
-                            ScreeningDate = new DateTime(2021, 10, 19, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1407),
+                            ScreeningDate = new DateTime(2021, 10, 27, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7808),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 69,
                             AvailableTickets = 102,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1409),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7814),
                             CreatedBy = "SYSTEM",
                             Duration = 310,
                             MediaId = 69,
                             Name = "Screening 69",
-                            ScreeningDate = new DateTime(2021, 9, 21, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1412),
+                            ScreeningDate = new DateTime(2021, 9, 29, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7819),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 70,
                             AvailableTickets = 4,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1414),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7824),
                             CreatedBy = "SYSTEM",
                             Duration = 200,
                             MediaId = 70,
                             Name = "Screening 70",
-                            ScreeningDate = new DateTime(2021, 10, 11, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1417),
+                            ScreeningDate = new DateTime(2021, 10, 19, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7828),
                             SoldTickets = 4
                         },
                         new
                         {
                             Id = 71,
                             AvailableTickets = 10,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1419),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7834),
                             CreatedBy = "SYSTEM",
                             Duration = 210,
                             MediaId = 71,
@@ -4045,7 +4010,7 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 72,
                             AvailableTickets = 22,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1426),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7840),
                             CreatedBy = "SYSTEM",
                             Duration = 220,
                             MediaId = 72,
@@ -4057,67 +4022,67 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 73,
                             AvailableTickets = 11,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1429),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7848),
                             CreatedBy = "SYSTEM",
                             Duration = 300,
                             MediaId = 73,
                             Name = "Screening 73",
-                            ScreeningDate = new DateTime(2021, 10, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1431),
+                            ScreeningDate = new DateTime(2021, 10, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7854),
                             SoldTickets = 7
                         },
                         new
                         {
                             Id = 74,
                             AvailableTickets = 12,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1434),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7858),
                             CreatedBy = "SYSTEM",
                             Duration = 200,
                             MediaId = 74,
                             Name = "Screening 74",
-                            ScreeningDate = new DateTime(2021, 10, 10, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1436),
+                            ScreeningDate = new DateTime(2021, 10, 18, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7863),
                             SoldTickets = 6
                         },
                         new
                         {
                             Id = 75,
                             AvailableTickets = 13,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1438),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7869),
                             CreatedBy = "SYSTEM",
                             Duration = 100,
                             MediaId = 75,
                             Name = "Screening 75",
-                            ScreeningDate = new DateTime(2021, 9, 30, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1441),
+                            ScreeningDate = new DateTime(2021, 10, 8, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7874),
                             SoldTickets = 5
                         },
                         new
                         {
                             Id = 76,
                             AvailableTickets = 14,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1443),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7880),
                             CreatedBy = "SYSTEM",
                             Duration = 400,
                             MediaId = 76,
                             Name = "Screening 76",
-                            ScreeningDate = new DateTime(2021, 9, 25, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1445),
+                            ScreeningDate = new DateTime(2021, 10, 3, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7885),
                             SoldTickets = 4
                         },
                         new
                         {
                             Id = 77,
                             AvailableTickets = 15,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1448),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7891),
                             CreatedBy = "SYSTEM",
                             Duration = 500,
                             MediaId = 77,
                             Name = "Screening 77",
-                            ScreeningDate = new DateTime(2021, 9, 21, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1450),
+                            ScreeningDate = new DateTime(2021, 9, 29, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7897),
                             SoldTickets = 3
                         },
                         new
                         {
                             Id = 78,
                             AvailableTickets = 16,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1453),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7903),
                             CreatedBy = "SYSTEM",
                             Duration = 320,
                             MediaId = 78,
@@ -4129,55 +4094,55 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 79,
                             AvailableTickets = 10,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1456),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7910),
                             CreatedBy = "SYSTEM",
                             Duration = 40,
                             MediaId = 79,
                             Name = "Screening 79",
-                            ScreeningDate = new DateTime(2021, 10, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1458),
+                            ScreeningDate = new DateTime(2021, 10, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7915),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 80,
                             AvailableTickets = 19,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1460),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7922),
                             CreatedBy = "SYSTEM",
                             Duration = 50,
                             MediaId = 80,
                             Name = "Screening 80",
-                            ScreeningDate = new DateTime(2021, 10, 19, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1463),
+                            ScreeningDate = new DateTime(2021, 10, 27, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7927),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 81,
                             AvailableTickets = 102,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1465),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7933),
                             CreatedBy = "SYSTEM",
                             Duration = 310,
                             MediaId = 81,
                             Name = "Screening 81",
-                            ScreeningDate = new DateTime(2021, 9, 21, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1467),
+                            ScreeningDate = new DateTime(2021, 9, 29, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7938),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 82,
                             AvailableTickets = 4,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1470),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7945),
                             CreatedBy = "SYSTEM",
                             Duration = 200,
                             MediaId = 82,
                             Name = "Screening 82",
-                            ScreeningDate = new DateTime(2021, 10, 11, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1472),
+                            ScreeningDate = new DateTime(2021, 10, 19, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7950),
                             SoldTickets = 4
                         },
                         new
                         {
                             Id = 83,
                             AvailableTickets = 10,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1475),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7954),
                             CreatedBy = "SYSTEM",
                             Duration = 210,
                             MediaId = 83,
@@ -4189,7 +4154,7 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 84,
                             AvailableTickets = 22,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1478),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(7962),
                             CreatedBy = "SYSTEM",
                             Duration = 220,
                             MediaId = 84,
@@ -4201,67 +4166,67 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 85,
                             AvailableTickets = 11,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1480),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8165),
                             CreatedBy = "SYSTEM",
                             Duration = 300,
                             MediaId = 85,
                             Name = "Screening 85",
-                            ScreeningDate = new DateTime(2021, 10, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1483),
+                            ScreeningDate = new DateTime(2021, 10, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8171),
                             SoldTickets = 7
                         },
                         new
                         {
                             Id = 86,
                             AvailableTickets = 12,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1485),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8177),
                             CreatedBy = "SYSTEM",
                             Duration = 200,
                             MediaId = 86,
                             Name = "Screening 86",
-                            ScreeningDate = new DateTime(2021, 10, 10, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1487),
+                            ScreeningDate = new DateTime(2021, 10, 18, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8182),
                             SoldTickets = 6
                         },
                         new
                         {
                             Id = 87,
                             AvailableTickets = 13,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1490),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8188),
                             CreatedBy = "SYSTEM",
                             Duration = 100,
                             MediaId = 87,
                             Name = "Screening 87",
-                            ScreeningDate = new DateTime(2021, 9, 30, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1492),
+                            ScreeningDate = new DateTime(2021, 10, 8, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8193),
                             SoldTickets = 5
                         },
                         new
                         {
                             Id = 88,
                             AvailableTickets = 14,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1495),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8198),
                             CreatedBy = "SYSTEM",
                             Duration = 400,
                             MediaId = 88,
                             Name = "Screening 88",
-                            ScreeningDate = new DateTime(2021, 9, 25, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1497),
+                            ScreeningDate = new DateTime(2021, 10, 3, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8204),
                             SoldTickets = 4
                         },
                         new
                         {
                             Id = 89,
                             AvailableTickets = 15,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1500),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8208),
                             CreatedBy = "SYSTEM",
                             Duration = 500,
                             MediaId = 89,
                             Name = "Screening 89",
-                            ScreeningDate = new DateTime(2021, 9, 21, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1502),
+                            ScreeningDate = new DateTime(2021, 9, 29, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8214),
                             SoldTickets = 3
                         },
                         new
                         {
                             Id = 90,
                             AvailableTickets = 16,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1505),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8220),
                             CreatedBy = "SYSTEM",
                             Duration = 320,
                             MediaId = 90,
@@ -4273,55 +4238,55 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 91,
                             AvailableTickets = 10,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1508),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8228),
                             CreatedBy = "SYSTEM",
                             Duration = 40,
                             MediaId = 91,
                             Name = "Screening 91",
-                            ScreeningDate = new DateTime(2021, 10, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1510),
+                            ScreeningDate = new DateTime(2021, 10, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8231),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 92,
                             AvailableTickets = 19,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1512),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8237),
                             CreatedBy = "SYSTEM",
                             Duration = 50,
                             MediaId = 92,
                             Name = "Screening 92",
-                            ScreeningDate = new DateTime(2021, 10, 19, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1514),
+                            ScreeningDate = new DateTime(2021, 10, 27, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8241),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 93,
                             AvailableTickets = 102,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1517),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8248),
                             CreatedBy = "SYSTEM",
                             Duration = 310,
                             MediaId = 93,
                             Name = "Screening 93",
-                            ScreeningDate = new DateTime(2021, 9, 21, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1519),
+                            ScreeningDate = new DateTime(2021, 9, 29, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8252),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 94,
                             AvailableTickets = 4,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1522),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8258),
                             CreatedBy = "SYSTEM",
                             Duration = 200,
                             MediaId = 94,
                             Name = "Screening 94",
-                            ScreeningDate = new DateTime(2021, 10, 11, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1524),
+                            ScreeningDate = new DateTime(2021, 10, 19, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8261),
                             SoldTickets = 4
                         },
                         new
                         {
                             Id = 95,
                             AvailableTickets = 10,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1526),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8268),
                             CreatedBy = "SYSTEM",
                             Duration = 210,
                             MediaId = 95,
@@ -4333,7 +4298,7 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 96,
                             AvailableTickets = 22,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1529),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8274),
                             CreatedBy = "SYSTEM",
                             Duration = 220,
                             MediaId = 96,
@@ -4345,31 +4310,31 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 97,
                             AvailableTickets = 102,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1532),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8282),
                             CreatedBy = "SYSTEM",
                             Duration = 310,
                             MediaId = 97,
                             Name = "Screening 97",
-                            ScreeningDate = new DateTime(2021, 9, 21, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1534),
+                            ScreeningDate = new DateTime(2021, 9, 29, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8288),
                             SoldTickets = 2
                         },
                         new
                         {
                             Id = 98,
                             AvailableTickets = 4,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1537),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8294),
                             CreatedBy = "SYSTEM",
                             Duration = 200,
                             MediaId = 98,
                             Name = "Screening 98",
-                            ScreeningDate = new DateTime(2021, 10, 11, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1539),
+                            ScreeningDate = new DateTime(2021, 10, 19, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8298),
                             SoldTickets = 4
                         },
                         new
                         {
                             Id = 99,
                             AvailableTickets = 10,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1541),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8303),
                             CreatedBy = "SYSTEM",
                             Duration = 210,
                             MediaId = 99,
@@ -4381,7 +4346,7 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 100,
                             AvailableTickets = 22,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1544),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8364),
                             CreatedBy = "SYSTEM",
                             Duration = 220,
                             MediaId = 100,
@@ -4393,7 +4358,7 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 101,
                             AvailableTickets = 22,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1547),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8373),
                             CreatedBy = "SYSTEM",
                             Duration = 220,
                             MediaId = 100,
@@ -4405,7 +4370,7 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 102,
                             AvailableTickets = 22,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1551),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8381),
                             CreatedBy = "SYSTEM",
                             Duration = 220,
                             MediaId = 100,
@@ -4417,7 +4382,7 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 103,
                             AvailableTickets = 22,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1554),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8388),
                             CreatedBy = "SYSTEM",
                             Duration = 220,
                             MediaId = 100,
@@ -4429,7 +4394,7 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 104,
                             AvailableTickets = 22,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1556),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8394),
                             CreatedBy = "SYSTEM",
                             Duration = 120,
                             MediaId = 104,
@@ -4441,7 +4406,7 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 105,
                             AvailableTickets = 22,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1559),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8400),
                             CreatedBy = "SYSTEM",
                             Duration = 100,
                             MediaId = 105,
@@ -4453,7 +4418,7 @@ namespace JapTask1BackendCorrection.Migrations
                         {
                             Id = 106,
                             AvailableTickets = 22,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 527, DateTimeKind.Local).AddTicks(1562),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 855, DateTimeKind.Local).AddTicks(8406),
                             CreatedBy = "SYSTEM",
                             Duration = 90,
                             MediaId = 106,
@@ -4463,7 +4428,7 @@ namespace JapTask1BackendCorrection.Migrations
                         });
                 });
 
-            modelBuilder.Entity("JapTask1BackendCorrection.Entities.User", b =>
+            modelBuilder.Entity("JapTask1BackendCorrection.Core.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -4513,25 +4478,25 @@ namespace JapTask1BackendCorrection.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2021, 9, 20, 16, 15, 24, 519, DateTimeKind.Local).AddTicks(8303),
+                            CreatedAt = new DateTime(2021, 9, 28, 16, 35, 38, 836, DateTimeKind.Local).AddTicks(9549),
                             CreatedBy = "SYSTEM",
                             Email = "admin@gmail.com",
                             FirstName = "Admin",
-                            Hash = new byte[] { 83, 133, 199, 240, 91, 252, 175, 59, 129, 154, 137, 144, 243, 23, 88, 79, 36, 74, 112, 119, 108, 220, 214, 126, 2, 69, 245, 253, 118, 46, 182, 160, 119, 230, 34, 235, 242, 193, 170, 237, 200, 76, 55, 246, 164, 190, 104, 125, 91, 65, 239, 105, 216, 195, 137, 139, 232, 138, 18, 174, 110, 10, 226, 81 },
+                            Hash = new byte[] { 48, 201, 188, 7, 5, 212, 119, 139, 156, 70, 212, 13, 219, 121, 179, 163, 75, 34, 227, 49, 161, 128, 158, 248, 133, 157, 16, 202, 6, 117, 184, 41, 65, 219, 117, 242, 93, 6, 149, 201, 57, 50, 4, 50, 226, 153, 220, 12, 216, 21, 53, 107, 14, 104, 46, 47, 158, 147, 51, 3, 210, 244, 121, 224 },
                             LastName = "Admin",
-                            Salt = new byte[] { 251, 171, 222, 41, 114, 124, 192, 29, 104, 175, 90, 65, 47, 101, 131, 214, 158, 166, 120, 158, 94, 186, 224, 193, 249, 209, 122, 3, 125, 103, 105, 125, 47, 120, 87, 244, 224, 97, 137, 129, 167, 205, 138, 217, 17, 199, 216, 97, 157, 228, 164, 213, 56, 232, 182, 42, 124, 27, 177, 128, 26, 27, 111, 15, 108, 234, 245, 109, 81, 57, 218, 9, 199, 200, 23, 19, 13, 224, 212, 73, 200, 196, 88, 12, 165, 53, 105, 181, 6, 24, 60, 54, 110, 189, 206, 213, 24, 254, 105, 0, 111, 240, 204, 231, 45, 54, 185, 217, 59, 142, 68, 121, 239, 198, 101, 88, 48, 59, 87, 80, 76, 34, 137, 28, 131, 0, 44, 69 }
+                            Salt = new byte[] { 23, 148, 157, 55, 97, 212, 168, 86, 3, 162, 46, 246, 203, 97, 111, 232, 111, 249, 143, 62, 103, 255, 26, 224, 99, 142, 141, 240, 197, 35, 0, 227, 172, 94, 201, 168, 245, 109, 82, 11, 62, 235, 194, 85, 165, 64, 96, 241, 183, 125, 72, 47, 19, 127, 216, 236, 151, 23, 109, 51, 76, 97, 200, 49, 248, 54, 102, 243, 248, 208, 148, 160, 21, 148, 107, 218, 183, 94, 119, 90, 173, 4, 114, 9, 230, 63, 189, 170, 84, 68, 216, 52, 132, 89, 134, 47, 35, 136, 0, 133, 220, 0, 115, 225, 6, 249, 27, 193, 240, 44, 215, 123, 119, 41, 5, 208, 33, 104, 28, 217, 98, 221, 109, 255, 95, 210, 201, 25 }
                         });
                 });
 
             modelBuilder.Entity("ActorMedia", b =>
                 {
-                    b.HasOne("JapTask1BackendCorrection.Entities.Actor", null)
+                    b.HasOne("JapTask1BackendCorrection.Core.Entities.Actor", null)
                         .WithMany()
                         .HasForeignKey("ActorsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("JapTask1BackendCorrection.Entities.Media", null)
+                    b.HasOne("JapTask1BackendCorrection.Core.Entities.Media", null)
                         .WithMany()
                         .HasForeignKey("MediasId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -4540,71 +4505,71 @@ namespace JapTask1BackendCorrection.Migrations
 
             modelBuilder.Entity("CategoryMedia", b =>
                 {
-                    b.HasOne("JapTask1BackendCorrection.Entities.Category", null)
+                    b.HasOne("JapTask1BackendCorrection.Core.Entities.Category", null)
                         .WithMany()
                         .HasForeignKey("CategoriesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("JapTask1BackendCorrection.Entities.Media", null)
+                    b.HasOne("JapTask1BackendCorrection.Core.Entities.Media", null)
                         .WithMany()
                         .HasForeignKey("MediasId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("JapTask1BackendCorrection.Entities.BoughtTicket", b =>
+            modelBuilder.Entity("JapTask1BackendCorrection.Core.Entities.BoughtTicket", b =>
                 {
-                    b.HasOne("JapTask1BackendCorrection.Entities.Screening", null)
+                    b.HasOne("JapTask1BackendCorrection.Core.Entities.Screening", null)
                         .WithMany("BoughtTickets")
                         .HasForeignKey("ScreeningId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("JapTask1BackendCorrection.Entities.User", null)
+                    b.HasOne("JapTask1BackendCorrection.Core.Entities.User", null)
                         .WithMany("BoughtTickets")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("JapTask1BackendCorrection.Entities.Rating", b =>
+            modelBuilder.Entity("JapTask1BackendCorrection.Core.Entities.Rating", b =>
                 {
-                    b.HasOne("JapTask1BackendCorrection.Entities.Media", null)
+                    b.HasOne("JapTask1BackendCorrection.Core.Entities.Media", null)
                         .WithMany("Ratings")
                         .HasForeignKey("MediaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("JapTask1BackendCorrection.Entities.User", null)
+                    b.HasOne("JapTask1BackendCorrection.Core.Entities.User", null)
                         .WithMany("Ratings")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("JapTask1BackendCorrection.Entities.Screening", b =>
+            modelBuilder.Entity("JapTask1BackendCorrection.Core.Entities.Screening", b =>
                 {
-                    b.HasOne("JapTask1BackendCorrection.Entities.Media", null)
+                    b.HasOne("JapTask1BackendCorrection.Core.Entities.Media", null)
                         .WithMany("Screenings")
                         .HasForeignKey("MediaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("JapTask1BackendCorrection.Entities.Media", b =>
+            modelBuilder.Entity("JapTask1BackendCorrection.Core.Entities.Media", b =>
                 {
                     b.Navigation("Ratings");
 
                     b.Navigation("Screenings");
                 });
 
-            modelBuilder.Entity("JapTask1BackendCorrection.Entities.Screening", b =>
+            modelBuilder.Entity("JapTask1BackendCorrection.Core.Entities.Screening", b =>
                 {
                     b.Navigation("BoughtTickets");
                 });
 
-            modelBuilder.Entity("JapTask1BackendCorrection.Entities.User", b =>
+            modelBuilder.Entity("JapTask1BackendCorrection.Core.Entities.User", b =>
                 {
                     b.Navigation("BoughtTickets");
 

@@ -1,6 +1,6 @@
 ﻿namespace JapTask1BackendCorrection.Core.Entities
 {
-    public class MoviesWithMostSoldTicketsReport : BaseEntity
+    public class MoviesWithMostSoldTicketsReport
     {
         public int MovieId { get; set; }
         public string MovieName { get; set; }

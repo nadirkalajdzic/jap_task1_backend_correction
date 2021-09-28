@@ -2,7 +2,6 @@
 using JapTask1BackendCorrection.Data.Seeders;
 using JapTask1BackendCorrection.Infrastructure.Services.AuthService;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace JapTask1BackendCorrection.Infrastructure.Data
 {
