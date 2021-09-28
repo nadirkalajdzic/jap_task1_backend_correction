@@ -5,6 +5,8 @@ using JapTask1BackendCorrection.Infrastructure.Data;
 using JapTask1BackendCorrection.Infrastructure.Services.AuthService;
 using JapTask1BackendCorrection.Infrastructure.Services.RatingService;
 using Microsoft.EntityFrameworkCore;
+using Moq;
+using Nest;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -102,7 +104,8 @@ namespace NUnitTests
 
             // --------------
 
-            _ratingsService = new RatingService(_context);            
+            var elasticClient = new Mock<IElasticClient>();
+            _ratingsService = new RatingService(_context, elasticClient.Object);            
 
         }
 
