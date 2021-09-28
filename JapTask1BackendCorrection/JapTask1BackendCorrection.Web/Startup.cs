@@ -26,6 +26,7 @@ namespace JapTask1BackendCorrection.Web
             services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
             services.AddAutoMapper(typeof(Startup));
+            services.AddElasticsearch(Configuration);
 
             AddSwagger.AddSwaggerConfig(ref services);
             AddAuth.AddAuthConfig(ref services, Configuration);

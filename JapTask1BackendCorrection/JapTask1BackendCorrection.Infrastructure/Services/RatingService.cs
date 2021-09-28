@@ -4,16 +4,20 @@ using JapTask1BackendCorrection.Core.Interfaces.RatingService;
 using JapTask1BackendCorrection.Core.Response;
 using JapTask1BackendCorrection.Infrastructure.Data;
 using JapTask1BackendCorrection.Core.Requests.Rating;
+using JapTask1BackendCorrection.Core.Entities;
+using Nest;
 
 namespace JapTask1BackendCorrection.Infrastructure.Services.RatingService
 {
     public class RatingService: IRatingService
     {
         private readonly DataContext _context;
-        
-        public RatingService(DataContext context)
+        private readonly IElasticClient _elasticClient;
+
+        public RatingService(DataContext context, IElasticClient elasticClient)
         {
             _context = context;
+            _elasticClient = elasticClient;
         }
 
         /// <summary>
@@ -43,8 +47,10 @@ namespace JapTask1BackendCorrection.Infrastructure.Services.RatingService
                 return new() { Message = "You already rated this item!" };
 
             // adding rating
-            await _context.Ratings.AddAsync(new() { Value = request.Value, MediaId = request.MediaId, UserId = userId });
+            Rating rating = new() { Value = request.Value, MediaId = request.MediaId, UserId = userId };
+            await _context.Ratings.AddAsync(rating);
             await _context.SaveChangesAsync();
+            await _elasticClient.UpdateAsync<Rating>(rating, r => r.Doc(rating));
 
             return new() { Data = true, Success = true, Message = "Successfully added rating" };
         }

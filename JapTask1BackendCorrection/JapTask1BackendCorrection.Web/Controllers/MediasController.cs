@@ -1,8 +1,10 @@
 ﻿using JapTask1BackendCorrection.Core.DTO.Media;
+using JapTask1BackendCorrection.Core.Entities;
 using JapTask1BackendCorrection.Core.Interfaces.MediaService;
 using JapTask1BackendCorrection.Core.Requests.Media;
 using JapTask1BackendCorrection.Core.Response;
 using Microsoft.AspNetCore.Mvc;
+using Nest;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -12,7 +14,6 @@ namespace JapTask1BackendCorrection.Controllers
     [Route("api/medias")]
     public class MediasController : ControllerBase
     {
-
         private readonly IMediaService _videosService;
 
         public MediasController(IMediaService videosService)
@@ -42,6 +43,5 @@ namespace JapTask1BackendCorrection.Controllers
 
             return Ok(await _videosService.GetFilteredMedias(search));
         }
-
     }
 }
